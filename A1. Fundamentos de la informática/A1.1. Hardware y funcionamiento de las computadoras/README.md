@@ -75,16 +75,16 @@ Las CPU vienen en varias configuraciones diferentes. Estas incluyen procesadores
 Esta CPU tiene una **única unidad de procesamiento**, lo que significa que solo puede manejar una tarea a la vez. Se encuentran con mayor frecuencia en ordenadores de **gama baja** o en **máquinas más antiguas**. Son adecuados para tareas simples que no requieren un alto nivel de multitarea. Los procesadores de un solo núcleo pueden ejecutar más de una aplicación a la vez, pero la CPU tiene que ser compartida entre estas aplicaciones, lo cual puede afectar al rendimiento.
 
 #### Procesadores multinúcleo
-Una CPU con procesadores multinúcleo tiene dos o más núcleos que pueden ejecutar múltiples instrucciones simultáneamente. A menudo se les denomina como de doble núcleo (dos procesadores), de cuatro núcleos (cuatro procesadores), de seis núcleos (hexa-core) o de ocho núcleos (octa-core). Su rendimiento es **significativamente más rápido que el de los procesadores de un solo núcleo** y son ideales para la multitarea, los videojuegos y los servidores. Sin embargo, el software debe estar escrito para aprovechar estos núcleos adicionales. El software más antiguo que no hace esto probablemente se ejecute a una velocidad similar a la de un procesador de un solo núcleo.
+Una **CPU con procesadores multinúcleo** tiene dos o más núcleos que pueden ejecutar múltiples instrucciones simultáneamente. A menudo se les denomina como de doble núcleo (dos procesadores), de cuatro núcleos (cuatro procesadores), de seis núcleos (hexa-core) o de ocho núcleos (octa-core). Su rendimiento es **significativamente más rápido que el de los procesadores de un solo núcleo** y son ideales para la multitarea, los videojuegos y los servidores. Sin embargo, el software debe estar escrito para aprovechar estos núcleos adicionales. El software más antiguo que no hace esto probablemente se ejecute a una velocidad similar a la de un procesador de un solo núcleo.
 
 #### Coprocesadores
-Un coprocesador es un tipo especial de procesador que tiene una tarea específica para apoyar a la CPU principal. Están construidos con un propósito concreto para lograr un rendimiento óptimo en comparación con una CPU de propósito general. Las tareas se descargan de la CPU al coprocesador para que puedan ejecutarse en paralelo, mejorando el rendimiento del sistema. Ejemplos de coprocesadores son las unidades de procesamiento gráfico (cubiertas en la Sección A1.1.2), los procesadores de audio y los procesadores de señal digital (DSP), que se utilizan en telecomunicaciones y compresión de imágenes.
+Un **coprocesador es un tipo especial de procesador que tiene una tarea específica para apoyar a la CPU principal**. Están construidos con un propósito concreto para lograr un rendimiento óptimo en comparación con una CPU de propósito general. Las tareas se descargan de la CPU al coprocesador para que puedan ejecutarse en paralelo, mejorando el rendimiento del sistema. Ejemplos de coprocesadores son las unidades de procesamiento gráfico (cubiertas en la Sección A1.1.2), los procesadores de audio y **los procesadores de señal digital (DSP)**, que se utilizan en telecomunicaciones y compresión de imágenes.
 
 ## A1.1.2. Función de una GPU
 
-Una **unidad de procesamiento gráfico (GPU)** es un circuito electrónico especializado diseñado para acelerar el renderizado de imágenes, videos y animaciones mediante la realización de cálculos matemáticos rápidos. Inicialmente desarrolladas para manejar las exigentes cargas de trabajo gráficas de los videojuegos y las aplicaciones visuales, las GPU han evolucionado hasta desempeñar un papel crucial en diversos campos más allá del renderizado gráfico.
+Una **unidad de procesamiento gráfico (GPU)** es un circuito electrónico especializado diseñado para acelerar el renderizado de imágenes, videos y animaciones mediante la realización de cálculos matemáticos rápidos. Inicialmente desarrolladas para manejar las exigentes **cargas de trabajo gráficas de los videojuegos y las aplicaciones visuales**, las GPU han evolucionado hasta desempeñar un papel crucial en diversos campos más allá del renderizado gráfico.
 
-Su estructura, compuesta por miles de núcleos pequeños y eficientes, les permite procesar múltiples tareas simultáneamente, lo que las hace excepcionalmente adecuadas para aplicaciones computacionalmente intensivas. Esta capacidad ha llevado a su amplia adopción en la investigación científica, el aprendizaje automático, la inteligencia artificial y la minería de criptomonedas.
+Su estructura, compuesta por **miles de núcleos pequeños y eficientes**, les permite procesar múltiples tareas simultáneamente, lo que las hace excepcionalmente adecuadas para aplicaciones computacionalmente intensivas. Esta capacidad ha llevado a su amplia adopción en la investigación científica, el aprendizaje automático, la inteligencia artificial y la minería de criptomonedas.
 
 Al descargar estas tareas intensivas de la CPU, las GPU mejoran el rendimiento general del sistema, permitiendo un procesamiento y una visualización de datos más rápidos y eficientes.
 
@@ -95,9 +95,9 @@ Al descargar estas tareas intensivas de la CPU, las GPU mejoran el rendimiento g
 
 ### Procesamiento gráfico
 
-Las GPU están diseñadas con una estructura altamente paralela, lo que les permite realizar muchos cálculos simultáneamente. Esto las hace excepcionalmente adecuadas para renderizar los gráficos complejos e intensivos en recursos que se ven en los videojuegos y aplicaciones modernas.
+Las **GPU** están diseñadas con una estructura altamente paralela, lo que les permite realizar muchos cálculos simultáneamente. Esto las hace excepcionalmente adecuadas para renderizar los gráficos complejos e intensivos en recursos que se ven en los videojuegos y aplicaciones modernas.
 
-También manejan la aplicación de shaders y textures a modelos 3D, lo que incluye iluminación, sombreado y mapeado de texturas, mejorando el realismo de la escena.
+También manejan la aplicación de **shaders y textures a modelos 3D**, lo que incluye iluminación, sombreado y mapeado de texturas, mejorando el realismo de la escena.
 
   <div style="text-align: center;">
     <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/A1.%20Fundamentos%20de%20la%20inform%C3%A1tica/images/Figura%204.%20Gr%C3%A1ficos%20de%20videojuegos.jpg" alt="GPU" width="450" height="auto"/>
@@ -106,19 +106,19 @@ También manejan la aplicación de shaders y textures a modelos 3D, lo que inclu
 
 ### Procesamiento de video
 
-Las GPU ayudan en la decodificación y codificación de archivos de video, haciendo que procesos como la reproducción, la transmisión y la edición sean más eficientes y rápidos. Esto es particularmente útil para quienes trabajan con archivos de video de alta resolución de 4K o superior.
+Las GPU ayudan en la decodificación y codificación de archivos de video, haciendo que procesos como la reproducción, la transmisión y la edición sean más eficientes y rápidos. Esto es particularmente útil para quienes trabajan con archivos de **video de alta resolución de 4K o superior**.
 
 ### Inteligencia artificial y aprendizaje automático
 
-Las GPU fueron creadas originalmente para el procesamiento gráfico; sin embargo, a principios de los 2000, investigadores e ingenieros comenzaron a reconocer su potencial para manejar cálculos de propósito general, incluyendo aquellos requeridos para el aprendizaje automático y la IA.
+Las **GPU** fueron creadas originalmente para el procesamiento gráfico; sin embargo, a principios de los 2000, investigadores e ingenieros comenzaron a reconocer su potencial para manejar cálculos de propósito general, incluyendo aquellos requeridos para el **aprendizaje automático** y la **IA**.
 
 El cambio hacia el uso de GPUs para esto se debió en gran parte a su capacidad de realizar muchos cálculos simples simultáneamente, y porque muchas GPU pueden ejecutarse en paralelo.
 
-Muchos modelos de IA dependen en gran medida de las multiplicaciones de matrices y vectores, y las GPU superan ampliamente a una CPU cuando intentan procesar esto rápidamente.
+Muchos **modelos de IA dependen en gran medida de las multiplicaciones de matrices y vectores**, y las GPU superan ampliamente a una CPU cuando intentan procesar esto rápidamente.
 
 ### Blockchain y minería de criptomonedas
 
-En 2010, el uso de GPUs para la minería de Bitcoin se disparó cuando los mineros descubrieron que las GPUs superaban significativamente a las CPUs en la resolución de acertijos criptográficos, como encontrar el nonce en el algoritmo de hash para el sistema de proof-of-work.
+En 2010, el uso de GPUs para la **minería de Bitcoin** se disparó cuando los mineros descubrieron que las GPUs superaban significativamente a las CPUs en la resolución de acertijos criptográficos, como encontrar el nonce en el algoritmo de **hash** para el sistema de **proof-of-work**.
 
 Esta constatación llevó a un cambio drástico hacia la minería con GPU. El auge de las criptomonedas entre 2017 y 2021 aumentó aún más la demanda de GPUs, lo que resultó en precios por las nubes y escasez global.
 
@@ -132,7 +132,7 @@ Esta constatación llevó a un cambio drástico hacia la minería con GPU. El au
 
 A partir de 2023, esta demanda se había reducido un poco y los precios de las GPUs se estaban volviendo más estables. Esto se debió a varias razones:
 
-La volatilidad y la menor rentabilidad de la minería de criptomonedas habían reducido la demanda de GPUs, específicamente para fines de minería.
+La **volatilidad** y la **menor rentabilidad** de la minería de criptomonedas habían reducido la demanda de GPUs, específicamente para fines de minería.
 
 Los grandes fabricantes habían incrementado la producción para satisfacer la demanda.
 
