@@ -27,7 +27,7 @@ La CPU está compuesta por dos unidades principales: la **unidad de control (CU)
   </div>
 
 #### Unidad de control (CU)
-La unidad de control **dirige las operaciones del procesador**. Es responsable del ciclo de **captación–decodificación–ejecución**, gestionando las tres operaciones y dirigiendo la memoria del ordenador, la ALU y los dispositivos de entrada/salida para que respondan de manera adecuada.
+La unidad de control **dirige las operaciones del procesador**. Es responsable del ciclo de **búsqueda–decodificación–ejecución**, gestionando las tres operaciones y dirigiendo la memoria del ordenador, la ALU y los dispositivos de entrada/salida para que respondan de manera adecuada.
 
 #### Unidad aritmético-lógica (ALU)
 Esta unidad es responsable de **realizar operaciones aritméticas y lógicas**. Estas incluyen operaciones aritméticas básicas como la suma, resta, multiplicación y división, así como **operaciones lógicas** incluyendo AND, OR, XOR y NOT.
