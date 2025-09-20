@@ -271,7 +271,7 @@ Este sistema por capas ayuda a garantizar que el juego se ejecute de forma fluid
 
 <br>
 
-## A1.1.4. Propósitos de los diferentes tipos de memoria principal
+## A1.1.5. Ciclo de búsqueda, decodificación y ejecución
 
 El ciclo de búsqueda–decodificación–ejecución, también conocido como “ciclo de instrucción”, es el proceso fundamental que utiliza una CPU para ejecutar instrucciones. El ciclo consta de tres etapas principales:
 
