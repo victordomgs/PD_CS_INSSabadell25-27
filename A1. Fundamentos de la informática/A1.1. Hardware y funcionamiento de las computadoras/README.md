@@ -169,7 +169,7 @@ La GPU utiliza su propia memoria especial llamada **VRAM (memoria de video)**. L
 > [!NOTE]  
 > **Renderizado:** el proceso de generar una imagen a partir de un modelo mediante programas informáticos.
 
-# Comparación entre CPU y GPU
+### Comparación entre CPU y GPU
 
 | Procesador | Procesamiento | Arquitectura | Funcionalidad |
 |------------|---------------|---------------|---------------|
@@ -181,3 +181,16 @@ La GPU utiliza su propia memoria especial llamada **VRAM (memoria de video)**. L
 Las GPU son mejores cuando la misma operación debe realizarse en muchos datos de forma simultánea.
 > 
 > Esto significa que, para tareas como los videojuegos, la edición de video y la investigación computacional (IA y aprendizaje automático), las GPU suelen superar significativamente a las CPU.
+
+### Cómo trabajan juntas la CPU y la GPU para aumentar el rendimiento en los videojuegos
+
+Al jugar videojuegos, la CPU y la GPU trabajan juntas para ofrecer una experiencia fluida e inmersiva.
+
+La CPU se encarga de la lógica principal del juego, incluyendo las reglas, los cálculos físicos y el comportamiento de la IA. También procesa las entradas del jugador (determinando los resultados de sus acciones y actualizando el estado del juego en consecuencia).
+
+La GPU tiene como función principal renderizar los elementos visuales del juego. Procesa los datos de **vértices y píxeles para dibujar imágenes en la pantalla**, incluyendo objetos 3D, texturas y efectos como iluminación y sombras.
+
+> [!NOTE]  
+> **Datos de vértices y píxeles:** datos que la GPU utiliza para renderizar objetos e imágenes en 3D.
+>
+> **Frame (fotograma):** una sola imagen dentro de una secuencia que forma un video o animación.
