@@ -166,9 +166,18 @@ La CPU y la GPU acceden a la memoria de forma diferente. **La CPU utiliza una me
 
 La GPU utiliza su propia memoria especial llamada **VRAM (memoria de video)**. La VRAM tiene un **ancho de banda muy alto**, lo que significa que puede mover grandes cantidades de datos a la vez, como imágenes y videos. Sin embargo, la GPU consume más energía porque debe procesar muchos datos al mismo tiempo, especialmente al renderizar videos o ejecutar simulaciones complejas.
 
+> [!NOTE]  
+> **Renderizado:** el proceso de generar una imagen a partir de un modelo mediante programas informáticos.
+
 # Comparación entre CPU y GPU
 
 | Procesador | Procesamiento | Arquitectura | Funcionalidad |
 |------------|---------------|---------------|---------------|
 | **CPU** | Es un procesador **de propósito general**, capaz de manejar muchas tareas diferentes. Ejecuta las instrucciones de los programas de ordenador, implicando operaciones como aritmética, lógica y control de operaciones de entrada/salida (E/S), según lo indicado por el sistema operativo. | Las CPU generalmente tienen menos núcleos. Los dispositivos de usuario general suelen tener entre 4 y 8 núcleos; sin embargo, existen algunas CPU avanzadas que ahora tienen 64 núcleos o más. Cada núcleo es muy versátil, lo que le permite manejar cálculos complejos que requieren procesamiento secuencial. | Permite al usuario cambiar entre múltiples tareas y aplicaciones. Esto lo hace ideal para ejecutar el sistema operativo y aplicaciones de software en general. |
 | **GPU** | Es un procesador **especializado**, centrado en manejar gráficos, **renderizar** imágenes, video y animaciones. | Compuesto por cientos o miles de núcleos pequeños que son adecuados para tareas que se pueden ejecutar en paralelo. Aunque cada núcleo no es tan potente como uno estándar de la CPU, el alto número de núcleos les permite realizar un gran número de cálculos simultáneamente, lo que los hace perfectos para el procesamiento gráfico. | Adecuado para tareas que requieren el procesamiento simultáneo de grandes bloques de datos, como el renderizado de imágenes, el procesamiento de video y las aplicaciones de *deep learning*. |
+
+> [!IMPORTANT]  
+> En resumen, las CPU son mejores para tareas que requieren alta velocidad, toma de decisiones complejas y versatilidad.
+Las GPU son mejores cuando la misma operación debe realizarse en muchos datos de forma simultánea.
+
+Esto significa que, para tareas como los videojuegos, la edición de video y la investigación computacional (IA y aprendizaje automático), las GPU suelen superar significativamente a las CPU.
