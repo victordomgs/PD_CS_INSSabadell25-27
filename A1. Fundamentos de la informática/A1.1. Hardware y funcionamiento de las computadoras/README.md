@@ -179,5 +179,4 @@ La GPU utiliza su propia memoria especial llamada **VRAM (memoria de video)**. L
 > [!IMPORTANT]  
 > En resumen, las CPU son mejores para tareas que requieren alta velocidad, toma de decisiones complejas y versatilidad.
 Las GPU son mejores cuando la misma operación debe realizarse en muchos datos de forma simultánea.
-
-Esto significa que, para tareas como los videojuegos, la edición de video y la investigación computacional (IA y aprendizaje automático), las GPU suelen superar significativamente a las CPU.
+> Esto significa que, para tareas como los videojuegos, la edición de video y la investigación computacional (IA y aprendizaje automático), las GPU suelen superar significativamente a las CPU.
