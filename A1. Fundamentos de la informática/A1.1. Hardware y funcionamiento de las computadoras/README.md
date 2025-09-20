@@ -25,7 +25,7 @@ La CPU está compuesta por dos unidades principales: la **unidad de control (CU)
 
   <div style="text-align: center;">
     <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/A1.%20Fundamentos%20de%20la%20inform%C3%A1tica/images/Figura%201.%20Modelo%20de%20CPU.png" alt="CPU Model" width="450" height="auto"/>
-    <p><em>Figura 1: Modelo de CPU. Fuente: Paul Baumgarten, Ioana Ganea, Carl Turland</em></p>
+    <p><em>Figura 1: Modelo de CPU. Fuente: Computer Science IB. (Paul Baumgarten, Ioana Ganea, Carl Turland)</em></p>
   </div>
 
 #### Unidad de control (CU)
@@ -194,3 +194,171 @@ La GPU tiene como función principal renderizar los elementos visuales del juego
 > **Datos de vértices y píxeles:** datos que la GPU utiliza para renderizar objetos e imágenes en 3D.
 >
 > **Frame (fotograma):** una sola imagen dentro de una secuencia que forma un video o animación.
+
+<br>
+
+## A1.1.4. Propósitos de los diferentes tipos de memoria principal
+
+### Tipos de memoria
+La memoria principal del ordenador almacena datos e instrucciones que la CPU necesita para procesar tareas. La memoria principal incluye varios tipos: RAM (memoria de acceso aleatorio), ROM (memoria de solo lectura), cachés y registros (tratados en la Sección A1.1.1). Todos estos son tipos de memoria principal, lo que significa que son utilizados directamente por la CPU.
+
+#### RAM
+La RAM (memoria de acceso aleatorio) contiene instrucciones y datos de los programas que se están ejecutando en ese momento. Por ejemplo, cuando abres una aplicación en tu teléfono o en tu ordenador, esta se carga en la RAM para que la CPU pueda acceder a ella rápidamente.
+
+La RAM es **volátil**, lo que significa que pierde su contenido cuando se apaga la energía del ordenador. Por eso, cuando estás jugando y no guardas la partida, pierdes tu progreso (ya que el guardado se almacena en la memoria secundaria).
+
+> [!NOTE]  
+> **Volátil:** tipo de memoria o almacenamiento que pierde sus datos cuando se apaga la energía.
+
+Un ejemplo real del uso de la RAM se encuentra en los teléfonos inteligentes, que utilizan la RAM para cambiar rápidamente entre aplicaciones. Cuando sales de una aplicación, esta permanece en la RAM, de modo que puedes volver a ella rápidamente sin necesidad de recargarla desde cero.
+
+  <div style="text-align: center;">
+    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/A1.%20Fundamentos%20de%20la%20inform%C3%A1tica/images/Figura%206.%20Random%20Access%20Memory%20(RAM).png" alt="RAM" width="450" height="auto"/>
+    <p><em>Figura 6: Random Access Memory (RAM). Fuente: Computer Science IB. (Paul Baumgarten, Ioana Ganea, Carl Turland)</em></p>
+  </div>
+
+#### ROM
+
+La ROM (read-only memory o memoria de solo lectura) se utiliza para almacenar instrucciones que rara vez se modifican. La ROM se emplea para el **BIOS** (basic input/output system o sistema básico de entrada/salida) del ordenador, que se encuentra en la placa base.
+
+La función principal del BIOS es **inicializar y comprobar los componentes de hardware del sistema durante el arranque**, y **cargar el sistema operativo (OS)** desde el almacenamiento secundario hacia la RAM, dejándolo listo para que la CPU obtenga, decodifique y ejecute las instrucciones.
+
+  <div style="text-align: center;">
+    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/A1.%20Fundamentos%20de%20la%20inform%C3%A1tica/images/Figura%207.%20Memoria%20ROM%20de%20la%20placa%20base.png" alt="ROM" width="450" height="auto"/>
+    <p><em>Figura 7: Read-Only Memory (ROM). Fuente: Computer Science IB. (Paul Baumgarten, Ioana Ganea, Carl Turland)</em></p>
+  </div>
+
+La **ROM** es una memoria **no volátil**, lo que significa que no pierde su contenido cuando el ordenador está apagado. Aunque la ROM es de “solo lectura”, lo que implica que sus datos no pueden modificarse fácilmente, la mayoría de los ordenadores modernos utilizan **memoria flash**, que permite actualizaciones y reprogramación. Esto hace posible que las compañías de placas base actualicen su software cuando sea necesario.
+
+Un ejemplo real del uso de la ROM se encuentra en los teléfonos inteligentes, donde la ROM almacena el sistema operativo y las aplicaciones principales, que no cambian a menos que realices una actualización. Esto garantiza que tu teléfono pueda arrancar de manera confiable en cada encendido.
+
+#### Caché (L1, L2 y L3)
+
+  <div style="text-align: center;">
+    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/A1.%20Fundamentos%20de%20la%20inform%C3%A1tica/images/Figura%208.%20Jerarqu%C3%ADa%20de%20memoria.png" alt="ROM" width="450" height="auto"/>
+    <p><em>Figura 8: Memoria Caché. Fuente: Computer Science IB. (Paul Baumgarten, Ioana Ganea, Carl Turland)</em></p>
+  </div>
+
+La **memoria caché** es pequeña, pero ofrece acceso de alta velocidad a la CPU en comparación con la RAM. Actúa como un búfer entre la CPU y la RAM más lenta, almacenando datos e instrucciones de uso frecuente.
+
+Existen tres tipos de caché: **L1, L2 y L3**, cada una con diferentes tamaños y velocidades. Cuanto más cerca de la CPU se encuentre, más rápida es.
+
+- **Caché L1**: se encuentra directamente en la CPU, lo que la convierte en la más rápida. Puede accederse a ella casi al instante debido a su ubicación. Sin embargo, también es la más pequeña, normalmente de solo unos pocos kilobytes (32KB a 128KB por núcleo). Cada núcleo de CPU suele tener su propia caché L1, que normalmente se divide en dos secciones: **L1i** para almacenar instrucciones y **L1d** para almacenar datos.
+- **Caché L2**: puede estar en la CPU, como la L1, o situada muy cerca de ella. La caché L2 es más grande que la L1 y puede tener hasta varios megabytes de tamaño (256KB a 2MB por núcleo), proporcionando más espacio para almacenar instrucciones de uso frecuente. Es más rápida que la L3, pero un poco más lenta que la L1, aunque sigue acelerando significativamente el procesamiento al reducir la necesidad de acceder a la RAM más lenta.
+- **Caché L3**: suele encontrarse más alejada del chip de la CPU. La caché L3 puede ser compartida entre varios núcleos en las CPU multinúcleo, mientras que L1 y L2 suelen ser exclusivas de un solo núcleo. Es la más grande de las tres y puede alcanzar decenas de megabytes (2MB a 64MB compartidos entre todos los núcleos). Es la más lenta de los tres tipos de caché, pero aún así es mucho más rápida que la RAM.
+
+Los términos **acierto de caché (cache hit) y fallo de caché (cache miss)** se utilizan para describir la eficiencia de la memoria caché de la CPU al recuperar datos.
+
+- Un **acierto de caché** es el escenario ideal: la CPU solicita datos y estos se encuentran en la memoria caché.
+- Un **fallo de caché** significa que no se encontraron, lo que obliga a recuperarlos desde la memoria principal (RAM) más lenta o incluso desde un almacenamiento todavía más lento (SSD / HDD).
+
+> [!TIP]
+> Imagina una cebolla, con sus capas representando los niveles de caché:
+>
+> La **caché L1** es la más pequeña y rápida, como el centro mismo de la cebolla, donde todo está muy compacto y más cerca del núcleo de la CPU.
+>
+> La **caché L2** es un poco más grande y más lenta, como la siguiente capa hacia afuera: todavía cerca del centro, pero no tan rápida de acceder como el núcleo.
+> 
+> La **caché L3** es la más grande y lenta, como las capas exteriores de la cebolla. Sigue siendo importante, pero se tarda un poco más en llegar a ella, de la misma forma que la CPU necesita más tiempo para acceder a los datos en la caché L3 en comparación con L1 y L2.
+
+#### Optimización del rendimiento de la CPU con caché
+
+La caché desempeña un papel fundamental para garantizar que la CPU pueda acceder a los datos lo más rápido posible. Cuando la CPU encuentra los datos buscados en la caché (**acierto de caché**), estos pueden procesarse muy rápidamente. Sin embargo, cuando ocurre un **fallo de caché**, la CPU debe buscar los datos en la memoria más lenta, lo que provoca un retraso.
+
+Imagina que estás jugando a un videojuego en un ordenador. La CPU revisa con frecuencia las cachés L1, L2 y L3 para encontrar los datos que necesita para que el juego funcione sin problemas. Las funciones principales del juego, como los controles del jugador y la lógica del juego, podrían almacenarse en la caché L1, mientras que los datos a los que se accede con menos frecuencia, como las texturas de fondo, pueden estar en la caché L3.
+
+Este sistema por capas ayuda a garantizar que el juego se ejecute de forma fluida, sin interrupciones. Una CPU con una caché más grande o con técnicas de **prefetching** más avanzadas (una técnica mediante la cual la CPU predice qué datos necesitará y los carga en la caché por adelantado) tendrá menos fallos de caché y un mejor rendimiento general.
+
+<br>
+
+## A1.1.4. Propósitos de los diferentes tipos de memoria principal
+
+El ciclo de búsqueda–decodificación–ejecución, también conocido como “ciclo de instrucción”, es el proceso fundamental que utiliza una CPU para ejecutar instrucciones. El ciclo consta de tres etapas principales:
+
+- **Búsqueda (Fetch):** la CPU obtiene una instrucción de la memoria.
+- **Decodificación (Decode):** la CPU interpreta la instrucción y prepara las operaciones necesarias para ejecutarla.
+- **Ejecución (Execute):** la CPU realiza las acciones requeridas por la instrucción.
+
+  <div style="text-align: center;">
+    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/A1.%20Fundamentos%20de%20la%20inform%C3%A1tica/images/Figura%209.%20The%20fetch-decode-execute%20cycle.png" alt="ROM" width="250" height="auto"/>
+    <p><em>Figura 10: The fetch-decode-execute cycle. Fuente: Computer Science IB. (Paul Baumgarten, Ioana Ganea, Carl Turland)</em></p>
+  </div>
+
+### Little Man Computer (LMC)
+
+na forma más sencilla de ver estas etapas con más detalle es utilizar un modelo educativo de CPU conocido como **Little Man Computer**, que puedes buscar en línea o usar en este enlace: [https://peterhigginson.co.uk/lmc](https://peterhigginson.co.uk/lmc).  
+
+Este modelo utiliza **lenguaje ensamblador**, un conjunto simple de instrucciones, cada una representada por tres letras, que se almacena como un código de tres dígitos en la memoria.  
+
+#### Conjunto de instrucciones
+
+| Instrucción | Código | Descripción |
+|-------------|--------|-------------|
+| **INP** | 901 | Introduce un valor y lo almacena en el acumulador. |
+| **OUT** | 902 | Muestra el valor del acumulador. |
+| **DAT** | N/A | Define valores de datos directamente en memoria en el punto de declaración, a menudo usados para constantes o variables. |
+| **LDA** | 5XX | Carga en el acumulador el valor de la dirección de memoria especificada. |
+| **STA** | 3XX | Almacena el valor del acumulador en la dirección de memoria especificada. |
+| **ADD** | 1XX | Suma al acumulador el valor de la dirección de memoria especificada. |
+| **SUB** | 2XX | Resta al acumulador el valor de la dirección de memoria especificada. |
+| **HLT** | 000 | Detiene el programa. |
+| **BRA** | 6XX | Salta a la dirección de memoria especificada. |
+| **BRZ** | 7XX | Salta a la dirección de memoria especificada si el acumulador es cero. |
+| **BRP** | 8XX | Salta a la dirección de memoria especificada si el acumulador es positivo. |
+
+---
+
+#### Ejemplo
+Introduce el siguiente programa en la columna de la izquierda y ensámblalo en la RAM.  
+Verás la representación de **tres dígitos** para cada instrucción almacenada en una dirección de memoria en la columna de la derecha.  
+
+Por ejemplo:  
+`LDA 4` se almacena como **504** en la dirección de memoria **0**.
+
+```
+LDA 4
+ADD 5
+STA 5
+HLT
+DAT 23
+DAT 12
+```
+
+LMC se debe ver tal que así:
+
+  <div style="text-align: center;">
+    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/A1.%20Fundamentos%20de%20la%20inform%C3%A1tica/images/Figura%2010.%20LMC%20Model.png" alt="LMC" width="750" height="auto"/>
+    <p><em>Figura 11: LMC Model. Fuente: Peter Higginson</em></p>
+  </div>
+
+#### Primer ciclo (Click step)
+
+1. **Búsqueda (Fetch):** El PC (contador de programa) está actualmente en 0, así que se recupera la instrucción en la dirección de memoria 0 (504) abriendo la dirección 0 en la RAM mediante el bus de direcciones y obteniendo la instrucción a través del bus de datos. El bus de control envía una señal de lectura para iniciar este proceso. El valor 5 se almacena en el registro de instrucciones y 04 en el registro de direcciones. Mientras esto sucede, el PC se incrementa a 1 mediante la ALU, preparándose para la siguiente instrucción.
+
+2. **Decodificación (Decode):** Una vez recuperada la instrucción, la CPU la decodifica. La unidad de control utiliza el bus de control para coordinar este proceso. La instrucción almacenada en el registro de instrucciones es 5, que se decodifica como “cargar en el acumulador”. El registro de direcciones 04 indica la dirección de los datos que deben cargarse.
+
+3. **Ejecución (Execute):** Se lleva a cabo la orden. La dirección 4 se abre en el bus de direcciones y el bus de control envía las señales apropiadas para recuperar los datos (23) de esa ubicación a través del bus de datos y almacenarlos en el acumulador.
+
+#### Segundo ciclo (Click step)
+
+1. **Búsqueda (Fetch):** La CPU usa ahora el PC para saber qué instrucción recuperar a continuación: el valor actual es 1. Se abre la dirección 1 y se obtiene la instrucción 105. El bus de control envía una señal de lectura para iniciar este proceso. El valor 1 se almacena en el registro de instrucciones y 05 en el registro de direcciones. El PC se incrementa a 2 mediante la ALU.
+
+2. **Decodificación (Decode):** La instrucción 1 se decodifica como “sumar al acumulador”; el registro de direcciones indica la dirección de los datos que deben sumarse (5). La unidad de control utiliza el bus de control para coordinar este proceso.
+
+3. **Ejecución (Execute):** Se abre la dirección 5, se recuperan los datos (12) y tanto el acumulador (que contiene 23) como los datos recuperados (12) se envían a la ALU. El resultado de 23 + 12 se almacena en el acumulador (35).
+
+#### Tercer ciclo (Click step)
+
+1. **Búsqueda (Fetch):** El PC está actualmente en 2, así que se recupera la instrucción en la dirección de memoria 2 (305). El bus de control envía una señal de lectura para iniciar este proceso. El valor 3 se almacena en el registro de instrucciones y 05 en el registro de direcciones. El PC se incrementa a 3 mediante la ALU.
+
+2. **Decodificación (Decode):** La instrucción 3 se decodifica como “almacenar acumulador en dirección” y el registro de direcciones indica la ubicación donde guardar los datos (05). La unidad de control usa el bus de control para coordinar esto.
+
+3. **Ejecución (Execute):** Se abre la dirección 5 mediante el bus de direcciones, y el bus de control envía las señales adecuadas para enviar el contenido del acumulador por el bus de datos y almacenarlo en la dirección 5 (sobrescribiendo los datos actuales).
+
+#### Cuarto ciclo (Click step)
+
+1. Búsqueda (Fetch): El PC está actualmente en 3, por lo que se recupera la instrucción en la dirección de memoria 3 (000). El bus de control envía una señal de lectura para iniciar este proceso. El valor 0 se almacena en el registro de instrucciones y 00 en el registro de direcciones. El PC se incrementa a 4 mediante la ALU.
+
+2. Decodificación (Decode): La instrucción 0 se decodifica como “detener”. La unidad de control utiliza el bus de control para señalar esta operación.
+
+3. Ejecución (Execute): El ordenador detiene todas las operaciones y finaliza el programa.
