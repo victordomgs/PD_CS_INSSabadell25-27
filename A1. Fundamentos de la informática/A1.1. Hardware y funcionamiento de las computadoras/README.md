@@ -14,6 +14,8 @@
 - [A1.1.7. Concepto de compresión](#A117-concepto-de-compresión)
 - [A1.1.8. Servicios de computación en la nube](#A118-servicios-de-computación-en-la-nube)
 
+<br>
+
 ## A1.1.1. Funciones e interacciones de los principales componentes de la CPU
 
 ### ¿Qué es la unidad central de procesamiento?
@@ -79,6 +81,8 @@ Una **CPU con procesadores multinúcleo** tiene dos o más núcleos que pueden e
 
 #### Coprocesadores
 Un **coprocesador es un tipo especial de procesador que tiene una tarea específica para apoyar a la CPU principal**. Están construidos con un propósito concreto para lograr un rendimiento óptimo en comparación con una CPU de propósito general. Las tareas se descargan de la CPU al coprocesador para que puedan ejecutarse en paralelo, mejorando el rendimiento del sistema. Ejemplos de coprocesadores son las unidades de procesamiento gráfico (cubiertas en la Sección A1.1.2), los procesadores de audio y **los procesadores de señal digital (DSP)**, que se utilizan en telecomunicaciones y compresión de imágenes.
+
+<br>
 
 ## A1.1.2. Función de una GPU
 
