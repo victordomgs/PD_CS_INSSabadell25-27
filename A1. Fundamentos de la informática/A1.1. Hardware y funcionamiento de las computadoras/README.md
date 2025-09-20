@@ -286,7 +286,7 @@ El ciclo de búsqueda–decodificación–ejecución, también conocido como “
 
 ### Little Man Computer (LMC)
 
-na forma más sencilla de ver estas etapas con más detalle es utilizar un modelo educativo de CPU conocido como **Little Man Computer**, que puedes buscar en línea o usar en este enlace: [https://peterhigginson.co.uk/lmc](https://peterhigginson.co.uk/lmc).  
+Una forma más sencilla de ver estas etapas con más detalle es utilizar un modelo educativo de CPU conocido como **Little Man Computer**, que puedes buscar en línea o usar en este enlace: [https://peterhigginson.co.uk/lmc](https://peterhigginson.co.uk/lmc).  
 
 Este modelo utiliza **lenguaje ensamblador**, un conjunto simple de instrucciones, cada una representada por tres letras, que se almacena como un código de tres dígitos en la memoria.  
 
