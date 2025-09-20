@@ -8,7 +8,7 @@
 - [A1.1.1. Funciones e interacciones de los principales componentes de la CPU](#A111-funciones-e-interacciones-de-los-principales-componentes-de-la-CPU)  
 - [A1.1.2. Función de una GPU](#A112-función-de-una-GPU)
 - [A1.1.3. Diferencia entre CPU y GPU](#A113-diferencia-entre-CPU-y-GPU)
-- [A1.1.4. Finalidad de la memoria primaria](#A114-finalidad-de-la-memoria-primaria) 
+- [A1.1.4. Propósitos de los diferentes tipos de memoria principal](#A114-propósitos-de-los-diferentes-tipos-de-memoria-principal) 
 - [A1.1.5. Ciclo de búsqueda, decodificación y ejecución](#A115-ciclo-de-búsqueda-decodificación-y-ejecución) 
 - [A1.1.6. Tipos externos e internos de memoria secundaria](#A116-tipos-externos-e-internos-de-memoria-secundaria)
 - [A1.1.7. Concepto de compresión](#A117-concepto-de-compresión)
