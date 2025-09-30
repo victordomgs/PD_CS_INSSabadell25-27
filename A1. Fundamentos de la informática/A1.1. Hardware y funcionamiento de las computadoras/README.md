@@ -93,7 +93,7 @@ Su estructura, compuesta por **miles de núcleos pequeños y eficientes**, les p
 Al descargar estas tareas intensivas de la CPU, las GPU mejoran el rendimiento general del sistema, permitiendo un procesamiento y una visualización de datos más rápidos y eficientes.
 
   <div style="text-align: center;">
-    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/A1.%20Fundamentos%20de%20la%20inform%C3%A1tica/images/Figura%203.%20Graphic%20processing%20unit%20(GPU).jpg" alt="GPU" width="350" height="auto"/>
+    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/A1.%20Fundamentos%20de%20la%20inform%C3%A1tica/images/Figura%203.%20Graphic%20processing%20unit%20(GPU).jpg" alt="GPU" width="650" height="auto"/>
     <p><em>Figura 3: Graphic Processing Unit. Fuente: PcCompomentes</em></p>
   </div>
 
@@ -104,7 +104,7 @@ Las **GPU** están diseñadas con una estructura altamente paralela, lo que les 
 También manejan la aplicación de **shaders y textures a modelos 3D**, lo que incluye iluminación, sombreado y mapeado de texturas, mejorando el realismo de la escena.
 
   <div style="text-align: center;">
-    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/A1.%20Fundamentos%20de%20la%20inform%C3%A1tica/images/Figura%204.%20Gr%C3%A1ficos%20de%20videojuegos.jpg" alt="GPU" width="450" height="auto"/>
+    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/A1.%20Fundamentos%20de%20la%20inform%C3%A1tica/images/Figura%204.%20Gr%C3%A1ficos%20de%20videojuegos.jpg" alt="GPU" width="750" height="auto"/>
     <p><em>Figura 4: Gráficos de videojuegos. Fuente: GAME</em></p>
   </div>
 
