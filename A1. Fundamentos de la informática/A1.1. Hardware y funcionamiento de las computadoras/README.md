@@ -127,7 +127,7 @@ En 2010, el uso de GPUs para la **minería de Bitcoin** se disparó cuando los m
 Esta constatación llevó a un cambio drástico hacia la minería con GPU. El auge de las criptomonedas entre 2017 y 2021 aumentó aún más la demanda de GPUs, lo que resultó en precios por las nubes y escasez global.
 
   <div style="text-align: center;">
-    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/A1.%20Fundamentos%20de%20la%20inform%C3%A1tica/images/Figura%205.%20Bitcoin.jpg" alt="Bitcoin" width="450" height="auto"/>
+    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/A1.%20Fundamentos%20de%20la%20inform%C3%A1tica/images/Figura%205.%20Bitcoin.jpg" alt="Bitcoin" width="550" height="auto"/>
     <p><em>Figura 5: Bitcoin. Fuente: Freepik</em></p>
   </div>
 
