@@ -478,7 +478,7 @@ La compresión con pérdida se utiliza comúnmente para archivos multimedia como
 Esto puede verse en las imágenes de abajo. Aunque puede resultar bastante difícil distinguir visualmente la diferencia en la calidad, la versión con pérdida utiliza un 50 % menos de datos que la original.
 
   <div style="text-align: center;">
-    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/A1.%20Fundamentos%20de%20la%20inform%C3%A1tica/images/Figura%2018.%20Compresi%C3%B3n%20de%20imagen.png" alt="Compresión de imagen" width="650" height="auto"/>
+    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/A1.%20Fundamentos%20de%20la%20inform%C3%A1tica/images/Figura%2018.%20Compresi%C3%B3n%20de%20imagen.png" alt="Compresión de imagen" width="750" height="auto"/>
     <p><em>Figura 18: Compresión de imagen. Fuente: Computer Science for the IB Diploma 2025 (Baumgarten P.)</em></p>
   </div>
 
@@ -532,7 +532,7 @@ Sin embargo, para datos que no contienen muchos caracteres repetidos, como una f
 ### Codificación por transformación
 
   <div style="text-align: center;">
-    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/A1.%20Fundamentos%20de%20la%20inform%C3%A1tica/images/Figura%2019.%20Etapas%20de%20codificaci%C3%B3n%20por%20transformaci%C3%B3n.png" alt="Codificación por transformación" width="650" height="auto"/>
+    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/A1.%20Fundamentos%20de%20la%20inform%C3%A1tica/images/Figura%2019.%20Etapas%20de%20codificaci%C3%B3n%20por%20transformaci%C3%B3n.png" alt="Codificación por transformación" width="750" height="auto"/>
     <p><em>Figura 19: Codificación por transformación. Fuente: Computer Science for the IB Diploma 2025 (Baumgarten P.)</em></p>
   </div>
 
