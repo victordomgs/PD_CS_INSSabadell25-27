@@ -458,3 +458,174 @@ Al utilizar múltiples HDD o SSD, su capacidad suele ser alta, y es posible ampl
 <br>
 
 ## A1.1.7. Concepto de compresión
+
+La **compresión** es el proceso de **codificar información utilizando menos bits que la representación original**. Reducir el tamaño de los archivos tiene dos ventajas principales: **ocupa menos espacio en el almacenamiento secundario y se transfiere más rápido a través de una red**.
+
+Existen **dos tipos principales de compresión: sin pérdida (lossless)** y **con pérdida (lossy)**.
+
+###  Compresión sin pérdida vs con pérdida
+
+La compresión sin pérdida consiste en reducir el tamaño de los datos, pero de manera que puedan restaurarse a su forma original sin pérdida de información. Esto es importante para archivos como documentos de texto o bases de datos, donde la pérdida de información sería crítica.
+Esta técnica funciona identificando y eliminando la **redundancia estadística** dentro de los datos, y este proceso puede revertirse cuando sea necesario.
+
+> [!NOTE]  
+> **Redundancia estadística:** repetición de información dentro de un conjunto de datos que no contribuye a su unicidad.
+
+Por otro lado, la compresión con pérdida suele ofrecer mejores resultados en cuanto a tamaño de archivo, pero lo hace eliminando permanentemente cierta información.
+Esta información suele ser redundante o menos importante, lo que da como resultado una versión comprimida no idéntica al original, aunque idealmente indistinguible para los sentidos humanos.
+La compresión con pérdida se utiliza comúnmente para archivos multimedia como imágenes, audio y vídeo, donde se acepta cierta pérdida de calidad a cambio de una reducción significativa del tamaño del archivo.
+
+Esto puede verse en las imágenes de abajo. Aunque puede resultar bastante difícil distinguir visualmente la diferencia en la calidad, la versión con pérdida utiliza un 50 % menos de datos que la original.
+
+  <div style="text-align: center;">
+    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/A1.%20Fundamentos%20de%20la%20inform%C3%A1tica/images/Figura%2018.%20Compresi%C3%B3n%20de%20imagen.png" alt="Compresión de imagen" width="450" height="auto"/>
+    <p><em>Figura 18: Compresión de imagen. Fuente: Computer Science for the IB Diploma 2025 (Baumgarten P.)</em></p>
+  </div>
+
+### Codificación por longitud de ejecución (RLE)
+
+La codificación por longitud de ejecución (RLE, Run-Length Encoding) es una técnica de compresión de datos sin pérdida que se utiliza para reducir el tamaño de archivos que contienen muchos caracteres consecutivos repetidos.
+
+Por ejemplo, considera la siguiente cadena:
+
+```
+AAAAABBBCCDAA
+```
+
+RLE busca “secuencias” (runs) donde un carácter se repite. En el ejemplo anterior, tenemos cinco secuencias:
+
+```
+AAAAA  BBB  CC  D  AA
+```
+
+Una vez identificadas, RLE las codifica reemplazándolas por un par: el carácter repetido y el número de repeticiones.
+Así, las secuencias anteriores se convierten en:
+
+```
+5A 3B 2C 1D 2A
+```
+
+La cadena codificada se almacena como:
+
+```
+5A3B2C1D2A
+```
+
+Si asumimos que cada letra almacena 8 bits de información, los datos iniciales son:
+
+```
+13 × 8 = 104 bits, o 13 bytes.
+```
+
+Después de comprimir con RLE, los datos son:
+
+```
+10 × 8 = 80 bits, o 10 bytes, lo que supone una reducción del 23 % en el tamaño.
+```
+
+RLE es fácil de implementar y muy eficaz con datos que contienen muchas repeticiones, como gráficos simples o ciertos tipos de archivos de texto.
+
+RLE se utilizaba frecuentemente en máquinas de fax, que enviaban documentos de texto por línea telefónica. Esto se debía a que los documentos contenían mucho espacio en blanco, lo que permitía a RLE alcanzar ratios de compresión de hasta 8:1.
+
+Sin embargo, para datos que no contienen muchos caracteres repetidos, como una fotografía de retrato, RLE puede no ser muy eficaz e incluso, en algunos casos, aumentar el tamaño del archivo.
+
+### Codificación por transformación
+
+La codificación por transformación es una forma de compresión con pérdida que se utiliza con frecuencia en la compresión de imágenes JPEG o en la compresión de audio MP3.
+
+Veamos el proceso utilizando la **compresión JPEG** como ejemplo:
+
+**1. División de la imagen**
+
+La codificación por transformación toma una imagen de tamaño N × N y la divide en subimágenes más pequeñas de tamaño n × n.
+
+**2. Transformación directa (Forward Transform)**
+
+A continuación, se aplica la transformación directa a cada una de las subimágenes.
+Esta transformación puede emplear distintos algoritmos, según el tipo de compresión, pero en el caso de JPEG se utiliza la DCT (Transformada Discreta del Coseno).
+Este proceso convierte los datos de la imagen del dominio espacial (valores de píxeles) al dominio de frecuencias.
+El resultado descompone la subimagen en coeficientes de baja y alta frecuencia.
+
+**3. Cuantización (Quantization)**
+
+Los coeficientes de frecuencia se envían al cuantizador, que reduce considerablemente el tamaño del archivo simplificando los coeficientes obtenidos de la DCT.
+El propósito de la cuantización es reducir la precisión de los componentes de alta frecuencia (los detalles finos) más que la de los de baja frecuencia.
+Esto se debe a que el ojo humano es menos sensible a la pérdida de datos de **alta frecuencia** que a la pérdida de detalles de **baja frecuencia**.
+El grado de cuantización determina el nivel de compresión y la calidad de la imagen final.
+
+**4. Codificación de símbolos (Symbol Encoding)**
+
+En la última etapa, los coeficientes cuantizados se comprimen aún más utilizando técnicas de codificación entrópica.
+Este proceso aplica tres algoritmos, en el siguiente orden, para representar de forma eficiente la frecuencia de aparición de cada símbolo y así reducir aún más el tamaño del archivo:
+
+- Escaneo en zigzag (Zigzag scan)
+- Codificación por longitud de ejecución (RLE, Run-Length Encoding)
+- Codificación de Huffman (Huffman coding)
+
+Una vez completada esta fase, la imagen comprimida final está lista.
+
+> [!NOTE]  
+> **- Datos de baja frecuencia:** Corresponden a cambios lentos en los valores de píxel, como áreas amplias y uniformes.
+> **- Datos de alta frecuencia:** Corresponden a cambios rápidos en los valores de píxel, que representan detalles finos, bordes y texturas.
+
+## A1.1.8. Tipos de servicios en la implementación en la nube
+
+La **computación en la nube** ha revolucionado la forma en que las organizaciones gestionan y despliegan recursos de TI, ofreciendo soluciones flexibles y escalables para satisfacer diversas necesidades empresariales.
+Existen **tres modelos principales de servicios en la nube:**
+
+- Software como servicio (SaaS)
+- Plataforma como servicio (PaaS)
+- Infraestructura como servicio (IaaS)
+
+Cada uno ofrece niveles distintos de control, flexibilidad y gestión.
+
+### Software como servicio (SaaS)
+
+El modelo **SaaS** entrega **aplicaciones de software a través de internet**.
+Los usuarios pueden acceder a estas aplicaciones mediante **navegadores web**, sin necesidad de instalarlas, mantenerlas o actualizarlas localmente.
+
+SaaS ofrece una **solución rentable y cómoda** tanto para empresas como para particulares, abarcando una amplia gama de aplicaciones, desde **herramientas de productividad** hasta **sistemas de gestión de relaciones con clientes (CRM)**.
+
+Los usuarios pueden acceder a su software desde cualquier lugar y dispositivo, siempre que dispongan de conexión a internet, lo que elimina la necesidad de instalaciones complejas.
+
+La mayoría de los proveedores de SaaS cobran una cuota de suscripción, normalmente inferior al coste de comprar licencias de software.
+Además, las actualizaciones y nuevas funciones se añaden automáticamente por parte del proveedor, garantizando que los usuarios dispongan siempre de la versión más reciente.
+
+Sin embargo, **SaaS depende de la conexión a internet**: sin ella, el usuario no puede utilizar el software, a diferencia de las aplicaciones instaladas localmente.
+También existen **preocupaciones sobre la seguridad de los datos**, ya que los usuarios confían en las medidas de seguridad del proveedor para proteger su información sensible.
+
+#### Ejemplo:
+
+**Google Workspace** es un ejemplo de SaaS.
+Esta suite ofrece herramientas de productividad como Gmail, Google Docs y Google Drive, utilizadas por empresas e instituciones educativas para comunicación, colaboración y almacenamiento.
+
+### Plataforma como servicio (PaaS)
+
+El modelo **PaaS** proporciona una **plataforma en la nube** que permite a los desarrolladores crear, probar y desplegar aplicaciones sin tener que gestionar la infraestructura subyacente.
+Incluye **herramientas y servicios** que facilitan el desarrollo, como **bases de datos**, **middleware y frameworks de desarrollo**.
+
+Middleware: software que conecta distintas aplicaciones, permitiendo que se comuniquen y compartan datos. Ayuda a que las diferentes partes de un sistema informático trabajen de forma coordinada.
+
+PaaS **acelera el desarrollo de software**, ya que los desarrolladores pueden centrarse en la programación y no en la gestión de la infraestructura.
+Además, **facilita y abarata la escalabilidad** del hardware a medida que crece la base de usuarios.
+
+No obstante, puede generar **dependencia del proveedor (vendor lock-in)**, lo que dificulta migrar las aplicaciones a otras plataformas y ofrece menos control sobre el entorno de alojamiento.
+
+Ejemplo:
+**Microsoft Azure App** Service es un ejemplo de PaaS.
+Es una plataforma para crear, desplegar y escalar aplicaciones web y APIs, utilizada por desarrolladores para construir aplicaciones escalables y fiables sin tener que gestionar los servidores subyacentes.
+
+### Infraestructura como servicio (IaaS)
+
+El modelo **IaaS** ofrece **recursos informáticos virtualizados** a través de internet, como **máquinas virtuales, almacenamiento y redes**.
+Esto permite a las empresas alquilar infraestructura de TI en lugar de comprar y administrar servidores físicos.
+
+A diferencia de PaaS, IaaS proporciona a los usuarios **control total sobre sus máquinas virtuales y redes**.
+Reduce la necesidad de inversión inicial en hardware, permitiendo a las empresas pagar por uso o mediante suscripción, lo que implica costes iniciales más bajos.
+
+IaaS también es **escalable**, lo que facilita ajustar los recursos conforme crece la base de usuarios.
+Sin embargo, requiere mayor conocimiento técnico que PaaS, ya que los usuarios deben gestionar sus propios dispositivos y la seguridad de sus datos y aplicaciones.
+
+Ejemplo:
+**Amazon Web Services (AWS) EC2 es** un ejemplo de IaaS.
+Las empresas utilizan AWS EC2 para **crear y gestionar servidores virtuales**, ofreciendo la flexibilidad de ejecutar aplicaciones sin poseer hardware físico.
