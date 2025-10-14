@@ -572,6 +572,7 @@ Una vez completada esta fase, la imagen comprimida final está lista.
 
 > [!NOTE]  
 > **- Datos de baja frecuencia:** Corresponden a cambios lentos en los valores de píxel, como áreas amplias y uniformes.
+> 
 > **- Datos de alta frecuencia:** Corresponden a cambios rápidos en los valores de píxel, que representan detalles finos, bordes y texturas.
 
 ## A1.1.8. Tipos de servicios en la implementación en la nube
