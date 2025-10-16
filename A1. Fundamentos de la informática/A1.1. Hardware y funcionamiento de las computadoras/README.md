@@ -357,11 +357,11 @@ LMC se debe ver tal que así:
 
 #### Cuarto ciclo (Click step)
 
-1. Búsqueda (Fetch): El PC está actualmente en 3, por lo que se recupera la instrucción en la dirección de memoria 3 (000). El bus de control envía una señal de lectura para iniciar este proceso. El valor 0 se almacena en el registro de instrucciones y 00 en el registro de direcciones. El PC se incrementa a 4 mediante la ALU.
+1. **Búsqueda (Fetch):** El PC está actualmente en 3, por lo que se recupera la instrucción en la dirección de memoria 3 (000). El bus de control envía una señal de lectura para iniciar este proceso. El valor 0 se almacena en el registro de instrucciones y 00 en el registro de direcciones. El PC se incrementa a 4 mediante la ALU.
 
-2. Decodificación (Decode): La instrucción 0 se decodifica como “detener”. La unidad de control utiliza el bus de control para señalar esta operación.
+2. **Decodificación (Decode):** La instrucción 0 se decodifica como “detener”. La unidad de control utiliza el bus de control para señalar esta operación.
 
-3. Ejecución (Execute): El ordenador detiene todas las operaciones y finaliza el programa.
+3. **Ejecución (Execute):** El ordenador detiene todas las operaciones y finaliza el programa.
 
 <br>
 
