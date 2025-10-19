@@ -47,3 +47,229 @@ La mayor fiabilidad de los sistemas binarios se debe a que utilizan solo dos est
 > - **Byte:** conjunto de 8 bits.
 
 Dado que **todos los datos en un sistema informático se almacenan en binario**, necesitamos sistemas que permitan representar distintos tipos de datos —como números enteros, cadenas, caracteres, imágenes, audio y vídeo— en forma binaria.
+
+### Representación de números enteros en binario
+
+Para representar números en binario, es útil recordar los fundamentos de nuestro sistema decimal (base 10).
+
+En el sistema decimal, al contar, comenzamos con un solo dígito y lo incrementamos en 1 hasta llegar a 9.
+
+Después del 9, añadimos un nuevo dígito delante para representar números mayores.
+
+Desglosemos el número decimal **1024**:
+
+| Miles | Cientos | Decenas | Unidades |
+|:------:|:--------:|:--------:|:----------:|
+| 1 | 0 | 2 | 4 |
+
+Esto se puede expresar como:
+(1 × 1000) + (0 × 100) + (2 × 10) + (4 × 1) = **1024**
+
+Cada posición decimal aumenta por múltiplos de 10 al movernos hacia la izquierda porque trabajamos en base 10.
+
+El sistema binario, y otros sistemas de base diferente, funcionan de manera similar, pero en lugar de 10 posibles estados por dígito, el binario solo tiene **dos (0 y 1)**.
+
+Por tanto, cada posición aumenta por múltiplos de 2.
+
+Desglosemos el número binario **0110**:
+
+| 8s | 4s | 2s | 1s |
+|:--:|:--:|:--:|:--:|
+| 0 | 1 | 1 | 0 |
+
+Esto se puede expresar como:
+(0 × 8) + (1 × 4) + (1 × 2) + (0 × 1) = 6
+
+En este ejemplo, no tenemos ochos, tenemos un cuatro, un dos y ninguna unidad.
+Sumando 4 + 2 obtenemos el equivalente decimal (base 10) del número binario (base 2) 0110.
+
+Para dejar claro si mostramos un número binario o decimal, solemos poner la base como subíndice para evitar confusiones:
+
+**0110₂ = 6₁₀**
+
+Cuando trabajamos con sistemas informáticos, normalmente usamos **números binarios de 8 bits**.
+
+Un **bit** se define como un “dígito binario”, y **8 bits equivalen a 1 byte**.
+
+Si el número no necesita 8 bits para representarse, normalmente completamos los bits restantes con ceros.
+
+Por ejemplo, el número decimal **33** se representaría así:
+
+| 128s | 64s | 32s | 16s | 8s | 4s | 2s | 1s |
+|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|
+| 0 | 0 | 1 | 0 | 0 | 0 | 0 | 1 |
+
+> [!WARNING]  
+> Al ver el número **11111111₂**, un error común es decir que equivale a **256**. Sin embargo, aunque hay **256 combinaciones posibles, 255** es el número más grande que podemos representar en 1 byte (ya que el 0 también se puede representar).
+
+Cuando nos referimos a bits y bytes:
+
+- La **“b” minúscula (b)** representa **bits**.
+- La **“B” mayúscula (B)** representa **bytes**.
+
+A medida que aumentan los valores, utilizamos prefijos. Existen **dos tipos de prefijos** al referirnos a bits y bytes:
+
+- Para **base 10** (por ejemplo: kilo, mega, giga)
+- Para **base 2** (por ejemplo: kibi, mebi, gibi)
+
+Durante un tiempo se usaron los prefijos de base 10 también para cantidades en base 2 debido a su similitud (por ejemplo, 1024 ≈ 1000). Sin embargo, esto generó confusión, por lo que en **1999 la IEC** introdujo nuevos prefijos (kibi, mebi, gibi) específicamente para múltiplos de base 2.
+
+#### Prefijos binarios (base 2)
+
+| Unidad | Abreviatura | Equivalencia |
+|:--------|:-------------|:--------------|
+| Kibibyte | KiB | 1 KiB = 1024 bytes |
+| Mebibyte | MiB | 1 MiB = 1024 KiB |
+| Gibibyte | GiB | 1 GiB = 1024 MiB |
+| Tebibyte | TiB | 1 TiB = 1024 GiB |
+| Pebibyte | PiB | 1 PiB = 1024 TiB |
+| Exbibyte | EiB | 1 EiB = 1024 PiB |
+| Zebibyte | ZiB | 1 ZiB = 1024 EiB |
+
+#### Prefijos binarios (base 10)
+
+| Unidad | Abreviatura | Equivalencia |
+|:--------|:-------------|:--------------|
+| Kilobyte | KB | 1 KB = 1000 bytes |
+| Megabyte | MB | 1 MB = 1000 KB |
+| Gigabyte | GB | 1 GB = 1000 MB |
+| Terabyte | TB | 1 TB = 1000 GB |
+| Petabyte | PB | 1 PB = 1000 TB |
+| Exabyte | EB | 1 EB = 1000 PB |
+| Zettabyte | ZB | 1 ZB = 1000 EB |
+
+### Convertir números binarios a números decimales
+
+Existen **dos métodos principales** para convertir un número binario a decimal:
+
+- El **método de notación posicional**.
+- El **método de duplicación**.
+
+#### Método de notación posicional
+
+Este es probablemente el método más directo, en el que se asignan los valores de posición y se suman.
+
+**Pasos:**
+
+1. Comenzando por la derecha, asigna los valores posicionales a cada bit binario.
+2. Suma todos los valores posicionales que tengan un **1** debajo.
+
+Por ejemplo, para convertir **10111011₂** a decimal:
+
+| 128 | 64 | 32 | 16 | 8 | 4 | 2 | 1 |
+|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|
+| 1 | 0 | 1 | 1 | 1 | 0 | 1 | 1 |
+
+Cálculo:
+
+(1×128) + (0×64) + (1×32) + (1×16) + (1×8) + (0×4) + (1×2) + (1×1) = **187**
+
+#### Método de duplicación
+
+**Pasos:**
+
+1. Empieza con el bit más a la izquierda (el bit más significativo, MSB).
+2. Duplica el total actual y suma el siguiente bit.
+3. Repite el proceso hasta procesar todos los bits.
+
+| Paso | Dígito binario | Total actual | Cálculo |
+|:----:|:---------------:|:-------------:|:---------|
+| 1 | 1 | 1 | Valor inicial |
+| 2 | 0 | 2 | 1 × 2 + 0 = 2 |
+| 3 | 1 | 5 | 2 × 2 + 1 = 5 |
+| 4 | 1 | 11 | 5 × 2 + 1 = 11 |
+| 5 | 1 | 23 | 11 × 2 + 1 = 23 |
+| 6 | 0 | 46 | 23 × 2 + 0 = 46 |
+| 7 | 1 | 93 | 46 × 2 + 1 = 93 |
+| 8 | 1 | 187 | 93 × 2 + 1 = 187 |
+
+Resultado: 10111011₂ = 187₁₀
+
+> [!WARNING]  
+> Si utilizas este método, recuerda **comenzar con el bit más significativo (MSB)** y no con el bit menos significativo (LSB).
+
+> [!NOTE]  
+> - **Bit menos significativo (LSB):** el bit situado más a la derecha en un número binario, que representa la posición de menor valor (0 o 1).
+> - **Cociente:** el resultado que se obtiene al dividir un número entre otro; por ejemplo, en la división de 15 entre 3, el cociente es 5.
+
+### Convertir números decimales a números binarios
+
+Existen **dos métodos principales** para convertir un número decimal a binario:
+
+- El **método de división**.
+- El **método de sustracción**.
+
+#### Método de división
+
+**Pasos:**
+
+1. Divide el número decimal entre 2.
+2. Anota el cociente y el resto. El resto será 0 o 1, y representa un dígito del número binario (el LSB o bit menos significativo en la primera división).
+3. Actualiza el cociente.
+4. Repite hasta que el cociente sea 0.
+5. Construye el número binario **leyendo los restos desde el primero hasta el último**.
+
+Por ejemplo, para convertir **42₁₀** a binario:
+
+| Paso de división | Cálculo | Cociente | Resto |
+|:-----------------:|:--------|:----------:|:--------:|
+| 1 | 42 ÷ 2 | 21 | 0 |
+| 2 | 21 ÷ 2 | 10 | 1 |
+| 3 | 10 ÷ 2 | 5 | 0 |
+| 4 | 5 ÷ 2 | 2 | 1 |
+| 5 | 2 ÷ 2 | 1 | 0 |
+| 6 | 1 ÷ 2 | 0 | 1 |
+
+Construimos el número binario a partir de los restos (de abajo hacia arriba) y lo completamos a 8 bits:
+
+`00101010₂`
+
+> [!WARNING]  
+> Recuerda construir el número binario **en el orden correcto** a partir de los restos. El **primer resto** corresponde al **bit menos significativo (LSB)**.
+
+#### Método de sustracción
+
+Primero, escribe los valores posicionales para un número binario de 8 bits:
+
+| 128 | 64 | 32 | 16 | 8 | 4 | 2 | 1 |
+|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|
+
+Comenzando con el valor más grande (128):
+
+**Pasos:**
+
+1. Intenta restarlo del número que deseas convertir.
+
+- Si el valor posicional es **mayor** que el número, escribe un **0** debajo.
+- Si es **menor o igual**, escribe un **1** y calcula el resto de la resta, que será el número con el que continuarás.
+
+2. Repite el proceso para cada valor posicional.
+
+Por ejemplo, para convertir **42₁₀** a binario:
+
+Los valores **128₁₀** y **64₁₀** son mayores que 42₁₀, así que escribimos 0 debajo.
+El siguiente valor, **32₁₀**, es menor, así que escribimos un 1 y restamos:
+42₁₀ – 32₁₀ = 10₁₀
+
+| 128 | 64 | 32 | 16 | 8 | 4 | 2 | 1 |
+|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|
+| 0 | 0 | 1 |   |   |   |   |   |
+
+Continuamos con **10₁₀**:
+
+- 16₁₀ es mayor → 0
+- 8₁₀ es menor → 1
+- 10₁₀ – 8₁₀ = 2₁₀
+- 4₁₀ es mayor → 0
+- 2₁₀ es igual → 1
+- Resto 0
+
+El resultado final es:
+
+| 128 | 64 | 32 | 16 | 8 | 4 | 2 | 1 |
+|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|
+| 0 | 0 | 1 | 0 | 1 | 0 | 1 | 0 |
+
+Resultado:
+
+`42₁₀ = 00101010₂`
