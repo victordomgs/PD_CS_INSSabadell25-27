@@ -575,7 +575,7 @@ Una vez completada esta fase, la imagen comprimida final está lista.
 > 
 > **- Datos de alta frecuencia:** Corresponden a cambios rápidos en los valores de píxel, que representan detalles finos, bordes y texturas.
 
-## A1.1.8. Tipos de servicios en la implementación en la nube
+## A1.1.8. Servicios de computación en la nube
 
 La **computación en la nube** ha revolucionado la forma en que las organizaciones gestionan y despliegan recursos de TI, ofreciendo soluciones flexibles y escalables para satisfacer diversas necesidades empresariales.
 Existen **tres modelos principales de servicios en la nube:**
