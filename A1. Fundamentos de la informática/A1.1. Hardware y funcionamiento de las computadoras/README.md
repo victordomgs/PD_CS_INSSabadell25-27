@@ -575,6 +575,8 @@ Una vez completada esta fase, la imagen comprimida final está lista.
 > 
 > **- Datos de alta frecuencia:** Corresponden a cambios rápidos en los valores de píxel, que representan detalles finos, bordes y texturas.
 
+<br>
+
 ## A1.1.8. Servicios de computación en la nube
 
 La **computación en la nube** ha revolucionado la forma en que las organizaciones gestionan y despliegan recursos de TI, ofreciendo soluciones flexibles y escalables para satisfacer diversas necesidades empresariales.
