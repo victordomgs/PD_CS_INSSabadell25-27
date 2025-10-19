@@ -571,9 +571,8 @@ Este proceso aplica tres algoritmos, en el siguiente orden, para representar de 
 Una vez completada esta fase, la imagen comprimida final está lista.
 
 > [!NOTE]  
-> **- Datos de baja frecuencia:** Corresponden a cambios lentos en los valores de píxel, como áreas amplias y uniformes.
-> 
-> **- Datos de alta frecuencia:** Corresponden a cambios rápidos en los valores de píxel, que representan detalles finos, bordes y texturas.
+> - **Datos de baja frecuencia:** Corresponden a cambios lentos en los valores de píxel, como áreas amplias y uniformes.
+> - **Datos de alta frecuencia:** Corresponden a cambios rápidos en los valores de píxel, que representan detalles finos, bordes y texturas.
 
 <br>
 
