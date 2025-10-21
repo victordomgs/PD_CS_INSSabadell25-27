@@ -9,7 +9,6 @@
 - [A1.2.2. Explica cómo se utiliza el sistema binario para almacenar datos](#A122-explica-cómo-se-utiliza-el-sistema-binario-para-almacenar-datos)
 - [A1.2.3. Describe el propósito y el uso de las puertas lógicas](#A123-describe-el-propósito-y-el-uso-de-las-puertas-lógicas)
 - [A1.2.4. Construye y analiza tablas de verdad](#A124-construye-y-analiza-tablas-de-verdad) 
-- [A1.2.5. Ciclo de búsqueda, decodificación y ejecución](#A125-construye-diagramas-lógicos) 
 
 <br>
 
