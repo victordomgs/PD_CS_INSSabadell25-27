@@ -350,3 +350,106 @@ print(code_point_a)      # Output: 65
 print(code_point_han)    # Output: 27721
 print(code_point_poo)    # Output: 128169
 ```
+
+En cuanto a cómo se ideó, la historia cuenta que fue **concebido en una cafetería, en la parte trasera de una servilleta**, cuando **Joe Becker (Xerox)**, **Lee Collins (Apple)** y **Mark Davis (Apple y más tarde Google)** se reunieron y diseñaron el esquema de codificación en **1987**.
+
+Existen **varias versiones de Unicode: UTF-8, UTF-16 y UTF-32**.
+
+Cada una tiene sus propios usos:
+
+|                         | **UTF-8** | **UTF-16** | **UTF-32** |
+|-------------------------|-----------|-------------|-------------|
+| **Codificación de longitud variable** | 1–4 bytes por carácter | 2 o 4 bytes por carácter | 4 bytes por carácter |
+| **Nota** | Compatibilidad: compatible hacia atrás con ASCII | Pares sustitutos: para los caracteres fuera del *Plano Multilingüe Básico (BMP)*, se utilizan dos unidades de código de 16 bits | Simplicidad: más fácil de procesar porque cada carácter ocupa exactamente 4 bytes |
+| **Uso** | Codificación más utilizada en la web y en muchas aplicaciones | Frecuente en entornos Windows y Java | Menos común debido a los mayores requisitos de almacenamiento |
+
+Examinemos **UTF-8**, el sistema de codificación más utilizado, para comprender su funcionamiento.
+
+En lugar de simplemente ampliar el tamaño para admitir más de **100.000 caracteres**, lo que habría afectado negativamente a la mayoría del contenido en línea, se ideó una solución más eficiente.
+
+Si todos los caracteres se hubieran estandarizado para usar **32 bits, cada letra del sistema ASCII habría cuadruplicado su tamaño**. Esto habría dado lugar a documentos y páginas web significativamente más grandes, lo que implicaría **mayores necesidades de almacenamiento y tiempos de transferencia más lentos**.
+
+Además, el sistema debía evitar **enviar ocho ceros seguidos (00000000)**, ya que muchos sistemas antiguos interpretaban esto como el **fin de la comunicación** y dejaban de escuchar.
+
+Por ello, el sistema **UTF-8 mantuvo el sistema ASCII tal cual**.
+
+La letra **“A”** se codifica como:
+
+**01000001 = A**
+
+Sin embargo, si el carácter requerido va más allá del sistema ASCII estándar —por ejemplo, “é”—, se necesita **más de un byte**:
+
+**11000011 10101001 = é**
+
+Los bits en **negrita** son importantes:
+
+- Los **tres primeros bits significativos “110”** del primer byte indican que **este carácter está formado por dos bytes en total** (se necesita un 0 al final para indicar que la información ha terminado).
+- El **segundo byte comienza con “10”**, lo que significa que **es una continuación**.
+
+Si se eliminan esos 5 bits de control y se combinan ambos bytes:
+
+**000 1110 1001 = 233 = é**
+
+Otro ejemplo es:
+
+11110000 10011111 10011000 10000100 = 😄
+
+Este emoji requiere **cuatro bytes** utilizando el sistema **UTF-8**. El **primer byte** indica que este carácter está compuesto por **cuatro bytes** (los bits iniciales **“11110”** lo señalan), y los **tres bytes siguientes** comienzan con **“10”**, lo que muestra que son **bytes de continuación**. Si eliminamos esa información de control:
+
+0001 1111 0110 0000 0100 = 128516 = 😄
+
+UTF-8 ha sido adoptado por Internet como el **principal sistema de codificación de caracteres**; sin embargo, **no está exento de algunos inconvenientes**.
+
+Debido a su **longitud variable**, algunos caracteres —especialmente los de **idiomas asiáticos** o los **emojis**— ocupan **más espacio** en comparación con las codificaciones de **un solo byte**. Esto puede provocar **tamaños de archivo mayores** en ciertos contextos.
+
+Además, el procesamiento necesario para manejar una codificación de longitud variable es **más complejo** que en los sistemas de **longitud fija**, como **UTF-32**.
+
+A pesar de estos inconvenientes, **UTF-8 ha demostrado ser un estándar de codificación versátil y eficaz** que satisface las necesidades de la Internet moderna. Su **compatibilidad retroactiva, eficiencia y amplio soporte** lo convierten en una **opción duradera** para la codificación de texto.
+
+Aunque presenta algunos desafíos, especialmente en el manejo de **caracteres no ASCII** y de la **codificación de longitud variable**, estos **no son lo suficientemente importantes** como para justificar su reemplazo completo.
+
+Por lo tanto, es probable que **UTF-8 siga siendo el estándar de codificación de texto dominante** en un futuro previsible.
+
+> [!NOTE]  
+> **Cifrado por desplazamiento (Shift cipher):** es un tipo de cifrado por sustitución, en el que cada letra del texto original (texto plano) se desplaza un cierto número de posiciones hacia arriba o hacia abajo en el alfabeto.
+
+#### Programming exercise
+
+El siguiente código utiliza un cifrado César para encriptar una cadena de texto introducida por el usuario usando una clave. Un cifrado César es un tipo de cifrado por desplazamiento simple, en el que cada letra se considera un número entero (a = 1, b = 2, c = 3, etc.), y la clave se suma a ese valor para obtener la letra cifrada.
+
+```python
+def caesar_cipher_encrypt(message, key):
+    encrypted_message = ""
+    for char in message:
+        if char.isalpha():  # Comprueba si el carácter es una letra
+            shift = ord("A") if char.isupper() else ord("a")  # Determina el desplazamiento ASCII
+            # Desplaza el carácter y vuelve al inicio del alfabeto si es necesario
+            encrypted_char = chr((ord(char) - shift + key) % 26 + shift)
+            encrypted_message += encrypted_char
+        else:
+            encrypted_message += char  # Los caracteres que no son letras se mantienen sin cambios
+    return encrypted_message
+
+# Entrada del usuario
+message = input("Enter the message to encrypt: ")
+key = int(input("Enter the key (an integer): "))
+
+# Encripta el mensaje
+encrypted_message = caesar_cipher_encrypt(message, key)
+print(f"Encrypted message: {encrypted_message}")
+```
+
+1. Después de estudiar cómo funciona este código, **escribe la función de descifrado** para alguien que reciba un mensaje cifrado.
+
+> [!NOTE]  
+> **Fuerza bruta:** un método para romper un cifrado probando sistemáticamente todas las claves posibles hasta encontrar la correcta.
+
+### Imágenes
+
+En 1957, Russel Kirch escaneó una fotografía analógica de su hijo Walden, convirtiendo la imagen en un archivo digital. Esta fue la primera imagen digital creada en la historia.
+
+Se trató de un hito significativo en la evolución de la tecnología visual, que revolucionó la forma en que capturamos, almacenamos y manipulamos las imágenes.
+
+El desarrollo de las primeras cámaras y escáneres digitales, que permitieron a los dispositivos convertir la luz en datos digitales, inició una tendencia que hoy en día se ha vuelto común.
+
+La transición del formato de película al digital ha transformado numerosas industrias, desde la fotografía y la imagen médica hasta las telecomunicaciones y el entretenimiento.
