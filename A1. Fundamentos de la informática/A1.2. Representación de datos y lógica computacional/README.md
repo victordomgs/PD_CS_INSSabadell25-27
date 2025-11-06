@@ -571,7 +571,7 @@ Por ejemplo, si tomamos el píxel superior izquierdo del vestido, sus valores so
 R: 216, G: 190, B: 199 → #d8bec7
 
   <div style="text-align: center;">
-    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/A1.%20Fundamentos%20de%20la%20inform%C3%A1tica/images/Figura%2024.%20Imagen%20de%20alta%20resoluci%C3%B3n.png" alt="Imagen" width="860" height="auto"/>
+    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/A1.%20Fundamentos%20de%20la%20inform%C3%A1tica/images/Figura%2024.%20Imagen%20de%20alta%20resoluci%C3%B3n.png" alt="Imagen" width="580" height="auto"/>
     <p><em>Figura 24: Imagen de alta resolución. Fuente: Computer Science for the IB Diploma 2025 (Baumgarten P.)</em></p>
   </div>
 
