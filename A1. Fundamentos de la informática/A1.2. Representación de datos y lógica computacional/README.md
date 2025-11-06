@@ -453,3 +453,149 @@ Se trató de un hito significativo en la evolución de la tecnología visual, qu
 El desarrollo de las primeras cámaras y escáneres digitales, que permitieron a los dispositivos convertir la luz en datos digitales, inició una tendencia que hoy en día se ha vuelto común.
 
 La transición del formato de película al digital ha transformado numerosas industrias, desde la fotografía y la imagen médica hasta las telecomunicaciones y el entretenimiento.
+
+  <div style="text-align: center;">
+    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/A1.%20Fundamentos%20de%20la%20inform%C3%A1tica/images/Figura%2022.%20La%20primera%20imagen%20digital%20escaneada%20en%201957.jpg" alt="Walden" width="550" height="auto"/>
+    <p><em>Figura 22: La primera imagen digital escaneada en 1957. Fuente: Wikipedia</em></p>
+  </div>
+
+#### Imágenes de mapa de bits (Bitmap images)
+
+Las **imágenes de mapa de bits**, también conocidas como **imágenes rasterizadas (raster images)**, son una de las formas más fundamentales de gráficos digitales. Reproducen las imágenes mediante una **rejilla de píxeles**, donde **cada píxel tiene asignado un color y una intensidad específicos**.
+
+Al final de la página se muestra una imagen bitmap con una **resolución de 13×10 píxeles** (13 píxeles de ancho por 10 de alto). Cada píxel se **“describe” utilizando 1 bit de información:** puede ser **1 o 0**.
+
+En este caso:
+
+- **1 = negro**
+- **0 = blanco** (es decir, una imagen monocroma).
+
+La cantidad de bits usados para describir el color se conoce como **“profundidad de bits”** o **“profundidad de color”**. Por lo tanto, en este ejemplo tenemos una **imagen de 13×10 píxeles** con una **profundidad de color de 1 bit**.
+
+> [!NOTE]  
+> - **Analógico:** señal continua que representa magnitudes físicas variables, como las ondas sonoras, que varían suavemente dentro de un rango. En cambio, digital representa los datos mediante valores binarios discretos (0 y 1), lo que permite un procesamiento más preciso y resistente a errores.
+> - **Bitmap:** tipo de imagen digital compuesta por una rejilla de píxeles, donde cada píxel contiene un valor de color específico, representando la imagen en formato rasterizado.
+> - **Píxel:** abreviatura de picture element (“elemento de imagen”); es la unidad más pequeña de una imagen o pantalla digital, que representa un punto individual con un color e intensidad determinados.
+
+Para calcular el tamaño de la imagen, la fórmula es: 
+
+tamaño de la imagen = ancho (píxeles) × alto (píxeles) × profundidad de color (bits por píxel)
+
+```13 × 10 × 1 = 130 bits```
+
+```130 / 8 = 16.25 bytes```
+
+Sin embargo, en realidad este cálculo no es completamente preciso, ya que la imagen necesitaría más datos para almacenar metadatos y otra información de cabecera (header).
+
+Estos datos adicionales pueden incluir información como:
+
+- las dimensiones de la imagen,
+- la profundidad de color,
+- y otros atributos que permiten a la CPU leer correctamente los datos de la imagen de modo que pueda mostrarla adecuadamente en la pantalla.
+
+  <div style="text-align: center;">
+    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/A1.%20Fundamentos%20de%20la%20inform%C3%A1tica/images/Figura%2023.%20Imagen%20con%20resoluci%C3%B3n%2013x10.png" alt="Walden" width="550" height="auto"/>
+    <p><em>Figura 23: Imagen con resolución 13x10. Fuente: Computer Science for the IB Diploma 2025 (Baumgarten P.)</em></p>
+  </div>
+
+Para mejorar la calidad de una imagen bitmap, tenemos dos opciones:
+
+1. **Aumentar el número de píxeles** → es decir, incrementar la resolución de la imagen.
+2. **Aumentar la profundidad de color** → usar más bits por píxel para representar una gama de colores más amplia y precisa.
+
+#### Resolución – aumentar el número de píxeles
+
+Aumentar el número de píxeles en una imagen bitmap incrementa su calidad.
+Una mayor resolución permite más detalle y nitidez, mientras que las imágenes con resoluciones bajas pueden mostrar pérdida de detalle y una apariencia pixelada.
+
+Sin embargo, la cantidad de píxeles no es el único factor importante: también influye el tamaño de la pantalla donde se muestra la imagen.
+Las imágenes con un mayor PPI (píxeles por pulgada, pixels per inch) se ven más nítidas que aquellas con un PPI menor.
+
+Por ejemplo, imagina una imagen con una resolución de 1024×768 píxeles mostrada en tu teléfono frente a la misma imagen proyectada en una pantalla de cine.
+El teléfono, al tener una mayor densidad de píxeles (PPI), mostrará la imagen más clara y detallada.
+
+El inconveniente de una imagen con mayor resolución es que ocupa más espacio de almacenamiento, lo cual puede afectar la eficiencia de almacenamiento y transferencia.
+
+> [!NOTE]  
+> - **Resolución de imagen:** número de píxeles contenidos en una imagen digital, normalmente expresado como sus dimensiones (ancho × alto) en píxeles, y a veces también como densidad de píxeles (PPI / DPI) para referirse a la calidad de impresión.
+> - **Profundidad de color:** también llamada “profundidad de bits” (bit depth); indica el número de bits usados para representar el color de cada píxel en una imagen digital, determinando así el rango y la precisión de los colores que se pueden mostrar.
+> - **Metadatos:** información que describe otros datos, proporcionando contexto y detalles sobre su contenido, estructura y atributos. En el caso de las imágenes digitales, los metadatos incluyen datos como las dimensiones, la profundidad de color, la fecha de creación, el autor, la configuración de la cámara y otras propiedades que ayudan a gestionar, comprender y utilizar la imagen de forma eficaz.
+
+Resoluciones comunes:
+
+| **Nombre de la resolución** | **Dimensiones en píxeles** | **Uso común** |
+|------------------------------|-----------------------------|----------------|
+| VGA                 | 640 × 480            | Primeras pantallas de ordenador, gráficos web básicos |
+| SVGA                | 800 × 600            | Monitores estándar de ordenador, gráficos web |
+| HD (720p)           | 1280 × 760           | Vídeo en HD, televisión HD básica |
+| Full HD (1080p)     | 1920 × 1080          | Vídeo en Full HD, monitores y televisores modernos |
+| 2K                  | 2048 × 1080          | Cine digital, algunos monitores |
+| Quad HD (1440p)     | 2560 × 1440          | Monitores de alta resolución, videojuegos, uso profesional |
+| 4K (Ultra HD)       | 3840 × 2160          | Televisores Ultra HD, monitores de gama alta, vídeo |
+| 8K                  | 7680 × 4320          | Televisores de última generación, vídeo profesional |
+
+#### Profundidad de color – aumentar la cantidad de colores
+
+Cuando aumentamos la profundidad de color, se permite representar una gama más amplia de colores, lo que da como resultado imágenes más vivas y precisas.
+
+Si una imagen tiene una profundidad de color baja, esto puede causar el fenómeno conocido como “banding”, donde los degradados se ven como escalones visibles en lugar de transiciones suaves entre colores.
+
+Sin embargo, al igual que ocurre con la resolución de imagen, también debemos tener en cuenta el impacto en el tamaño del archivo y los tiempos de transferencia.
+
+Cuanto mayor sea la profundidad de color, mayor será el tamaño del archivo.
+
+| **Profundidad de color (bits por píxel)** | **Número de colores** | **Uso común** |
+|-------------------------------------------|------------------------|----------------|
+| 1 bit  | 2 | Gráficos simples, pantallas monocromas |
+| 4 bits | 16 | Primeros gráficos por ordenador, iconos |
+| 8 bits | 256 | Imágenes GIF, gráficos web sencillos |
+| 16 bits | 65.536 | Imágenes de alta coloración, algunos formatos de vídeo |
+| 24 bits (color real) | 16,8 millones | Estándar para la mayoría de las imágenes y vídeos, fotografía digital |
+| 30 bits (color profundo) | Más de 1.000 millones | Fotografía profesional, monitores y televisores de alta gama |
+| 36 bits | Más de 68.000 millones | Imagen médica, gráficos profesionales |
+| 48 bits | Billones | Aplicaciones personales de alta gama, imágenes científicas detalladas |
+
+La mayoría de las **pantallas modernas** son de **24 bits**, lo que permite representar 16,8 millones de colores.
+Cada píxel está compuesto por **tres luces**: una **roja (R)**, una **verde (G)** y una **azul (B)**, conocidas en conjunto como el modelo de color “RGB”.
+
+Cada canal de color tiene un rango de valores de 0 a 255 (es decir, 1 byte por canal de color).
+Esto es suficiente para la mayoría de las aplicaciones, ya que el ojo humano puede distinguir alrededor de 10 millones de colores distintos.
+
+Los monitores que superan los 24 bits suelen ser necesarios solo en ámbitos profesionales, donde la precisión del color es esencial.
+
+A continuación se muestra una imagen de alta resolución. Si hacemos zoom sobre el vestido de esa imagen, podemos observar la composición de los píxeles individuales y los valores de cada canal de color.
+
+Al trabajar con gráficos, estos valores suelen expresarse en hexadecimal.
+Por ejemplo, si tomamos el píxel superior izquierdo del vestido, sus valores son:
+
+R: 216, G: 190, B: 199 → #d8bec7
+
+  <div style="text-align: center;">
+    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/A1.%20Fundamentos%20de%20la%20inform%C3%A1tica/images/Figura%2024.%20Imagen%20de%20alta%20resoluci%C3%B3n.png" alt="Imagen" width="1100" height="auto"/>
+    <p><em>Figura 24: Imagen de alta resolución. Fuente: Computer Science for the IB Diploma 2025 (Baumgarten P.)</em></p>
+  </div>
+
+Una imagen de alta resolución con una resolución de 2268 × 4032 píxeles, una profundidad de color de 24 bits y un tamaño de archivo de 1,77 MB.
+
+  <div style="text-align: center;">
+    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/A1.%20Fundamentos%20de%20la%20inform%C3%A1tica/images/Figura%2025.%20Zoom%20en%20una%20%C3%A1rea%20de%20la%20imagen%20de%20alta%20resoluci%C3%B3n.png" alt="Imagen" width="650" height="auto"/>
+    <p><em>Figura 25: Zoom en una área de la imagen de alta resolución. Fuente: Computer Science for the IB Diploma 2025 (Baumgarten P.)</em></p>
+  </div>
+
+Un área ampliada de la imagen anterior, que muestra el valor de cada píxel, creada utilizando la herramienta disponible en: [www.csfieldguide.org.nz/en/interactives/pixel-viewer](https://www.csfieldguide.org.nz/en/interactives/pixel-viewer).
+
+  <div style="text-align: center;">
+    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/A1.%20Fundamentos%20de%20la%20inform%C3%A1tica/images/Figura%2026.%20El%20valor%20de%20un%20p%C3%ADxel%20del%20vestido.png" alt="Imagen" width="650" height="auto"/>
+    <p><em>Figura 26: El valor de un píxel del vestido. Fuente: Computer Science for the IB Diploma 2025 (Baumgarten P.)</em></p>
+  </div>
+
+Los valores de color del píxel superior izquierdo del vestido en la fotografía —obtenidos utilizando [www.w3schools.com/colors/colors_rgb.asp](https://www.w3schools.com/colors/colors_rgb.asp).
+
+También podemos observar el impacto de las menores profundidades de color sobre la misma imagen:
+
+  <div style="text-align: center;">
+    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/A1.%20Fundamentos%20de%20la%20inform%C3%A1tica/images/Figura%2027.%20Misma%20imagen%20usando%20diferentes%20profundidades.png" alt="Imagen" width="650" height="auto"/>
+    <p><em>Figura 27: Misma imagen usando diferentes profundidades. Fuente: Computer Science for the IB Diploma 2025 (Baumgarten P.)</em></p>
+  </div>
+
+La misma imagen utilizando diferentes profundidades de color, desde 24 bits hasta 0 bits, creada utilizando: [https://www.csfieldguide.org.nz/en/interactives/image-bit-comparer/](https://www.csfieldguide.org.nz/en/interactives/image-bit-comparer/).
