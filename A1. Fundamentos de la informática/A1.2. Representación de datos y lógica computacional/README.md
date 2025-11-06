@@ -301,7 +301,7 @@ Por ejemplo:
 01000001₂ = A
 
 > [!TIP]  
-> - Si los **cinco primeros bits por la derecha** son **00000** (cinco ceros), casi con toda seguridad se trata de un **espacio (00100000)**. Si los **tres primeros bits por la izquierda no son 011 ni 010**, es probable que se trate de un **signo de puntuación**.
+> Si los **cinco primeros bits por la derecha** son **00000** (cinco ceros), casi con toda seguridad se trata de un **espacio (00100000)**. Si los **tres primeros bits por la izquierda no son 011 ni 010**, es probable que se trate de un **signo de puntuación**.
 
 #### Review exercice
 
