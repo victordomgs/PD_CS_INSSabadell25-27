@@ -273,3 +273,80 @@ El resultado final es:
 Resultado:
 
 `42₁₀ = 00101010₂`
+
+<br>
+
+## A1.2.2. Explica cómo se utiliza el sistema binario para almacenar datos
+
+El sistema binario sustenta todo, desde los valores numéricos y la información textual hasta los archivos multimedia complejos, garantizando un procesamiento de datos eficiente y fiable. En esta sección, vamos a descubrir los mecanismos que se utilizan para almacenar datos como caracteres, cadenas de texto, imágenes, audio y vídeo en forma binaria.
+
+### Caracteres y cadenas de texto
+
+Los caracteres y las cadenas se almacenan utilizando esquemas de codificación binaria estandarizados, lo que permite un almacenamiento, recuperación y procesamiento coherentes entre distintos sistemas y aplicaciones. Los estándares de codificación más comunes son **ASCII** (American Standard Code for Information Interchange, Código Estándar Americano para el Intercambio de Información) y **Unicode**.
+
+#### Codificación ASCII
+
+El desarrollo del ASCII comenzó en 1960 y fue oficialmente estandarizado en 1963. Se desarrolló porque no existía una forma estandarizada de codificar los caracteres de texto, lo que provocaba problemas de compatibilidad entre dispositivos y sistemas. Cada fabricante utilizaba su propio sistema de codificación propietario, lo que hacía muy difícil la comunicación entre dispositivos. ASCII fue diseñado para proporcionar un estándar común para el intercambio de datos de texto.
+
+Inicialmente, ASCII se creó como un sistema de codificación de **7 bits**, lo que le daba la capacidad de representar **128 (2⁷)** caracteres diferentes, considerados suficientes para la mayoría de los textos básicos (letras, números, signos de puntuación y caracteres de control). Sin embargo, a medida que la informática se globalizó y las aplicaciones necesitaron soporte para caracteres adicionales, se desarrolló una **extensión de 8 bits** del ASCII, que le permitió representar **256 (2⁸)** caracteres. Esta ampliación se conoció como **ASCII extendido**, y los nuevos caracteres se utilizaron principalmente para los idiomas de Europa Occidental.
+
+ASCII utiliza un sistema sencillo pero ingenioso para representar caracteres en binario (siempre que solo consideremos el alfabeto latino, es decir, el inglés). **Los cinco primeros bits empezando por la derecha** se usan para representar la letra según su posición numérica en el alfabeto.
+
+Los tres primeros bits por la izquierda representan si se trata de una letra mayúscula o minúscula.
+
+011 = minúscula; 010 = mayúscula.
+
+Por ejemplo:
+01100001₂ = a
+01000001₂ = A
+
+> [!TIP]  
+> - Si los **cinco primeros bits por la derecha** son **00000** (cinco ceros), casi con toda seguridad se trata de un **espacio (00100000)**. Si los **tres primeros bits por la izquierda no son 011 ni 010**, es probable que se trate de un **signo de puntuación**.
+
+#### Review exercice
+
+Vamos a convertir el siguiente código binario en el mensaje correspondiente. Siguiendo el estándar ASCII:
+
+01000110 01101111 01101100 01101100 01101111 01110111 00100000 01110100 01101000 01100101 00100000 01110111 01101000 01101001 01110100 01100101 00100000 01110010 01100001 01100010 01100010 01101001 01110100
+
+#### Codificación Unicode
+
+En la década de **1960**, los Estados Unidos y la mayoría de los países de habla inglesa utilizaban un sistema **ASCII de 7 bits** que funcionaba bien para el alfabeto inglés. Otros países no angloparlantes tenían sus propios sistemas de codificación únicos adaptados a sus respectivos idiomas.
+
+Cuando el sistema ASCII se amplió a **8 bits** (ASCII extendido), permitiendo representar **256 caracteres** en los ordenadores modernos, los distintos países **no se pusieron de acuerdo en un mismo estándar**.
+Los países nórdicos comenzaron a usar el espacio adicional para codificar los caracteres de sus propios idiomas, y **Japón llegó a utilizar cuatro sistemas diferentes** que ni siquiera eran compatibles entre sí.
+
+Esto no representaba un gran problema mientras la comunicación entre sistemas fuera poco común, pero cuando **se lanzó Internet**, la compatibilidad pasó a ser **muy importante**, ya que cada vez se compartía más información entre sistemas de distintos países.
+
+En **1991**, se creó el **Unicode Consortium** con el objetivo de resolver este problema. Esta organización se estableció para **desarrollar, mantener y promover el Estándar Unicode**, que asigna **un número único a cada carácter**, independientemente de la plataforma, el programa o el idioma.
+
+Era necesario crear un sistema capaz de **almacenar todos los caracteres y signos de puntuación de todos los idiomas del mundo**, pero que además fuera **compatible hacia atrás con ASCII**.
+
+En el momento de redactar este texto, la versión actual del estándar, **Unicode 15.0** (publicada en **septiembre de 2022**), codifica **149.186 caracteres diferentes**.
+
+Unicode incluye los alfabetos **latino, cirílico, griego y árabe**, los **caracteres chinos**, así como muchos otros, e incluso **emojis** y **símbolos matemáticos y técnicos**.
+
+En Unicode, **cada letra o símbolo tiene asignado un número único**, por ejemplo:
+
+- A = 65
+- 汉 = 27721 
+- 💩 = 128169
+
+Puedes encontrar la representación numérica de cualquier carácter o símbolo utilizando el siguiente código:
+
+```python
+# Python examples
+char_a = 'A'
+char_han = '汉'
+char_poo = '💩'
+
+# Get Unicode code points as integers
+code_point_a = ord(char_a)      # 65
+code_point_han = ord(char_han)  # 27721
+code_point_poo = ord(char_poo)  # 128169
+
+# Print integer representations
+print(code_point_a)      # Output: 65
+print(code_point_han)    # Output: 27721
+print(code_point_poo)    # Output: 128169
+```
