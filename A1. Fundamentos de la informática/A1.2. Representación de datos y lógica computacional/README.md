@@ -764,3 +764,216 @@ Por ello, los vídeos necesitan **ser comprimidos**, y existen dos técnicas pri
 Este método también es esencial en vídeos donde el contenido visual varía a lo largo del tiempo, como animaciones, documentales de naturaleza o emisiones de noticias en directo.
 
 ### Diferentes metodologias de código binario para el almacenamiento de enteros
+
+#### Binario sin signo
+
+Este es el sistema que se explicó en la Sección A1.2.1.
+
+Este sistema solo representa números enteros positivos, utilizando directamente dígitos binarios (0 y 1).
+
+#### Binario con signo
+
+Incluye métodos para representar tanto números positivos como negativos.
+
+#### Complemento a dos (Two’s complement)
+
+El complemento a dos es un método para representar enteros con signo en binario, donde el bit más significativo (MSB) indica el signo:
+
+- 0 → número positivo
+- 1 → número negativo
+
+Para convertir un número binario positivo en su equivalente negativo en complemento a dos:
+
+1. Invierte todos los bits (cambia los 0 por 1 y los 1 por 0).
+2. Suma 1 al bit menos significativo (LSB).
+
+
+Ejemplo:
+```
+00000101 = +5  
+Invertir bits → 11111010  
+Sumar 1 → 11111011 = –5
+```
+
+**Limitación:**
+
+En un sistema de 8 bits, el complemento a dos reduce el rango de números representables:
+
+- En binario sin signo → de 0 a 255
+- En complemento a dos → de –128 a +127
+
+Esto reduce a la mitad la cantidad de valores positivos que se pueden representar.
+
+#### Complemento a uno (One’s complement)
+
+El complemento a uno es otro método para representar enteros con signo, donde el MSB indica el signo:
+
+- 0 → positivo
+- 1 → negativo
+
+Para obtener el complemento a uno de un número positivo, simplemente se invierten todos los bits.
+
+Ejemplo:
+```
+00000101 = +5  
+11111010 = –5
+```
+
+**Limitaciones:**
+
+Tiene dos representaciones para el número cero:
+
+- Cero positivo → 00000000
+- Cero negativo → 11111111
+
+Esto genera confusión en operaciones aritméticas y lógicas, por lo que el complemento a dos es el sistema preferido.
+
+Su rango es de –127 a +127.
+
+#### Signo y magnitud (Sign-magnitude)
+
+El método de signo y magnitud representa enteros con signo donde el bit más significativo (MSB) indica el signo:
+
+
+- 0 → positivo
+- 1 → negativo
+
+
+Los bits restantes representan la magnitud del número, de forma similar al binario sin signo.
+
+Ejemplo:
+00000101 = +5  
+10000105 = –5
+
+**Limitaciones:**
+
+Tiene dos representaciones para el cero:
+
+- Cero positivo → 00000000
+- Cero negativo → 10000000
+
+Su rango también va de –127 a +127.
+
+Es un sistema simple, pero menos eficiente que el complemento a dos.
+
+#### Decimal codificado en binario (BCD)
+
+El Decimal Codificado en Binario (BCD) es un método para representar números decimales en el que cada dígito del número decimal se codifica por separado en su propia forma binaria.
+
+A diferencia de la representación binaria pura, que convierte el número decimal completo en una única secuencia binaria, el BCD asigna un código binario de 4 bits a cada dígito decimal (0–9).
+
+Ejemplo:
+
+```
+0100 0101 = 45
+```
+ya que 0100 representa el 4 y 0101 representa el 5.
+
+Este sistema es útil cuando se necesita una representación decimal exacta, como en aplicaciones financieras o en relojes digitales, ya que evita los errores de redondeo que pueden ocurrir en otros sistemas.
+
+Sin embargo, como se utilizan cuatro bits por cada dígito, se requieren más bits para almacenar los números, lo que lo hace menos eficiente en espacio que las representaciones binarias puras.
+
+Además, las operaciones aritméticas en BCD son más complejas, ya que requieren pasos adicionales para manejar acarreo (carry) y desbordamiento (overflow), por lo que no es adecuado para la computación de propósito general.
+
+Código Gray (código binario reflejado)
+
+El Código Gray es un sistema binario en el que dos valores sucesivos solo pueden diferir en un bit. Esto lo hace especialmente útil en situaciones donde la integridad de los datos durante las transiciones es importante.
+
+Un ejemplo típico es el de un brazo robótico en el que se desea monitorizar su posición. A medida que el brazo gira, el codificador rotativo genera una secuencia de salidas binarias correspondientes al ángulo del brazo.
+
+Si el codificador utilizara código binario estándar, pequeñas vibraciones mecánicas o inexactitudes podrían causar que varios bits cambien simultáneamente, provocando lecturas incorrectas. Sin embargo, al usar Código Gray, se minimiza el riesgo de errores de transición.
+
+Comparación entre el Código Gray y el binario estándar para los números del 0 al 7:
+
+| Números | Binario estándar | Código Gray |
+|----------|------------------|--------------|
+| 0        | 000              | 000          |
+| 1        | 001              | 001          |
+| 2        | 010              | 011          |
+| 3        | 011              | 010          |
+| 4        | 100              | 110          |
+| 5        | 101              | 111          |
+| 6        | 110              | 101          |
+| 7        | 111              | 100          |
+
+#### Exceso-N (Excess-N)
+
+El sistema Exceso-N consiste en sumar un sesgo fijo (N) al valor real para formar un valor codificado, y restar ese sesgo para decodificarlo.
+Este método se utiliza para que todos los números enteros con signo aparezcan como números binarios no negativos, facilitando así las comparaciones y las operaciones aritméticas.
+
+Ejemplo con Exceso-3:
+
+El número decimal 2 se codifica como:
+
+2+3=5 → 0101
+
+El número decimal –2 se codifica como:
+
+−2+3=1 → 0001
+
+En un sistema de 8 bits, se suele utilizar Exceso-127, que suma 127 para codificar un número y resta 127 para decodificarlo.
+
+Si intentamos ordenar números binarios con signo, puede resultar complicado, ya que los números negativos aparecen como valores binarios mayores que los positivos.
+
+Ejemplo con signo y magnitud:
+
+01111111 = +127  
+10000001 = –127
+
+Codificados con Exceso-127:
+
+127 + 127 = 254 → 11111110  
+–127 + 127 = 0 → 00000000
+
+Ahora los números positivos aparecen como mayores que los negativos, lo que facilita el orden.
+
+Decodificación (Exceso-127):
+
+254 – 127 = +127 → 11111110  
+0 – 127 = –127 → 00000000
+
+#### Representación en punto fijo (Fixed-point representation)
+
+La **representación en punto fijo** es un método para almacenar **números reales (con parte fraccionaria)** en binario **fijando la posición del punto binario**.
+
+En este sistema, el punto binario se coloca en una posición predefinida, lo que permite una representación sencilla de fracciones, aunque con limitaciones en **precisión** y **rango**.
+
+Ejemplo:
+
+Queremos representar 5.25 en un sistema de 8 bits, donde:
+
+4 bits son para la parte entera
+
+4 bits para la parte fraccionaria
+
+```
+Parte entera: 0101 = 5  
+Parte fraccionaria: 0100 = 0.25  
+Combinado: 0101.0100
+```
+
+En la parte fraccionaria binaria:
+
+- El primer bit a la derecha del punto vale ½
+- El segundo vale ¼
+- El tercero vale ⅛
+- El cuarto vale 1/16
+
+Por tanto, en el ejemplo anterior tenemos 0.0100=0.25.
+
+El número de bits asignados limita el rango y la precisión.
+
+Por ejemplo, con 4 bits para la parte entera con signo, el rango es de –8 a +7.9375, con una resolución mínima de 0.0625.
+
+Esto significa que este sistema no maneja bien números muy grandes o muy pequeños, aunque es más simple y rápido que la representación en punto flotante, ya que no necesita ajustar la posición del punto binario.
+
+#### Representación en punto flotante (Floating-point representation)
+
+La **representación en punto flotante** permite representar **números reales con un rango muy amplio**, incluidos números muy grandes, muy pequeños o con parte fraccionaria.
+Se compone de tres partes:
+
+1. **Bit de signo** (1 bit) → Indica si el número es positivo o negativo.
+2. **Exponente** (8 bits) → Escala el número mediante una potencia de dos y se almacena usando el sistema **Exceso-127**.
+3. **Mantisa o significando** (23 bits) → Representa los dígitos significativos del número (sin incluir el 1 inicial en forma normalizada).
+
+Se utiliza el estándar **IEEE 754** para números de **precisión simple (32 bits)**.
