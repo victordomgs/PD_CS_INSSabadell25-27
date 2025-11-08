@@ -332,6 +332,8 @@ En Unicode, **cada letra o símbolo tiene asignado un número único**, por ejem
 - 汉 = 27721 
 - 💩 = 128169
 
+#### 🧠💻 Programming exercise
+
 Puedes encontrar la representación numérica de cualquier carácter o símbolo utilizando el siguiente código:
 
 ```python
@@ -413,7 +415,7 @@ Por lo tanto, es probable que **UTF-8 siga siendo el estándar de codificación 
 > [!NOTE]  
 > **Cifrado por desplazamiento (Shift cipher):** es un tipo de cifrado por sustitución, en el que cada letra del texto original (texto plano) se desplaza un cierto número de posiciones hacia arriba o hacia abajo en el alfabeto.
 
-#### Programming exercise
+#### 🧠💻 Programming exercise
 
 El siguiente código utiliza un cifrado César para encriptar una cadena de texto introducida por el usuario usando una clave. Un cifrado César es un tipo de cifrado por desplazamiento simple, en el que cada letra se considera un número entero (a = 1, b = 2, c = 3, etc.), y la clave se suma a ese valor para obtener la letra cifrada.
 
@@ -438,8 +440,6 @@ key = int(input("Enter the key (an integer): "))
 encrypted_message = caesar_cipher_encrypt(message, key)
 print(f"Encrypted message: {encrypted_message}")
 ```
-
-1. Después de estudiar cómo funciona este código, **escribe la función de descifrado** para alguien que reciba un mensaje cifrado.
 
 > [!NOTE]  
 > **Fuerza bruta:** un método para romper un cifrado probando sistemáticamente todas las claves posibles hasta encontrar la correcta.
@@ -599,3 +599,168 @@ También podemos observar el impacto de las menores profundidades de color sobre
   </div>
 
 La misma imagen utilizando diferentes profundidades de color, desde 24 bits hasta 0 bits, creada utilizando: [https://www.csfieldguide.org.nz/en/interactives/image-bit-comparer/](https://www.csfieldguide.org.nz/en/interactives/image-bit-comparer/).
+
+### Audio
+
+El audio en su forma analógica es una señal continua que representa las ondas sonoras mediante variaciones de la presión del aire. Estas ondas sonoras pueden capturarse mediante dispositivos de entrada, como los micrófonos, que convierten las ondas en una señal digital, la cual se almacena en forma binaria.
+
+Este proceso implica varios pasos:
+
+Conversión analógico-digital (ADC)
+
+El sonido es una señal analógica continua. Un **ADC** (Conversor Analógico-Digital) toma muestras de la **amplitud** (volumen o intensidad) del sonido a intervalos discretos en un proceso conocido como muestreo.
+
+La velocidad a la que esto ocurre se mide en **Hertz (Hz)**: cuanto mayor es el número de Hertz, más muestras se registran por segundo.
+
+El audio con calidad de CD utiliza **44,1 kHz**, mientras que el audio profesional se muestrea a 48 kHz.
+
+Cada muestra se almacena y representa como un valor numérico en binario. La **precisión** está determinada por la **profundidad de bits (bit depth)**. Cuanto mayor sea la profundidad de bits, más valores posibles se podrán usar para describir la muestra.
+
+Por ejemplo:
+
+- La profundidad de bits del sonido con calidad de CD es de 16 bits, lo que en base dos, da 65.536 valores posibles.
+- El audio profesional, que usa 24 bits, tiene 16.777.216 valores posibles.
+
+Un solo segundo de audio estéreo (dos canales) con una frecuencia de muestreo de 44,1 kHz y una profundidad de 16 bits tiene:
+
+- 44.100 muestras por segundo.
+- Cada muestra representada por 16 bits.
+- Una necesidad total de almacenamiento por segundo de:
+
+44.100 muestras/segundo × 16 bits/muestra × 2 canales = 1.411.200 bits por segundo o 176.400 bytes por segundo.
+
+> [!NOTE]  
+> - **Amplitud:** la magnitud del cambio en una onda sonora, que representa la intensidad o volumen del sonido.
+> - **Muestreo:** el proceso de convertir una señal analógica continua en una serie de valores digitales discretos midiendo su amplitud a intervalos regulares.
+> - **kHz (kilohertz):** unidad de frecuencia equivalente a 1000 ciclos por segundo, comúnmente utilizada para medir la frecuencia de muestreo de señales de audio.
+
+  <div style="text-align: center;">
+    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/A1.%20Fundamentos%20de%20la%20inform%C3%A1tica/images/Figura%2028.%20Se%C3%B1al%20anal%C3%B3gica%20y%20digital.png" alt="Imagen" width="650" height="auto"/>
+    <p><em>Figura 28: Señal analógica y digital. Fuente: Computer Science for the IB Diploma 2025 (Baumgarten P.)</em></p>
+  </div>
+
+La forma de onda continua azul representa una **señal analógica**, que es una representación **suave y continua del sonido**.
+
+La **señal digital** consiste en **muestras discretas** tomadas a intervalos regulares (frecuencia de muestreo), lo que ilustra cómo la señal analógica continua se convierte en una **serie de puntos discretos** en formato digital.
+
+#### Formatos de almacenamiento
+
+Existen muchos tipos diferentes de **formatos de archivo** para almacenar audio. Los más comunes son **WAV, AIFF, MP3 y FLAC**.
+
+La principal diferencia entre ellos es si están **comprimidos** o **no comprimidos**.
+
+- Los **formatos no comprimidos** almacenan los datos binarios en bruto.
+- Los **formatos comprimidos** utilizan algoritmos para reducir el tamaño del archivo con el fin de facilitar su **almacenamiento o transmisión**.
+
+Al igual que en la compresión de imágenes, la **compresión de audio** intenta reducir el tamaño del archivo **eliminando partes de la señal sonora menos perceptibles para el oído humano**.
+
+Existen dos tipos de compresión de audio: **con pérdida (lossy)** y **sin pérdida (lossless)**.
+
+- Los **algoritmos sin pérdida (lossless)** comprimen los datos **sin pérdida de calidad**.
+- Los **algoritmos con pérdida (lossy)** eliminan de forma permanente partes del audio que el oído humano **percibe con menor facilidad** en la grabación.
+
+Principales formatos de audio
+
+- **WAV (Waveform Audio File Format):** sin comprimir.
+- **AIFF (Audio Interchange File Format):** sin comprimir.
+- **MP3 (MPEG Audio Layer III):** comprimido (con pérdida).
+- **FLAC (Free Lossless Audio Codec):** comprimido (sin pérdida).
+
+> [!NOTE]  
+> **Estéreo:** método de reproducción de sonido que utiliza dos o más canales de audio para crear la percepción de que el sonido proviene de diferentes direcciones, lo que mejora la sensación de profundidad y dimensión espacial.
+
+#### 🧠💻 Programming exercise
+
+Explora los archivos de audio con el siguiente código. Esto te permitirá analizar la amplitud de cualquier archivo MP3.
+
+```python
+import soundfile as sf
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy.fftpack import fft
+
+# Load the audio file
+samples, sample_rate = sf.read("name_of_file.mp3")
+
+# If stereo, select one channel
+if samples.ndim > 1:
+    samples = samples[:, 0]
+
+# Visualize the waveform
+plt.figure(figsize=(12, 6))
+plt.plot(samples)
+plt.title("Audio Waveform")
+plt.xlabel("Sample Index")
+plt.ylabel("Amplitude")
+plt.show()
+
+# Perform FFT
+spectrum = fft(samples)
+frequencies = np.fft.fftfreq(len(spectrum), 1 / sample_rate)
+
+plt.figure(figsize=(12, 6))
+plt.plot(frequencies[:len(frequencies)//2], np.abs(spectrum[:len(spectrum)//2]))
+plt.title("Audio Spectrum")
+plt.xlabel("Frequency (Hz)")
+plt.ylabel("Magnitude")
+plt.show()
+```
+
+Para ejecutar en Google Colab y poder seleccionar la canción. Debemos ejecutar esta celda:
+
+```python
+from google.colab import files
+uploaded = files.upload()
+```
+
+### Vídeo
+
+Los vídeos están compuestos por varios elementos que se encuentran dentro de un **formato contenedor encapsulado**, como **MP4, MKV o AVI**.
+
+Los componentes son:
+
+- **Fotogramas (datos visuales)**
+- **Pistas de audio**
+- **Metadatos**
+- **Subtítulos y subtítulos ocultos (closed captions)**
+
+El audio se almacena como se describió en la sección anterior sobre audio, y los metadatos y subtítulos se guardan como texto, por lo que esta sección se centrará únicamente en cómo se almacena el **vídeo**.
+
+El vídeo, en esencia, se almacena como una **secuencia de imágenes fijas**, también conocidas como **fotogramas**.
+
+Cuando se reproducen en rápida sucesión (normalmente entre **24 y 60 fotogramas por segundo**), estos fotogramas crean la **ilusión de movimiento**.
+
+Esto es muy parecido a la técnica que quizá hayas utilizado para crear un **libro animado o flipbook**.
+
+Los fotogramas se almacenan y codifican en **formato binario**, utilizando diversas técnicas para **optimizar el espacio** y garantizar una **reproducción eficiente**.
+
+  <div style="text-align: center;">
+    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/A1.%20Fundamentos%20de%20la%20inform%C3%A1tica/images/Figura%2029.%20Flipbook.png" alt="Imagen" width="550" height="auto"/>
+    <p><em>Figura 29: Flipbook. Fuente: Computer Science for the IB Diploma 2025 (Baumgarten P.)</em></p>
+  </div>
+
+La reproducción de vídeo digital es similar a un **flipbook**: una serie de imágenes que se muestran rápidamente, creando la **ilusión de movimiento**.
+
+#### Fotogramas
+
+En su forma bruta, los **fotogramas** se almacenan igual que las imágenes, donde cada **píxel** tiene un valor que puede representarse mediante un **modelo de color** como **RGB**.
+
+Para mejorar la eficiencia del color, los fotogramas suelen convertirse del modelo RGB a otro diferente, como **YUV**.
+
+Este modelo favorece la **luminancia** (brillo), a la que el ojo humano es más sensible que a los cambios en el detalle del color, lo que facilita la **compresión**.
+
+Sin embargo, no podemos almacenar los fotogramas del mismo modo que almacenamos fotografías, ya que en ese formato serían **demasiado grandes**.
+
+Por ello, los vídeos necesitan **ser comprimidos**, y existen dos técnicas principales para hacerlo:
+
+- Compresión espacial (intraframe)
+- Compresión temporal (interframe)
+
+#### Técnicas de compresión
+
+- **Compresión espacial (intraframe):** Es especialmente efectiva y común en vídeos con **gran variación de detalles dentro de cada fotograma**. Reduce el tamaño del archivo **eliminando información redundante dentro del propio fotograma**, como niveles de color o detalle que no aportan diferencias visibles. Este enfoque es importante para vídeos con mucho detalle que cambia significativamente entre fotogramas, como **animaciones, documentales de naturaleza** o **transmisiones en directo**.
+- **Compresión temporal (interframe):** Es especialmente efectiva y común en vídeos con **movimiento coherente o continuo entre fotogramas**. Reduce el tamaño del archivo **eliminando información redundante entre fotogramas consecutivos**, capturando solo los **cambios o movimientos** de un fotograma al siguiente. Como técnica de **compresión predictiva**, predice el contenido de los fotogramas en función de los anteriores (y a veces de los siguientes), almacenando únicamente las diferencias.
+
+Este método también es esencial en vídeos donde el contenido visual varía a lo largo del tiempo, como animaciones, documentales de naturaleza o emisiones de noticias en directo.
+
+### Diferentes metodologias de código binario para el almacenamiento de enteros
