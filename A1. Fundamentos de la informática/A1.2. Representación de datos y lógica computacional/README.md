@@ -527,7 +527,7 @@ Resoluciones comunes:
 |------------------------------|-----------------------------|----------------|
 | VGA                 | 640 × 480            | Primeras pantallas de ordenador, gráficos web básicos |
 | SVGA                | 800 × 600            | Monitores estándar de ordenador, gráficos web |
-| HD (720p)           | 1280 × 760           | Vídeo en HD, televisión HD básica |
+| HD (720p)           | 1280 × 720           | Vídeo en HD, televisión HD básica |
 | Full HD (1080p)     | 1920 × 1080          | Vídeo en Full HD, monitores y televisores modernos |
 | 2K                  | 2048 × 1080          | Cine digital, algunos monitores |
 | Quad HD (1440p)     | 2560 × 1440          | Monitores de alta resolución, videojuegos, uso profesional |
