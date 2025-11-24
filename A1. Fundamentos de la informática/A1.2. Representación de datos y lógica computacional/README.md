@@ -1081,12 +1081,12 @@ El diagrama de la izquierda muestra una puerta OR implementada con transistores.
 El diagrama siguiente ilustra una puerta NOT (inversor) utilizando un transistor. En esta configuración, la línea de entrada está conectada a la puerta (gate) del transistor, la línea de salida está conectada a la fuente (source) y el drenador (drain) está conectado a tierra.
 
   <div style="text-align: center;">
-    <img src="" alt="Imagen" width="250" height="auto"/>
+    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/A1.%20Fundamentos%20de%20la%20inform%C3%A1tica/images/Figura%2037.%20Puerta%20NOT.png" alt="Imagen" width="250" height="auto"/>
     <p><em>Figura 37: Puerta NOT. Fuente: Computer Science for the IB Diploma 2025 (Baumgarten P.)</em></p>
   </div>
 
   <div style="text-align: center;">
-    <img src="" alt="Imagen" width="550" height="auto"/>
+    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/A1.%20Fundamentos%20de%20la%20inform%C3%A1tica/images/Figura%2038.%20Esquema%20a%20nivel%20de%20transistores%20de%20una%20puerta%20NOT.png" alt="Imagen" width="550" height="auto"/>
     <p><em>Figura 38: Esquema a nivel de transistores de una puerta NOT. Fuente: Computer Science for the IB Diploma 2025 (Baumgarten P.)</em></p>
   </div>
 
@@ -1100,3 +1100,115 @@ Cuando la entrada está en alto (1), el transistor se enciende, permitiendo que 
 |    1    |     0     |
 
 ```Boolean algebra: X = ¬A```
+
+### Puertas derivadas (complejas)
+
+Las siguientes puertas —**NAND**, **NOR**, **XOR** y **XNOR**— son ejemplos de puertas derivadas. Las puertas derivadas son combinaciones de las puertas básicas y proporcionan funciones lógicas más complejas. Para mostrarlas, subiremos un nivel de abstracción y, en lugar de examinar el esquema a nivel de transistores, veremos cómo se combinan las puertas básicas para crearlas.
+
+#### Puerta NAND (NOT AND)
+
+Una puerta NAND se construye con una puerta AND seguida de una puerta NOT. Debido a esto, produce la salida opuesta a una puerta AND. Si ambas entradas están en alto (1), la salida es baja (0). En todos los demás casos, la salida es alta (1).
+
+  <div style="text-align: center;">
+    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/A1.%20Fundamentos%20de%20la%20inform%C3%A1tica/images/Figura%2039.%20Puerta%20NAND.png" alt="Imagen" width="250" height="auto"/>
+    <p><em>Figura 39: Puerta AND y NOT. Fuente: Computer Science for the IB Diploma 2025 (Baumgarten P.)</em></p>
+  </div>
+
+Cómo se construye una puerta NAND: una puerta AND seguida de una puerta NOT.
+
+  <div style="text-align: center;">
+    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/A1.%20Fundamentos%20de%20la%20inform%C3%A1tica/images/Figura%2040.%20Puerta%20NAND.png" alt="Imagen" width="250" height="auto"/>
+    <p><em>Figura 40: Puerta NAND. Fuente: Computer Science for the IB Diploma 2025 (Baumgarten P.)</em></p>
+  </div>
+
+**Regla de entrada y salida:** La puerta NAND produce 1 a menos que ambas entradas sean 1.
+
+| Input A | Input B | Output X |
+|---------|----------|-----------|
+|    0    |    0     |     1     |
+|    0    |    1     |     1     |
+|    1    |    0     |     1     |
+|    1    |    1     |     0     |
+
+```Boolean algebra: X = ¬(A · B)```
+
+#### Puerta NOR (NOT OR)
+
+Una puerta NOR produce la salida opuesta a una puerta OR, ya que está construida utilizando una puerta OR seguida de una puerta NOT. Esto significa que solo cuando ambas entradas están en bajo (0) la salida es alta (1). En todos los demás casos, la salida es baja (0).
+
+  <div style="text-align: center;">
+    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/A1.%20Fundamentos%20de%20la%20inform%C3%A1tica/images/Figura%2041.%20Puerta%20NOR.png" alt="Imagen" width="250" height="auto"/>
+    <p><em>Figura 41: Puerta OR y NOT. Fuente: Computer Science for the IB Diploma 2025 (Baumgarten P.)</em></p>
+  </div>
+
+Cómo se construye una puerta NOR: una puerta OR seguida de una puerta NOT.
+
+  <div style="text-align: center;">
+    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/A1.%20Fundamentos%20de%20la%20inform%C3%A1tica/images/Figura%2042.%20Puerta%20NOR.png" alt="Imagen" width="250" height="auto"/>
+    <p><em>Figura 42: Puerta NOR. Fuente: Computer Science for the IB Diploma 2025 (Baumgarten P.)</em></p>
+  </div>
+
+**Regla de entrada y salida:** La puerta NOR produce 1 solo si ambas entradas son 0.
+
+| Input A | Input B | Output X |
+|---------|----------|-----------|
+|    0    |    0     |     1     |
+|    0    |    1     |     0     |
+|    1    |    0     |     0     |
+|    1    |    1     |     0     |
+
+```Boolean algebra: X = ¬(A + B)```
+
+#### Puerta XOR (OR exclusivo)
+
+La puerta XOR (OR exclusivo) se diferencia de la puerta OR en un aspecto clave: su salida es verdadera solo cuando las entradas son diferentes. Esto significa que la puerta XOR produce verdadero cuando exactamente una de las entradas es verdadera, pero falso cuando ambas entradas son iguales. Por ejemplo, si ambas entradas están en alto (1), la salida de la puerta XOR es baja (0). Esto es distinto a la puerta OR, que en ese caso produciría una salida alta (1).
+
+  <div style="text-align: center;">
+    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/A1.%20Fundamentos%20de%20la%20inform%C3%A1tica/images/Figura%2043.%20Puerta%20XOR.png" alt="Imagen" width="250" height="auto"/>
+    <p><em>Figura 43: Puerta exclusive OR. Fuente: Computer Science for the IB Diploma 2025 (Baumgarten P.)</em></p>
+  </div>
+
+Cómo se construye una puerta XOR.
+
+  <div style="text-align: center;">
+    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/A1.%20Fundamentos%20de%20la%20inform%C3%A1tica/images/Figura%2044.%20Puerta%20XOR.png" alt="Imagen" width="250" height="auto"/>
+    <p><em>Figura 44: Puerta XOR. Fuente: Computer Science for the IB Diploma 2025 (Baumgarten P.)</em></p>
+  </div>
+
+**Regla de entrada y salida:** La puerta XOR produce 1 si las entradas son diferentes.
+
+| Input A | Input B | Output X |
+|---------|----------|-----------|
+|    0    |    0     |     0     |
+|    0    |    1     |     1     |
+|    1    |    0     |     1     |
+|    1    |    1     |     0     |
+
+```Boolean algebra: X = A ⊕ B```
+
+#### Puerta XNOR (exclusive NOT OR)
+
+La puerta XNOR se construye utilizando una puerta XOR seguida de una puerta NOT. Esto significa que su salida es la opuesta a la de una puerta XOR, produciendo un valor alto (1) únicamente cuando ambas entradas son iguales (ya sea ambas altas o ambas bajas).
+
+  <div style="text-align: center;">
+    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/A1.%20Fundamentos%20de%20la%20inform%C3%A1tica/images/Figura%2045.%20Puerta%20XNOR.png" alt="Imagen" width="250" height="auto"/>
+    <p><em>Figura 45: Puerta XNOR. Fuente: Computer Science for the IB Diploma 2025 (Baumgarten P.)</em></p>
+  </div>
+
+Cómo se construye una puerta XNOR: una puerta XOR seguida de una puerta NOT.
+
+  <div style="text-align: center;">
+    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/A1.%20Fundamentos%20de%20la%20inform%C3%A1tica/images/Figura%2046.%20Puerta%20XNOR.png" alt="Imagen" width="250" height="auto"/>
+    <p><em>Figura 46: Puerta XNOR. Fuente: Computer Science for the IB Diploma 2025 (Baumgarten P.)</em></p>
+  </div>
+
+**Regla de entrada y salida:** La puerta XNOR produce 1 si las entradas son iguales.
+
+| Input A | Input B | Output X |
+|---------|----------|-----------|
+|    0    |    0     |     1     |
+|    0    |    1     |     0     |
+|    1    |    0     |     0     |
+|    1    |    1     |     1     |
+
+```Boolean algebra: X = ¬(A ⊕ B)```
