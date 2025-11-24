@@ -977,3 +977,126 @@ Se compone de tres partes:
 3. **Mantisa o significando** (23 bits) → Representa los dígitos significativos del número (sin incluir el 1 inicial en forma normalizada).
 
 Se utiliza el estándar **IEEE 754** para números de **precisión simple (32 bits)**.
+
+<br>
+
+## A1.2.3. Describe el propósito y el uso de las puertas lógicas
+
+### La historia de las puertas lógicas
+A mediados del siglo XIX, un matemático británico llamado George Boole desarrolló un sistema algebraico conocido como “álgebra booleana”. Este proporcionó un marco matemático para representar enunciados y operaciones lógicas que sentaron las bases de la lógica digital moderna.
+
+  <div style="text-align: center;">
+    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/A1.%20Fundamentos%20de%20la%20inform%C3%A1tica/images/Figura%2030.%20George%20Boole.jpg" alt="Imagen" width="550" height="auto"/>
+    <p><em>Figura 30: George Boole. Fuente: Wikipedia</em></p>
+  </div>
+  
+George Boole, el matemático británico que desarrolló el álgebra booleana, sentando las bases de la lógica digital y la informática moderna.
+
+A principios del siglo XX, un matemático e ingeniero eléctrico estadounidense llamado Claude Shannon fue la primera persona en reconocer el potencial del álgebra booleana para el diseño de circuitos eléctricos. Demostró cómo el diseño de circuitos de relés eléctricos podía optimizarse utilizando álgebra booleana, y posteriormente el desarrollo de la tecnología de semiconductores impulsó aún más la evolución de las puertas lógicas.
+
+El transistor fue inventado en 1947 en los Laboratorios Bell, lo que hizo posible construir puertas lógicas compactas y eficientes. Entre las décadas de 1960 y 1970, los circuitos integrados comenzaron a incorporar múltiples transistores en un solo chip, lo que llevó al desarrollo de los microprocesadores. Las puertas lógicas son los bloques fundamentales de los sistemas digitales modernos, desde la calculadora básica hasta los superordenadores avanzados.
+
+### Puertas básicas
+
+Las puertas lógicas son **componentes fundamentales en la electrónica digital**, esenciales para construir diversos tipos de circuitos dentro de los ordenadores y otros dispositivos digitales.
+Los tipos básicos de puertas lógicas incluyen las puertas **AND**, **OR** y **NOT**, cada una de las cuales realiza una función lógica específica. Estas puertas reciben una o más entradas binarias y producen una salida binaria según la operación lógica que llevan a cabo.
+
+Para comprender y verificar el comportamiento de estas puertas, utilizamos tablas de verdad, que enumeran de manera sistemática todas las combinaciones posibles de entradas y sus salidas correspondientes, proporcionando una representación clara de la función de la puerta. Además, cada puerta tiene una representación en álgebra booleana que permite simplificar expresiones lógicas complejas.
+
+Las puertas lógicas están formadas por transistores, que actúan como interruptores electrónicos, permitiendo o bloqueando el flujo de corriente eléctrica. En un transistor, el cable de control (o “gate”) regula la corriente entre los dos electrodos, conocidos como “source” (fuente) y “drain” (drenador). Cuando se aplica un voltaje a la puerta, se permite que la corriente fluya desde la fuente hacia el drenador, lo que permite que el transistor cambie de estado y realice operaciones lógicas.
+
+  <div style="text-align: center;">
+    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/A1.%20Fundamentos%20de%20la%20inform%C3%A1tica/images/Figura%2031.%20Circuito%20l%C3%B3gico.png" alt="Imagen" width="550" height="auto"/>
+    <p><em>Figura 31: Puerta Buffer apagada. Fuente: Computer Science for the IB Diploma 2025 (Baumgarten P.)</em></p>
+  </div>
+
+  Una puerta Buffer que muestra el funcionamiento interno de la puerta: cuando el cable de control está apagado, no puede fluir electricidad entre los electrodos.
+
+  <div style="text-align: center;">
+    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/A1.%20Fundamentos%20de%20la%20inform%C3%A1tica/images/Figura%2032.%20Circuito%20l%C3%B3gico.png" alt="Imagen" width="550" height="auto"/>
+    <p><em>Figura 32: Puerta Buffer encendida. Fuente: Computer Science for the IB Diploma 2025 (Baumgarten P.)</em></p>
+  </div>
+
+Cuando la electricidad circula por el cable de control, el transistor permite el flujo de electricidad entre los electrodos.
+
+Arriba se muestra una puerta Buffer simple, donde podemos considerar el cable de control como la entrada y el electrodo drain como la salida. Si la entrada está encendida, la salida está encendida; y si la entrada está apagada, la salida está apagada. Podemos mostrar esto usando una tabla de verdad:
+
+| Input A | Output X |
+|---------|----------|
+|    1    |     1    |
+|    0    |     0    |
+
+#### Puerta AND
+
+El diagrama de debajo muestra una puerta AND implementada con transistores. La puerta tiene dos entradas y una salida. Si solo una de las entradas está encendida, uno de los transistores sin entrada detendría el paso de la corriente. Solo cuando ambas entradas están en alto (1) los transistores permiten que la corriente fluya, lo que da como resultado una salida alta (1).
+
+  <div style="text-align: center;">
+    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/A1.%20Fundamentos%20de%20la%20inform%C3%A1tica/images/Figura%2033.%20Puerta%20AND.png" alt="Imagen" width="250" height="auto"/>
+    <p><em>Figura 33: Puerta AND. Fuente: Computer Science for the IB Diploma 2025 (Baumgarten P.)</em></p>
+  </div>
+
+**Regla de entrada y salida:** La puerta AND produce 1 solo si ambas entradas son 1.
+
+| Input A | Input B | Output X |
+|---------|----------|-----------|
+|    0    |    0     |     0     |
+|    0    |    1     |     0     |
+|    1    |    0     |     0     |
+|    1    |    1     |     1     |
+
+```Boolean algebra: X = A · B```
+
+  <div style="text-align: center;">
+    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/A1.%20Fundamentos%20de%20la%20inform%C3%A1tica/images/Figura%2034.%20Esquema%20a%20nivel%20de%20transistores%20de%20una%20puerta%20AND.png" alt="Imagen" width="550" height="auto"/>
+    <p><em>Figura 34: Esquema a nivel de transistores de una puerta AND. Fuente: Computer Science for the IB Diploma 2025 (Baumgarten P.)</em></p>
+  </div>
+
+#### Puerta OR
+
+El diagrama de la izquierda muestra una puerta OR implementada con transistores. La puerta tiene dos entradas —A y B— y una salida. Cuando cualquiera de las entradas A o B está en alto (1), el transistor correspondiente se activa, permitiendo que la corriente fluya a través del circuito y dando como resultado una salida alta (1). Cuando ambas entradas están en bajo (0), ninguno de los transistores conduce y la salida permanece en bajo (0).
+
+  <div style="text-align: center;">
+    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/A1.%20Fundamentos%20de%20la%20inform%C3%A1tica/images/Figura%2035.%20Puerta%20OR.png" alt="Imagen" width="250" height="auto"/>
+    <p><em>Figura 35: Puerta OR. Fuente: Computer Science for the IB Diploma 2025 (Baumgarten P.)</em></p>
+  </div>
+
+```Boolean algebra: X = A + B```
+
+**Regla de entrada y salida:** La puerta OR produce 1 si al menos una de las entradas es 1.
+
+| Input A | Input B | Output X |
+|---------|----------|-----------|
+|    0    |    0     |     0     |
+|    0    |    1     |     1     |
+|    1    |    0     |     1     |
+|    1    |    1     |     1     |
+
+  <div style="text-align: center;">
+    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/A1.%20Fundamentos%20de%20la%20inform%C3%A1tica/images/Figura%2036.%20Esquema%20a%20nivel%20de%20transistores%20de%20una%20puerta%20OR.png" alt="Imagen" width="550" height="auto"/>
+    <p><em>Figura 36: Esquema a nivel de transistores de una puerta OR. Fuente: Computer Science for the IB Diploma 2025 (Baumgarten P.)</em></p>
+  </div>
+
+#### Puerta NOT
+
+El diagrama siguiente ilustra una puerta NOT (inversor) utilizando un transistor. En esta configuración, la línea de entrada está conectada a la puerta (gate) del transistor, la línea de salida está conectada a la fuente (source) y el drenador (drain) está conectado a tierra.
+
+  <div style="text-align: center;">
+    <img src="" alt="Imagen" width="250" height="auto"/>
+    <p><em>Figura 37: Puerta NOT. Fuente: Computer Science for the IB Diploma 2025 (Baumgarten P.)</em></p>
+  </div>
+
+  <div style="text-align: center;">
+    <img src="" alt="Imagen" width="550" height="auto"/>
+    <p><em>Figura 38: Esquema a nivel de transistores de una puerta NOT. Fuente: Computer Science for the IB Diploma 2025 (Baumgarten P.)</em></p>
+  </div>
+
+Cuando la entrada está en alto (1), el transistor se enciende, permitiendo que la corriente fluya desde la fuente hacia el drenador, conectando efectivamente la salida a tierra y produciendo un voltaje bajo en la salida (0). Cuando la entrada está en bajo (0), el transistor se apaga, impidiendo que la corriente fluya hacia tierra. En este estado, la salida adopta un voltaje alto (1).
+
+**Regla de entrada y salida:** La puerta NOT produce el valor opuesto al de la entrada. 
+
+| Input A | Output X |
+|---------|-----------|
+|    0    |     1     |
+|    1    |     0     |
+
+```Boolean algebra: X = ¬A```
