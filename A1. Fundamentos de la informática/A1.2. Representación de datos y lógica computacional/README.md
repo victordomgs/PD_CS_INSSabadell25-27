@@ -1226,7 +1226,7 @@ El siguiente diagrama muestra un circuito lógico, donde varios compuertas lógi
     <p><em>Figura 47: Diagrama de circuito lógico 1. Fuente: Computer Science for the IB Diploma 2025 (Baumgarten P.)</em></p>
   </div>
 
-Al crear una tabla de verdad, primero introduce las tres entradas y sus posibles estados; en este caso, A, B y C. Como hay tres entradas, puedes calcular el número de filas necesarias usando 2<sup>n</sup>, donde n representa el número de entradas.
+Al crear una tabla de verdad, primero introduce las tres entradas y sus posibles estados; en este caso, A, B y C. Como hay tres entradas, puedes calcular el número de filas necesarias usando 2<sup>n</sup>, donde *n* representa el número de entradas.
 
 En este ejemplo:
 
@@ -1250,3 +1250,28 @@ Seguir este patrón te dará todos los posibles estados de entrada.
 | 1 | 1 | 1 |
 
 Una vez hecho esto, añadimos los valores intermedios para facilitar recordar el estado en cada etapa del circuito. En este ejemplo, tenemos tres valores intermedios: P, Q y R. Finalmente, añadimos la columna de salida, X.
+
+| A | B | C | P | Q | R | X |
+|---|---|---|---|---|---|---|
+| 0 | 0 | 0 |   |   |   |   |
+| 0 | 0 | 1 |   |   |   |   |
+| 0 | 1 | 0 |   |   |   |   |
+| 0 | 1 | 1 |   |   |   |   |
+| 1 | 0 | 0 |   |   |   |   |
+| 1 | 0 | 1 |   |   |   |   |
+| 1 | 1 | 0 |   |   |   |   |
+| 1 | 1 | 1 |   |   |   |   |
+
+Ahora, comenzando por los valores intermedios, recorre el circuito lógico paso a paso.
+
+| A | B | C | P (A AND B) | Q (B NOR C) | R (P OR Q) | X (C XOR R) |
+|---|---|---|--------------|-------------|------------|-------------|
+| 0 | 0 | 0 |      0       |      1      |     1      |      1      |
+| 0 | 0 | 1 |      0       |      0      |     0      |      1      |
+| 0 | 1 | 0 |      0       |      0      |     0      |      0      |
+| 0 | 1 | 1 |      0       |      0      |     0      |      1      |
+| 1 | 0 | 0 |      0       |      1      |     1      |      1      |
+| 1 | 0 | 1 |      0       |      0      |     0      |      1      |
+| 1 | 1 | 0 |      1       |      0      |     1      |      1      |
+| 1 | 1 | 1 |      1       |      0      |     1      |      0      |
+
