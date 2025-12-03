@@ -1212,3 +1212,41 @@ Cómo se construye una puerta XNOR: una puerta XOR seguida de una puerta NOT.
 |    1    |    1     |     1     |
 
 ```Boolean algebra: X = ¬(A ⊕ B)```
+
+<br>
+
+## A1.2.4. Construye y analiza tablas de la verdad
+
+### Tablas de verdad para predecir la salida de circuitos lógicos simples
+
+El siguiente diagrama muestra un circuito lógico, donde varios compuertas lógicas están conectadas entre sí. En este escenario, debes ser capaz de trabajar con circuitos que tengan hasta tres entradas.
+
+  <div style="text-align: center;">
+    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/A1.%20Fundamentos%20de%20la%20inform%C3%A1tica/images/Figura%2047.%20Diagrama%20de%20circuito%20l%C3%B3gico%201%20.png" alt="Imagen" width="550" height="auto"/>
+    <p><em>Figura 47: Diagrama de circuito lógico 1. Fuente: Computer Science for the IB Diploma 2025 (Baumgarten P.)</em></p>
+  </div>
+
+Al crear una tabla de verdad, primero introduce las tres entradas y sus posibles estados; en este caso, A, B y C. Como hay tres entradas, puedes calcular el número de filas necesarias usando 2<sup>n</sup>, donde n representa el número de entradas.
+
+En este ejemplo:
+
+2<sup>3</sup> = 8
+
+- Rellena la columna de la derecha alternando entre 0 y 1.
+- Rellena la columna central alternando, cada dos filas, entre 0 y 1.
+- Rellena la columna de la izquierda alternando, cada cuatro filas, entre 0 y 1.
+
+Seguir este patrón te dará todos los posibles estados de entrada.
+
+| A | B | C |
+|---|---|---|
+| 0 | 0 | 0 |
+| 0 | 0 | 1 |
+| 0 | 1 | 0 |
+| 0 | 1 | 1 |
+| 1 | 0 | 0 |
+| 1 | 0 | 1 |
+| 1 | 1 | 0 |
+| 1 | 1 | 1 |
+
+Una vez hecho esto, añadimos los valores intermedios para facilitar recordar el estado en cada etapa del circuito. En este ejemplo, tenemos tres valores intermedios: P, Q y R. Finalmente, añadimos la columna de salida, X.
