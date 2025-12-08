@@ -1384,25 +1384,25 @@ El mapa de Karnaugh ya está completo y muestra que el valor de B no tiene ning�
 Con tres entradas, utilizamos un mapa de Karnaugh similar, pero en este caso colocamos dos de las entradas en la parte superior. Los dígitos de la parte superior pueden parecer fuera de orden en comparación con el conteo binario estándar (00, 01, 10, 11). En su lugar, siguen la convención del código Gray (véase la Sección A1.2.2 para más información), en la que solo cambia un dígito cada vez. Es importante configurar el mapa de esta manera para garantizar una agrupación y una simplificación correctas.
 
   <div style="text-align: center;">
-    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/A1.%20Fundamentos%20de%20la%20inform%C3%A1tica/images/Figura%2057.%20K-map.png" alt="Imagen" width="450" height="auto"/>
+    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/A1.%20Fundamentos%20de%20la%20inform%C3%A1tica/images/Figura%2057.%20K-map.png" alt="Imagen" width="550" height="auto"/>
   </div>
 
 Ahora seguimos pasos similares a los del mapa de Karnaugh de dos entradas. Separamos la expresión por el operador OR (O) y nos centramos en el primer término: ¬A · B · C. En este paso, completamos el mapa de Karnaugh introduciendo un 1 en las celdas donde A es 0, B es 1 y C es 1.
 
   <div style="text-align: center;">
-    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/A1.%20Fundamentos%20de%20la%20inform%C3%A1tica/images/Figura%2058.%20K-map.png" alt="Imagen" width="450" height="auto"/>
+    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/A1.%20Fundamentos%20de%20la%20inform%C3%A1tica/images/Figura%2058.%20K-map.png" alt="Imagen" width="550" height="auto"/>
   </div>
 
 Seguido de: A · ¬B · C
 
   <div style="text-align: center;">
-    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/A1.%20Fundamentos%20de%20la%20inform%C3%A1tica/images/Figura%2059.%20K-map.png" alt="Imagen" width="450" height="auto"/>
+    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/A1.%20Fundamentos%20de%20la%20inform%C3%A1tica/images/Figura%2059.%20K-map.png" alt="Imagen" width="550" height="auto"/>
   </div>
 
 Y finalmente: A · B · C
 
   <div style="text-align: center;">
-    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/A1.%20Fundamentos%20de%20la%20inform%C3%A1tica/images/Figura%2060.%20K-map.png" alt="Imagen" width="450" height="auto"/>
+    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/A1.%20Fundamentos%20de%20la%20inform%C3%A1tica/images/Figura%2060.%20K-map.png" alt="Imagen" width="550" height="auto"/>
   </div>
 
 #### Agrupación de los 1 y simplificación de la expresión
@@ -1419,7 +1419,7 @@ Aunque no se indicó explícitamente antes, es posible que hayas observado los r
 Para determinar la expresión a partir de los grupos, analizamos cada grupo de celdas y nos fijamos en las variables. Si el valor de una variable se mantiene igual en todas las celdas del grupo, esa variable se conserva en la expresión simplificada. Sin embargo, si el valor de la variable cambia dentro del grupo, se elimina de la expresión.
 
   <div style="text-align: center;">
-    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/A1.%20Fundamentos%20de%20la%20inform%C3%A1tica/images/Figura%2061.%20K-map.png" alt="Imagen" width="450" height="auto"/>
+    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/A1.%20Fundamentos%20de%20la%20inform%C3%A1tica/images/Figura%2061.%20K-map.png" alt="Imagen" width="550" height="auto"/>
   </div>
 
 El primer grupo está completamente a lo largo de la fila inferior, lo que significa que C se mantiene constante (C = 1), por lo que la conservamos en la expresión. A cambia de 0 a 1 entre las celdas del grupo, así que descartamos A. B permanece en 1 en ambas celdas, por lo que conservamos B.
@@ -1427,7 +1427,7 @@ El primer grupo está completamente a lo largo de la fila inferior, lo que signi
 Por tanto, la primera parte de nuestra expresión final es: B · C
 
   <div style="text-align: center;">
-    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/A1.%20Fundamentos%20de%20la%20inform%C3%A1tica/images/Figura%2062.%20K-map.png" alt="Imagen" width="450" height="auto"/>
+    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/A1.%20Fundamentos%20de%20la%20inform%C3%A1tica/images/Figura%2062.%20K-map.png" alt="Imagen" width="550" height="auto"/>
   </div>
 
 El segundo grupo, al igual que el primero, se encuentra a lo largo de la fila inferior, lo que significa que C se mantiene en 1, ya que no cambia dentro del grupo. En este caso, A permanece en 1 en ambas celdas, mientras que B cambia de 0 a 1. Dado que B cambia, descartamos B de esta parte de la expresión. Como resultado, conservamos A y C, lo que nos da la segunda parte de nuestra expresión: A · C
@@ -1444,23 +1444,23 @@ Aquí se muestra el mapa de Karnaugh para la expresión:
 ¬B + A · B · C
 
   <div style="text-align: center;">
-    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/A1.%20Fundamentos%20de%20la%20inform%C3%A1tica/images/Figura%2063.%20K-map.png" alt="Imagen" width="450" height="auto"/>
+    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/A1.%20Fundamentos%20de%20la%20inform%C3%A1tica/images/Figura%2063.%20K-map.png" alt="Imagen" width="550" height="auto"/>
   </div>
 
 Para agrupar estos 1, puedes asumir que esta es la respuesta:
 
   <div style="text-align: center;">
-    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/A1.%20Fundamentos%20de%20la%20inform%C3%A1tica/images/Figura%2064.%20K-map.png" alt="Imagen" width="450" height="auto"/>
+    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/A1.%20Fundamentos%20de%20la%20inform%C3%A1tica/images/Figura%2064.%20K-map.png" alt="Imagen" width="550" height="auto"/>
   </div>
 
 Sin embargo, los mapas de Karnaugh se consideran tridimensionales, y los grupos pueden formarse de izquierda a derecha y de arriba abajo (aunque con tres entradas solo es posible de izquierda a derecha). En este ejemplo, es posible construir un grupo más grande combinando los dos grupos de los extremos, formando un grupo cuadrado de cuatro 1.
 
   <div style="text-align: center;">
-    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/A1.%20Fundamentos%20de%20la%20inform%C3%A1tica/images/Figura%2065.%20K-map.png" alt="Imagen" width="450" height="auto"/>
+    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/A1.%20Fundamentos%20de%20la%20inform%C3%A1tica/images/Figura%2065.%20K-map.png" alt="Imagen" width="550" height="auto"/>
   </div>
 
   <div style="text-align: center;">
-    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/A1.%20Fundamentos%20de%20la%20inform%C3%A1tica/images/Figura%2066.%20K-map.png" alt="Imagen" width="450" height="auto"/>
+    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/A1.%20Fundamentos%20de%20la%20inform%C3%A1tica/images/Figura%2066.%20K-map.png" alt="Imagen" width="650" height="auto"/>
   </div>
 
 Mapa de Karnaugh dibujado sobre un toro y en un plano – las celdas marcadas con puntos son adyacentes
