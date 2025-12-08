@@ -1327,13 +1327,13 @@ Este mapa de Karnaugh de dos entradas se utiliza para expresiones con dos variab
 Dividimos la expresión en el operador OR (O) y nos centramos primero en el término que implica a A. Rellenamos el mapa de Karnaugh donde A es 1, lo que, en este caso, corresponde a toda la fila inferior. En esta etapa, ignoramos B y solo completamos las celdas en las que A = 1.
 
   <div style="text-align: center;">
-    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/A1.%20Fundamentos%20de%20la%20inform%C3%A1tica/images/Figura%2049.%20K-map.png" alt="Imagen" width="350" height="auto"/>
+    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/A1.%20Fundamentos%20de%20la%20inform%C3%A1tica/images/Figura%2049.%20K-map.png" alt="Imagen" width="450" height="auto"/>
   </div>
 
 Hacemos lo mismo para la segunda parte de la expresión: B. 
 
   <div style="text-align: center;">
-    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/A1.%20Fundamentos%20de%20la%20inform%C3%A1tica/images/Figura%2050.%20K-map.png" alt="Imagen" width="350" height="auto"/>
+    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/A1.%20Fundamentos%20de%20la%20inform%C3%A1tica/images/Figura%2050.%20K-map.png" alt="Imagen" width="450" height="auto"/>
   </div>
 
 Este mapa de Karnaugh completado ahora muestra la expresión A + B.
@@ -1341,7 +1341,7 @@ Este mapa de Karnaugh completado ahora muestra la expresión A + B.
 Este es otro ejemplo de un mapa completado para la expresión ¬A + B:
 
   <div style="text-align: center;">
-    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/A1.%20Fundamentos%20de%20la%20inform%C3%A1tica/images/Figura%2051.%20K-map.png" alt="Imagen" width="350" height="auto"/>
+    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/A1.%20Fundamentos%20de%20la%20inform%C3%A1tica/images/Figura%2051.%20K-map.png" alt="Imagen" width="450" height="auto"/>
   </div>
 
 *Expresión: A · B + A · ¬B*
@@ -1349,29 +1349,29 @@ Este es otro ejemplo de un mapa completado para la expresión ¬A + B:
 Esta es una expresión más complicada, pero que aún solo tiene dos entradas. Utilizando esta expresión, el circuito tendría el siguiente aspecto:
 
   <div style="text-align: center;">
-    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/A1.%20Fundamentos%20de%20la%20inform%C3%A1tica/images/Figura%2052.%20K-map.png" alt="Imagen" width="350" height="auto"/>
+    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/A1.%20Fundamentos%20de%20la%20inform%C3%A1tica/images/Figura%2052.%20K-map.png" alt="Imagen" width="450" height="auto"/>
   </div>
 
 La estructura del mapa en forma de tabla sigue siendo la misma:
 
   <div style="text-align: center;">
-    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/A1.%20Fundamentos%20de%20la%20inform%C3%A1tica/images/Figura%2053.%20K-map.png" alt="Imagen" width="350" height="auto"/>
+    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/A1.%20Fundamentos%20de%20la%20inform%C3%A1tica/images/Figura%2053.%20K-map.png" alt="Imagen" width="450" height="auto"/>
   </div>
 
 Volvemos a dividir la expresión en el símbolo OR (O), centrándonos inicialmente en A · B. En este caso, introducimos un 1 únicamente en una celda, donde tanto A como B son 1.
 
   <div style="text-align: center;">
-    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/A1.%20Fundamentos%20de%20la%20inform%C3%A1tica/images/Figura%2054.%20K-map.png" alt="Imagen" width="350" height="auto"/>
+    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/A1.%20Fundamentos%20de%20la%20inform%C3%A1tica/images/Figura%2054.%20K-map.png" alt="Imagen" width="450" height="auto"/>
   </div>
 
 A continuación, nos centramos en la segunda parte de la expresión A · ¬B. En este caso, introducimos un 1 en la celda donde A es 1 y B es 0.
 
   <div style="text-align: center;">
-    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/A1.%20Fundamentos%20de%20la%20inform%C3%A1tica/images/Figura%2055.%20K-map.png" alt="Imagen" width="350" height="auto"/>
+    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/A1.%20Fundamentos%20de%20la%20inform%C3%A1tica/images/Figura%2055.%20K-map.png" alt="Imagen" width="450" height="auto"/>
   </div>
 
 El mapa de Karnaugh ya está completo y muestra que el valor de B no tiene ningún impacto en el resultado, lo que nos permite simplificar la expresión a simplemente A. Si creamos el circuito utilizando esta expresión simplificada, podemos ver que el circuito es significativamente más eficiente, mientras que sigue realizando la misma función.
 
   <div style="text-align: center;">
-    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/A1.%20Fundamentos%20de%20la%20inform%C3%A1tica/images/Figura%2056.%20K-map.png" alt="Imagen" width="350" height="auto"/>
+    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/A1.%20Fundamentos%20de%20la%20inform%C3%A1tica/images/Figura%2056.%20K-map.png" alt="Imagen" width="450" height="auto"/>
   </div>
