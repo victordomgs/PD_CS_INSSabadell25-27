@@ -1275,3 +1275,103 @@ Ahora, comenzando por los valores intermedios, recorre el circuito lógico paso 
 | 1 | 1 | 0 |      1       |      0      |     1      |      1      |
 | 1 | 1 | 1 |      1       |      0      |     1      |      0      |
 
+### Tablas de verdad para determinar las salidas a partir de las entradas de la descripción de un problema
+
+**Descripción del problema:** *Una alarma para bebés que se activa cuando la alarma está encendida y el bebé está llorando o la habitación está demasiado fría.*
+
+Con una descripción del problema, primero necesitamos identificar las entradas. Aquí tenemos tres: el interruptor de la alarma, el llanto del bebé y la temperatura de la habitación, que podemos representar como A, B y C y configurar nuestra tabla de verdad.
+
+Sabemos que la alarma se activa si el dispositivo está encendido Y el bebé está llorando O la habitación está demasiado fría. A partir de aquí, podemos identificar las puertas lógicas en la descripción. Podemos deducir que el dispositivo debe estar encendido antes de que la alarma pueda activarse, por lo que, si el interruptor está apagado, todas las salidas serían 0. Si el dispositivo está encendido, al menos una de las otras dos entradas debe estar activa para que la alarma se dispare. Tenemos un valor intermedio (el bebé está llorando O la habitación está fría), representado con P.
+
+| A (encendida) | B (llorando) | C (fría) | P (B or C) | X (A and P) |
+|------------|------------|----------|------------|-------------|
+| 0          | 0          | 0        | 0          | 0           |
+| 0          | 0          | 1        | 1          | 0           |
+| 0          | 1          | 0        | 1          | 0           |
+| 0          | 1          | 1        | 1          | 0           |
+| 1          | 0          | 0        | 0          | 0           |
+| 1          | 0          | 1        | 1          | 1           |
+| 1          | 1          | 0        | 1          | 1           |
+| 1          | 1          | 1        | 1          | 1           |
+
+### Expresiones lógicas
+
+Podemos representar circuitos lógicos utilizando álgebra booleana. Si usamos de nuevo el escenario de la alarma para bebés, podemos representarlo así:
+
+```X = A · (B + C)```
+
+En álgebra booleana, los paréntesis se utilizan a menudo para indicar qué operaciones deben realizarse primero. Sin embargo, existe un orden estándar de las operaciones, similar a PEMDAS (o BODMAS) en matemáticas. Si no hay paréntesis presentes, se debe seguir esta secuencia:
+
+- NOT
+- AND (incluyendo NAND)
+- OR (incluyendo NOR y XOR)
+
+Esto garantiza que las operaciones se ejecuten en el orden correcto para obtener resultados precisos.
+
+### Mapas de Karnaugh y simplificación algebraica
+
+Los mapas de Karnaugh (K-maps) son una herramienta que ayuda a simplificar expresiones booleanas, facilitando la creación de circuitos digitales más simples y eficientes. En lugar de utilizar métodos algebraicos complicados, los mapas de Karnaugh permiten agrupar visualmente términos de una tabla de verdad, lo que hace más rápido encontrar una expresión simplificada.
+
+Este proceso es útil porque reduce el número de puertas lógicas necesarias en un circuito, ahorrando tiempo, espacio, costes y consumo de energía.
+
+#### Dos entradas
+
+Este mapa de Karnaugh de dos entradas se utiliza para expresiones con dos variables. En este mapa, la variable A se coloca en el lateral y la variable B en la parte superior. Sin embargo, el orden de las variables no importa: B podría colocarse en el lateral y A en la parte superior. Ambos estados posibles (0 y 1) para cada variable se muestran en el mapa, representando todas las combinaciones de sus valores.
+
+*Expresión: A + B*
+
+  <div style="text-align: center;">
+    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/A1.%20Fundamentos%20de%20la%20inform%C3%A1tica/images/Figura%2048.%20K-map.png" alt="Imagen" width="350" height="auto"/>
+  </div>
+
+Dividimos la expresión en el operador OR (O) y nos centramos primero en el término que implica a A. Rellenamos el mapa de Karnaugh donde A es 1, lo que, en este caso, corresponde a toda la fila inferior. En esta etapa, ignoramos B y solo completamos las celdas en las que A = 1.
+
+  <div style="text-align: center;">
+    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/A1.%20Fundamentos%20de%20la%20inform%C3%A1tica/images/Figura%2049.%20K-map.png" alt="Imagen" width="350" height="auto"/>
+  </div>
+
+Hacemos lo mismo para la segunda parte de la expresión: B. 
+
+  <div style="text-align: center;">
+    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/A1.%20Fundamentos%20de%20la%20inform%C3%A1tica/images/Figura%2050.%20K-map.png" alt="Imagen" width="350" height="auto"/>
+  </div>
+
+Este mapa de Karnaugh completado ahora muestra la expresión A + B.
+
+Este es otro ejemplo de un mapa completado para la expresión ¬A + B:
+
+  <div style="text-align: center;">
+    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/A1.%20Fundamentos%20de%20la%20inform%C3%A1tica/images/Figura%2051.%20K-map.png" alt="Imagen" width="350" height="auto"/>
+  </div>
+
+*Expresión: A · B + A · ¬B*
+
+Esta es una expresión más complicada, pero que aún solo tiene dos entradas. Utilizando esta expresión, el circuito tendría el siguiente aspecto:
+
+  <div style="text-align: center;">
+    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/A1.%20Fundamentos%20de%20la%20inform%C3%A1tica/images/Figura%2052.%20K-map.png" alt="Imagen" width="350" height="auto"/>
+  </div>
+
+La estructura del mapa en forma de tabla sigue siendo la misma:
+
+  <div style="text-align: center;">
+    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/A1.%20Fundamentos%20de%20la%20inform%C3%A1tica/images/Figura%2053.%20K-map.png" alt="Imagen" width="350" height="auto"/>
+  </div>
+
+Volvemos a dividir la expresión en el símbolo OR (O), centrándonos inicialmente en A · B. En este caso, introducimos un 1 únicamente en una celda, donde tanto A como B son 1.
+
+  <div style="text-align: center;">
+    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/A1.%20Fundamentos%20de%20la%20inform%C3%A1tica/images/Figura%2054.%20K-map.png" alt="Imagen" width="350" height="auto"/>
+  </div>
+
+A continuación, nos centramos en la segunda parte de la expresión A · ¬B. En este caso, introducimos un 1 en la celda donde A es 1 y B es 0.
+
+  <div style="text-align: center;">
+    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/A1.%20Fundamentos%20de%20la%20inform%C3%A1tica/images/Figura%2055.%20K-map.png" alt="Imagen" width="350" height="auto"/>
+  </div>
+
+El mapa de Karnaugh ya está completo y muestra que el valor de B no tiene ningún impacto en el resultado, lo que nos permite simplificar la expresión a simplemente A. Si creamos el circuito utilizando esta expresión simplificada, podemos ver que el circuito es significativamente más eficiente, mientras que sigue realizando la misma función.
+
+  <div style="text-align: center;">
+    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/A1.%20Fundamentos%20de%20la%20inform%C3%A1tica/images/Figura%2056.%20K-map.png" alt="Imagen" width="350" height="auto"/>
+  </div>
