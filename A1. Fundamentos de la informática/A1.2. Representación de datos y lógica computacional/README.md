@@ -1318,9 +1318,7 @@ Este proceso es útil porque reduce el número de puertas lógicas necesarias en
 
 Este mapa de Karnaugh de dos entradas se utiliza para expresiones con dos variables. En este mapa, la variable A se coloca en el lateral y la variable B en la parte superior. Sin embargo, el orden de las variables no importa: B podría colocarse en el lateral y A en la parte superior. Ambos estados posibles (0 y 1) para cada variable se muestran en el mapa, representando todas las combinaciones de sus valores.
 
-<br>
-
-*Expresión: A + B*
+##### Expresión: A + B
 
   <div style="text-align: center;">
     <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/A1.%20Fundamentos%20de%20la%20inform%C3%A1tica/images/Figura%2048.%20K-map.png" alt="Imagen" width="450" height="auto"/>
@@ -1348,7 +1346,7 @@ Este es otro ejemplo de un mapa completado para la expresión ¬A + B:
 
 <br>
 
-*Expresión: A · B + A · ¬B*
+##### Expresión: A · B + A · ¬B
 
 Esta es una expresión más complicada, pero que aún solo tiene dos entradas. Utilizando esta expresión, el circuito tendría el siguiente aspecto:
 
