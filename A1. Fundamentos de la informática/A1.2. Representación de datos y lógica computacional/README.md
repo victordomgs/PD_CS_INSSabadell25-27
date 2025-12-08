@@ -1341,7 +1341,7 @@ Este mapa de Karnaugh completado ahora muestra la expresión A + B.
 Este es otro ejemplo de un mapa completado para la expresión ¬A + B:
 
   <div style="text-align: center;">
-    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/A1.%20Fundamentos%20de%20la%20inform%C3%A1tica/images/Figura%2051.%20K-map.png" alt="Imagen" width="650" height="auto"/>
+    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/A1.%20Fundamentos%20de%20la%20inform%C3%A1tica/images/Figura%2051.%20K-map.png" alt="Imagen" width="450" height="auto"/>
   </div>
 
 *Expresión: A · B + A · ¬B*
@@ -1349,7 +1349,7 @@ Este es otro ejemplo de un mapa completado para la expresión ¬A + B:
 Esta es una expresión más complicada, pero que aún solo tiene dos entradas. Utilizando esta expresión, el circuito tendría el siguiente aspecto:
 
   <div style="text-align: center;">
-    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/A1.%20Fundamentos%20de%20la%20inform%C3%A1tica/images/Figura%2052.%20K-map.png" alt="Imagen" width="450" height="auto"/>
+    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/A1.%20Fundamentos%20de%20la%20inform%C3%A1tica/images/Figura%2052.%20K-map.png" alt="Imagen" width="650" height="auto"/>
   </div>
 
 La estructura del mapa en forma de tabla sigue siendo la misma:
