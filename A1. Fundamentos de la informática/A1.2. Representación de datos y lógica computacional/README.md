@@ -1457,8 +1457,10 @@ Sin embargo, los mapas de Karnaugh se consideran tridimensionales, y los grupos 
     <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/A1.%20Fundamentos%20de%20la%20inform%C3%A1tica/images/Figura%2065.%20K-map.png" alt="Imagen" width="650" height="auto"/>
   </div>
 
+<br>
+
   <div style="text-align: center;">
-    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/A1.%20Fundamentos%20de%20la%20inform%C3%A1tica/images/Figura%2066.%20K-map.png" alt="Imagen" width="750" height="auto"/>
+    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/A1.%20Fundamentos%20de%20la%20inform%C3%A1tica/images/Figura%2066.%20K-map.png" alt="Imagen" width="550" height="auto"/>
   </div>
 
 Mapa de Karnaugh dibujado sobre un toro y en un plano – las celdas marcadas con puntos son adyacentes
