@@ -1321,7 +1321,7 @@ Este mapa de Karnaugh de dos entradas se utiliza para expresiones con dos variab
 *Expresión: A + B*
 
   <div style="text-align: center;">
-    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/A1.%20Fundamentos%20de%20la%20inform%C3%A1tica/images/Figura%2048.%20K-map.png" alt="Imagen" width="350" height="auto"/>
+    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/A1.%20Fundamentos%20de%20la%20inform%C3%A1tica/images/Figura%2048.%20K-map.png" alt="Imagen" width="450" height="auto"/>
   </div>
 
 Dividimos la expresión en el operador OR (O) y nos centramos primero en el término que implica a A. Rellenamos el mapa de Karnaugh donde A es 1, lo que, en este caso, corresponde a toda la fila inferior. En esta etapa, ignoramos B y solo completamos las celdas en las que A = 1.
@@ -1341,7 +1341,7 @@ Este mapa de Karnaugh completado ahora muestra la expresión A + B.
 Este es otro ejemplo de un mapa completado para la expresión ¬A + B:
 
   <div style="text-align: center;">
-    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/A1.%20Fundamentos%20de%20la%20inform%C3%A1tica/images/Figura%2051.%20K-map.png" alt="Imagen" width="450" height="auto"/>
+    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/A1.%20Fundamentos%20de%20la%20inform%C3%A1tica/images/Figura%2051.%20K-map.png" alt="Imagen" width="650" height="auto"/>
   </div>
 
 *Expresión: A · B + A · ¬B*
