@@ -1482,7 +1482,7 @@ Al comprender los principios del álgebra booleana, podemos simplificar expresio
 2. Trabaja sobre el primer paréntesis introduciendo una puerta AND (Y) y conectando tanto A como B a ella.
 
   <div style="text-align: center;">
-    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/A1.%20Fundamentos%20de%20la%20inform%C3%A1tica/images/Figura%2067.%20K-map.png" alt="Imagen" width="750" height="auto"/>
+    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/A1.%20Fundamentos%20de%20la%20inform%C3%A1tica/images/Figura%2067.%20K-map.png" alt="Imagen" width="550" height="auto"/>
   </div>
 
 3. Trabaja sobre el segundo paréntesis, conectando A a una puerta NOT (NO) y B a otra puerta NOT.
