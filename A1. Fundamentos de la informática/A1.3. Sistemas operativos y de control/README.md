@@ -65,17 +65,17 @@ El SO permite una serie de operaciones estándar que los usuarios y las aplicaci
 Para garantizar la coherencia y evitar conflictos, el SO impone reglas para la denominación de archivos, asegurando que no existan dos archivos con el mismo nombre dentro de un mismo directorio. Los archivos suelen tener extensiones, como .jpg o .exe, que indican el tipo de archivo y la aplicación asociada, aunque, dependiendo de la configuración del sistema operativo, estas extensiones pueden estar ocultas para el usuario.
 
   <div style="text-align: center;">
-    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/A1.%20Fundamentos%20de%20la%20inform%C3%A1tica/images/Figura%2072.%20Windows%20File%20Explorer%20view.png" alt="Walden" width="250" height="auto"/>
+    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/A1.%20Fundamentos%20de%20la%20inform%C3%A1tica/images/Figura%2072.%20Windows%20File%20Explorer%20view.png" alt="Walden" width="550" height="auto"/>
     <p><em>Figura 49: Windows File Explorer. Fuente: Computer Science for the IB Diploma 2025 (Baumgarten P.)</em></p>
   </div>
 
   <div style="text-align: center;">
-    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/A1.%20Fundamentos%20de%20la%20inform%C3%A1tica/images/Figura%2073.%20MacOS%20finder%20view.png" alt="Walden" width="250" height="auto"/>
+    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/A1.%20Fundamentos%20de%20la%20inform%C3%A1tica/images/Figura%2073.%20MacOS%20finder%20view.png" alt="Walden" width="550" height="auto"/>
     <p><em>Figura 50: MacOS finder view. Fuente: Computer Science for the IB Diploma 2025 (Baumgarten P.)</em></p>
   </div>
 
   <div style="text-align: center;">
-    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/A1.%20Fundamentos%20de%20la%20inform%C3%A1tica/images/Figura%2074.%20Los%20tipos%20de%20archivo%20m%C3%A1s%20comunes.png" alt="Walden" width="350" height="auto"/>
+    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/A1.%20Fundamentos%20de%20la%20inform%C3%A1tica/images/Figura%2074.%20Los%20tipos%20de%20archivo%20m%C3%A1s%20comunes.png" alt="Walden" width="550" height="auto"/>
     <p><em>Figura 51: Tipología de archivos. Fuente: Computer Science for the IB Diploma 2025 (Baumgarten P.)</em></p>
   </div>
   
