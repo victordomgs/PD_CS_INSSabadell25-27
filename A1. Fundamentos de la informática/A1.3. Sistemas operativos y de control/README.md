@@ -247,8 +247,8 @@ La interfaz gráfica permite a los usuarios personalizar su entorno informático
 La **virtualización** es una característica clave de los sistemas operativos modernos que permite ejecutar múltiples **máquinas virtuales (VM)** en una sola máquina física. Cada máquina virtual funciona de manera independiente, con su propio sistema operativo y aplicaciones. El sistema operativo gestiona este proceso mediante un hipervisor, que asigna tiempo de CPU, memoria y almacenamiento a cada VM, garantizando un uso eficiente de los recursos y permitiendo que cada máquina virtual funcione como si estuviera en un equipo físico independiente.
 
 > [!NOTE] 
-> **Hipervisor:** software que crea y gestiona máquinas virtuales permitiendo que múltiples sistemas operativos se ejecuten simultáneamente en una sola máquina física, compartiendo los recursos de hardware subyacentes.
-> **Balanceo de carga (load balancing):** proceso de distribución del tráfico de red o de aplicaciones entre varios servidores o recursos para garantizar un rendimiento, fiabilidad y disponibilidad óptimos, evitando que un único servidor se sobrecargue.
+> - **Hipervisor:** software que crea y gestiona máquinas virtuales permitiendo que múltiples sistemas operativos se ejecuten simultáneamente en una sola máquina física, compartiendo los recursos de hardware subyacentes.
+> - **Balanceo de carga (load balancing):** proceso de distribución del tráfico de red o de aplicaciones entre varios servidores o recursos para garantizar un rendimiento, fiabilidad y disponibilidad óptimos, evitando que un único servidor se sobrecargue.
 
 La virtualización mejora la seguridad y la estabilidad al aislar las máquinas virtuales entre sí, evitando que los problemas de una VM afecten a las demás. También permite la creación de **instantáneas (snapshots)** y copias de seguridad, lo que posibilita guardar el estado actual de una máquina virtual y restaurarlo si es necesario. Las **migraciones en vivo**, que trasladan máquinas virtuales de un host físico a otro sin interrumpir los servicios, son otra característica fundamental que facilita el balanceo de carga y el mantenimiento del hardware.
 
@@ -372,7 +372,7 @@ Un ejemplo de una **cola prioritaria en un aeropuerto**, donde los pasajeros con
 
 En este ejemplo, P1 y P4, ambos procesos de alta prioridad, se ejecutan primero. Una vez finalizados los procesos de alta prioridad, se ejecuta el proceso de prioridad media P2, seguido del proceso de baja prioridad P3.
 
-| Proceso | Tiempo de llegada | Nivel de prioridad |
+| Process | Time | Priority |
 |--------|------------------|-------------------|
 | P1 | 0 | Alta |
 | P2 | 1 | Media |
@@ -400,7 +400,7 @@ El planificador de la CPU selecciona primero los procesos de la cola de mayor pr
 
 En este ejemplo, los procesos de la cola de alta prioridad (P1 y P2) se planifican primero utilizando round robin. Ambos procesos se ejecutan y finalizan. A continuación, el planificador pasa a la cola de prioridad media (P3) y después a la cola de baja prioridad (P4), solo cuando la cola de alta prioridad no tiene procesos listos para ejecutarse. No obstante, el sistema comprueba con frecuencia la cola de alta prioridad, lo que explica por qué P2 (alta prioridad) vuelve a ejecutarse después de P4 (baja prioridad).
 
-| Cola | Prioridad | Tipo de proceso | Algoritmo de planificación | Cola de procesos |
+| Queue | Priority | process type | Algorithm | Queue |
 |----|-----------|----------------|----------------------------|------------------|
 | Q1 | Alta | Interactivos | Round Robin (cuanto = 2) | P1, P2 |
 | Q2 | Media | Batch (por lotes) | FCFS | P3 |
@@ -413,3 +413,92 @@ En este ejemplo, los procesos de la cola de alta prioridad (P1 y P2) se planific
 
 > [!CAUTION]
 > No olvides que el **cambio de contexto (context switching)** —cuando la CPU cambia de una tarea a otra— puede ralentizar el sistema. Aunque permite la multitarea, un exceso de cambios de contexto puede reducir la eficiencia del sistema, ya que la CPU debe dedicar tiempo a guardar y restaurar el estado de las tareas en lugar de ejecutar procesos.
+
+<br>
+
+## A1.3.4. Evalúa el uso del manejo de interrupciones y del sondeo
+
+La **gestión de interrupciones** y el **sondeo (polling)** son dos técnicas fundamentales que utilizan los sistemas operativos para gestionar la comunicación entre la CPU y los dispositivos periféricos. Cada método presenta sus propias ventajas e inconvenientes, que pueden afectar al rendimiento y a la eficiencia del sistema en función del contexto en el que se utilicen.
+
+### Gestión de interrupciones (Interrupt handling)
+
+La **gestión de interrupciones** es un mecanismo mediante el cual los dispositivos periféricos avisan a la CPU para captar su atención y solicitar servicio. Cuando ocurre un evento, como la entrada de datos desde un teclado o la llegada de información desde una interfaz de red, el dispositivo envía una **señal de interrupción** a la CPU. En ese momento, la CPU pausa la operación que estaba realizando, guarda su estado actual y ejecuta una **rutina de servicio de interrupción (ISR)** para atender el evento.
+
+Este método permite que la CPU permanezca inactiva o ejecutando otras tareas hasta que realmente ocurre un evento, lo que lo hace muy eficiente en entornos donde los eventos se producen de forma esporádica o impredecible. La gestión de interrupciones garantiza que la CPU solo atienda eventos cuando es necesario, reduciendo el desperdicio de ciclos de CPU dedicados a comprobar constantemente si ha ocurrido algo.
+
+> [!NOTE] 
+> - **Rutina de servicio de interrupción (ISR):** función especial de un sistema informático que se ejecuta automáticamente en respuesta a una señal de interrupción, encargándose de tareas específicas, como procesar la entrada de dispositivos de hardware o gestionar eventos del sistema, antes de devolver el control al programa principal.
+> - **Latencia:** retardo entre el inicio de una acción y la respuesta correspondiente; a menudo se refiere al tiempo que tarda la información en viajar desde su origen hasta su destino dentro de un sistema o una red.
+
+Sin embargo, la aparición frecuente de interrupciones puede introducir **sobrecarga de procesamiento** debido al cambio de contexto que implican. Cada vez que se gestiona una interrupción, la CPU debe guardar su estado y restaurarlo posteriormente, lo que puede consumir tiempo y recursos si las interrupciones son demasiado frecuentes. Además, gestionar un gran volumen de interrupciones puede aumentar el consumo energético, un aspecto especialmente crítico en dispositivos alimentados por batería.
+
+A pesar de estos posibles inconvenientes, la eficiencia de la gestión de interrupciones para tratar eventos esporádicos y minimizar el tiempo de inactividad de la CPU la convierte en el método preferido en muchos sistemas en tiempo real e interactivos, donde es esencial una respuesta inmediata a los eventos.
+
+> [!TIP]
+> Una **interrupción** es como el timbre de una puerta que suena mientras estás trabajando. Dejas lo que estás haciendo (pausas el proceso actual), atiendes la puerta (gestionas la interrupción) y luego vuelves a tu tarea. El sistema operativo gestiona estas interrupciones de forma eficiente para que tu trabajo (el proceso principal) no se retrase de manera significativa.
+
+### Sondeo (Polling)
+
+El **sondeo (polling)**, por el contrario, consiste en que la CPU comprueba periódicamente cada dispositivo periférico para verificar si requiere atención. Este método es sencillo y puede ser eficiente en sistemas donde los eventos ocurren a intervalos regulares y predecibles. El sondeo garantiza una **latencia controlada**, ya que la CPU revisa los dispositivos en momentos predeterminados, lo que lo hace adecuado para aplicaciones en tiempo real donde una respuesta puntual es crítica. Además, el polling es fácil de implementar y proporciona un mecanismo simple para asegurar que los dispositivos se revisen de forma regular.
+
+No obstante, el sondeo puede generar una **sobrecarga significativa de procesamiento** en la CPU, ya que esta dedica una parte considerable del tiempo a comprobar repetidamente los dispositivos en lugar de realizar trabajo útil. Esta comprobación continua consume muchos recursos y puede reducir la eficiencia general del sistema.
+
+Además, el sondeo es menos eficiente desde el punto de vista energético en comparación con la gestión de interrupciones, ya que la CPU permanece activa incluso cuando no hay eventos que procesar. Esta actividad constante puede agotar la batería de los dispositivos portátiles más rápidamente que en sistemas que utilizan interrupciones. En entornos donde la frecuencia de los eventos es baja o impredecible, el polling puede resultar muy ineficiente y derrochador, consumiendo ciclos de CPU sin detectar necesariamente nuevos eventos.
+
+### Interrupciones vs sondeo (Interrupts vs Polling)
+
+| Criterio | Interrupciones | Sondeo (Polling) |
+|--------|----------------|------------------|
+| Frecuencia de eventos | Eficiente para eventos poco frecuentes o impredecibles, ya que la CPU solo responde cuando ocurre un evento | Más efectivo para eventos regulares y predecibles, ya que la CPU comprueba los dispositivos a intervalos fijos |
+| Sobrecarga de procesamiento de la CPU | Baja sobrecarga para eventos poco frecuentes, pero puede aumentar con interrupciones de alta frecuencia debido al cambio de contexto | Mayor sobrecarga debido a la comprobación constante de los dispositivos, consumiendo ciclos de CPU incluso cuando no hay eventos |
+| Fuente de energía | Más eficiente energéticamente, especialmente en dispositivos alimentados por batería, ya que la CPU permanece inactiva hasta que ocurre un evento | Menos eficiente energéticamente, ya que la CPU permanece activa y comprueba continuamente los dispositivos, aumentando el consumo |
+| Previsibilidad de eventos | Ideal para eventos impredecibles, ya que el sistema responde inmediatamente cuando ocurre un evento | Adecuado para eventos predecibles, garantizando comprobaciones regulares en intervalos establecidos |
+| Latencia controlada | Puede ofrecer tiempos de respuesta rápidos, pero si las interrupciones son demasiado frecuentes puede haber variabilidad en la respuesta | Proporciona latencia controlada y tiempos de respuesta predecibles, al realizarse comprobaciones periódicas |
+| Seguridad | Potencialmente más seguro, ya que el sistema puede responder rápidamente a eventos críticos, reduciendo la ventana de actividad maliciosa | Menos seguro si los intervalos de sondeo son largos, ya que puede retrasarse la detección de eventos críticos |
+
+La elección entre **gestión de interrupciones** y **sondeo** depende de los requisitos y limitaciones específicas del sistema. La gestión de interrupciones suele ser más eficiente para eventos esporádicos y en dispositivos alimentados por batería, aunque puede introducir sobrecarga cuando los eventos son muy frecuentes. El sondeo ofrece una latencia predecible y es sencillo de implementar, pero puede provocar ineficiencias y un mayor consumo de energía. Comprender los compromisos entre ambos métodos es fundamental para diseñar sistemas eficaces y eficientes.
+
+> [!CAUTION]
+> Recuerda que el contexto específico es muy importante a la hora de decidir si el sondeo (polling) o la gestión de interrupciones es la mejor solución para un sistema. No se trata de una elección simple en la que uno sea siempre mejor que el otro. Las interrupciones son ideales para eventos que ocurren de forma impredecible, mientras que el sondeo es más adecuado para eventos regulares y predecibles. Asegúrate de comprender bien la diferencia para poder elegir el método correcto en cada situación.
+
+### Escenarios del mundo real
+
+#### Ratón y teclado
+
+Cuando un usuario mueve el ratón o pulsa una tecla, estos dispositivos generan señales de interrupción que hacen que la CPU pause inmediatamente sus tareas actuales y ejecute la rutina de servicio de interrupción (ISR) correspondiente. Esto garantiza que las entradas del usuario se procesen en tiempo real, proporcionando una respuesta inmediata y una interacción fluida. Por ejemplo, al escribir, cada pulsación de tecla genera una interrupción que el sistema operativo gestiona de forma inmediata, asegurando que los caracteres aparezcan en pantalla sin retrasos.
+
+Por el contrario, usar sondeo para estos dispositivos obligaría a la CPU a comprobar continuamente el estado del ratón y el teclado, lo que provocaría una sobrecarga innecesaria de procesamiento y un mayor consumo de energía, especialmente en dispositivos alimentados por batería como los portátiles. Además, el sondeo podría generar respuestas más lentas si la CPU está ocupada con otras tareas cuando se produce una entrada del usuario.
+
+En sistemas embebidos básicos, como terminales sencillos de introducción de datos o quioscos, donde la interacción del usuario es poco frecuente y el sistema permanece mayoritariamente inactivo, el sondeo puede ser suficiente. Comprobar periódicamente la entrada del usuario simplifica el diseño del sistema y evita la sobrecarga asociada a la gestión de interrupciones. Esto es aceptable en entornos de baja actividad donde una respuesta inmediata no es crítica.
+
+#### Comunicaciones de red
+
+Cuando llegan paquetes de datos a una tarjeta de red (NIC), se generan interrupciones que avisan a la CPU para procesar inmediatamente los datos entrantes. Esta gestión rápida garantiza que los datos se reciban, procesen y entreguen a la aplicación correspondiente con eficiencia, manteniendo un buen rendimiento de red. Por ejemplo, durante una videoconferencia, las interrupciones permiten procesar audio y vídeo en tiempo real, asegurando una latencia mínima y una comunicación de alta calidad.
+
+Si se utilizara sondeo en las comunicaciones de red, la CPU tendría que comprobar continuamente la NIC en busca de nuevos datos, lo que aumentaría la sobrecarga de procesamiento y podría provocar la pérdida de paquetes si la CPU está ocupada con otras tareas. Esto daría lugar a retrasos, un peor rendimiento de red y un mayor consumo de energía, especialmente en dispositivos como smartphones o tabletas.
+
+En escenarios donde el tráfico de red es mínimo y predecible, como en un sistema de monitorización remota que envía pequeños paquetes de datos de forma periódica, el sondeo puede resultar más eficiente. Comprobar la actividad de red a intervalos regulares reduce la complejidad de la gestión de interrupciones y es suficiente para cubrir necesidades de comunicación poco frecuentes y previsibles.
+
+#### Operaciones de entrada/salida en disco
+
+Cuando una unidad de disco completa una operación de lectura o escritura, genera una interrupción que avisa a la CPU para gestionar inmediatamente la transferencia de datos. Este enfoque permite que la CPU ejecute otras tareas mientras espera a que finalice la operación de disco, mejorando la eficiencia general del sistema. Por ejemplo, al guardar un archivo, la CPU puede continuar ejecutando otras aplicaciones hasta que el disco indique que la escritura ha terminado.
+
+Si se utilizara sondeo para las operaciones de E/S de disco, la CPU tendría que comprobar continuamente el estado de la unidad, lo que supondría una sobrecarga considerable y una pérdida de eficiencia. Se desperdiciarían muchos ciclos de CPU en comprobaciones repetidas, especialmente durante operaciones largas, provocando un peor rendimiento del sistema y un mayor consumo de energía.
+
+En sistemas donde el acceso al disco es predecible e infrecuente, como un registrador de datos (data logger) que escribe información en disco a intervalos fijos, el sondeo puede ser una opción adecuada. Comprobar la disponibilidad del disco antes de escrituras programadas simplifica la implementación y elimina la complejidad asociada a las interrupciones.
+
+#### Sistemas embebidos
+
+Los sistemas embebidos, como los utilizados en unidades de control de automóviles o en maquinaria industrial, a menudo necesitan responder rápidamente a señales de sensores y eventos externos. Por ejemplo, en un sistema de airbag de un vehículo, los sensores que detectan una colisión generan interrupciones que provocan el despliegue inmediato de los airbags. Esta respuesta rápida es crucial para la seguridad y la eficacia del sistema.
+
+Usar sondeo en este tipo de escenarios obligaría a la CPU a comprobar constantemente el estado de los sensores, aumentando la sobrecarga de procesamiento y con el riesgo de no detectar eventos críticos si la CPU está ocupada con otras tareas. En aplicaciones sensibles al tiempo, este retraso podría tener consecuencias catastróficas.
+
+En situaciones donde los eventos ocurren a intervalos regulares y predecibles, y la sobrecarga de las interrupciones no está justificada, el sondeo puede ser más adecuado. Por ejemplo, en un sistema de control climático de un edificio, los sensores de temperatura pueden comprobarse periódicamente para mantener condiciones constantes, haciendo del sondeo una opción ventajosa.
+
+#### Sistemas en tiempo real
+
+En los sistemas en tiempo real, la elección entre sondeo e interrupciones depende de los requisitos concretos de la aplicación. Aunque las interrupciones suelen preferirse por su rápida capacidad de respuesta, existen casos en los que el sondeo resulta más apropiado.
+
+Por ejemplo, en un sistema en tiempo real que controla un robot industrial que realiza tareas repetitivas a intervalos fijos, el sondeo puede ser más predecible y fácil de gestionar. El robot puede comprobar sensores y ajustar actuadores en momentos precisos y regulares, asegurando una ejecución controlada de las tareas. En este caso, el sondeo simplifica el diseño y evita la sobrecarga asociada a cambios de contexto frecuentes provocados por interrupciones.
+
+En cambio, en sistemas críticos como el despliegue de airbags en automóviles, la gestión de interrupciones es imprescindible. El sistema debe responder de inmediato a señales que indican una colisión. Cuando los sensores detectan una desaceleración brusca o un impacto, generan interrupciones que hacen que la CPU ejecute instantáneamente la rutina de despliegue del airbag. En este tipo de aplicaciones críticas, la capacidad de las interrupciones para proporcionar una respuesta inmediata y de alta prioridad las convierte en la opción preferente, ya que cualquier retraso podría tener consecuencias graves.
