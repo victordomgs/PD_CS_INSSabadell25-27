@@ -207,7 +207,7 @@ En entornos donde el uso de recursos debe facturarse a usuarios o departamentos 
 Al ofrecer elementos visuales como ventanas, iconos, menús y punteros, el sistema operativo proporciona un entorno fácil de usar para interactuar con el ordenador y permite al usuario ejecutar comandos, gestionar archivos y ejecutar aplicaciones.
 
   <div style="text-align: center;">
-    <img src="" alt="Walden" width="550" height="auto"/>
+    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/A1.%20Fundamentos%20de%20la%20inform%C3%A1tica/images/Figura%2077.%20Ubuntu%20GUI.png" alt="Walden" width="550" height="auto"/>
     <p><em>Figura 54: Ubuntu GUI. Fuente: Computer Science for the IB Diploma 2025 (Baumgarten P.)</em></p>
   </div>
 
@@ -230,7 +230,7 @@ La interfaz gráfica incluye funciones que mejoran la accesibilidad para usuario
 Los **atajos de teclado** permiten realizar acciones rápidamente sin depender del ratón o del panel táctil, lo que beneficia a usuarios con movilidad reducida.
 
   <div style="text-align: center;">
-    <img src="" alt="Walden" width="550" height="auto"/>
+    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/A1.%20Fundamentos%20de%20la%20inform%C3%A1tica/images/Figura%2078.%20MacOS%20accesibilidad.png" alt="Walden" width="550" height="auto"/>
     <p><em>Figura 55: Accesibilidad MacOS. Fuente: Computer Science for the IB Diploma 2025 (Baumgarten P.)</em></p>
   </div>
 
@@ -280,7 +280,7 @@ El método **first come, first served (FCFS)** es uno de los algoritmos de plani
 La simplicidad de FCFS hace que sea fácil de implementar y de comprender. Sin embargo, presenta algunos inconvenientes, como el **efecto convoy**, en el que procesos cortos pueden verse retrasados por procesos de larga duración, lo que provoca un aumento del tiempo de espera y una menor productividad del sistema. Este método es **no apropiativo (non-preemptive)**, lo que significa que, una vez que un proceso ha sido asignado a la CPU, no puede ser interrumpido hasta que finalice, lo que puede causar ineficiencias en determinados escenarios.
 
   <div style="text-align: center;">
-    <img src="" alt="Walden" width="550" height="auto"/>
+    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/A1.%20Fundamentos%20de%20la%20inform%C3%A1tica/images/Figura%2079.%20FCFS.png" alt="Walden" width="550" height="auto"/>
     <p><em>Figura 56: FCFS. Fuente: Computer Science for the IB Diploma 2025 (Baumgarten P.)</em></p>
   </div>
 
@@ -298,7 +298,7 @@ En este ejemplo, P1 llega primero y se ejecuta inmediatamente, seguido de P2 y P
 | Llega P3 | P1, P2, P3 |
 
   <div style="text-align: center;">
-    <img src="" alt="Walden" width="550" height="auto"/>
+    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/A1.%20Fundamentos%20de%20la%20inform%C3%A1tica/images/Figura%2080.%20Orden%20de%20procesos.png" alt="Walden" width="550" height="auto"/>
     <p><em>Figura 57: Ejecución de procesos. Fuente: Computer Science for the IB Diploma 2025 (Baumgarten P.)</em></p>
   </div>
 
@@ -309,6 +309,11 @@ En este ejemplo, P1 llega primero y se ejecuta inmediatamente, seguido de P2 y P
 La principal ventaja de la planificación round robin es que garantiza un alto nivel de **capacidad de respuesta**, ya que ningún proceso puede monopolizar la CPU durante un periodo prolongado. Este enfoque es especialmente eficaz en sistemas de tiempo compartido, donde múltiples usuarios o aplicaciones necesitan interactuar con la CPU de forma frecuente.
 
 La duración del **cuanto de tiempo** es un factor crítico: si es demasiado corto, el sistema pierde eficiencia debido al exceso de cambios de contexto; si es demasiado largo, el comportamiento del algoritmo se asemeja al de **FCFS**, perdiendo sus ventajas en cuanto a respuesta y equidad.
+
+  <div style="text-align: center;">
+    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/A1.%20Fundamentos%20de%20la%20inform%C3%A1tica/images/Figura%2081.%20Round%20Robin.png" alt="Walden" width="550" height="auto"/>
+    <p><em>Figura 58: Round Robin. Fuente: Computer Science for the IB Diploma 2025 (Baumgarten P.)</em></p>
+  </div>
 
 | Ventajas | Desventajas |
 |--------|-------------|
@@ -335,8 +340,8 @@ El ciclo se repite:
 | Llega P3 | P1, P2, P3 |
 
   <div style="text-align: center;">
-    <img src="" alt="Walden" width="550" height="auto"/>
-    <p><em>Figura 58: Ejecución de procesos. Fuente: Computer Science for the IB Diploma 2025 (Baumgarten P.)</em></p>
+    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/A1.%20Fundamentos%20de%20la%20inform%C3%A1tica/images/Figura%2082.%20Orden%20de%20procesos%202.png" alt="Walden" width="550" height="auto"/>
+    <p><em>Figura 59: Ejecución de procesos. Fuente: Computer Science for the IB Diploma 2025 (Baumgarten P.)</em></p>
   </div>
 
 ### Planificación por prioridades (Priority Scheduling)
@@ -353,8 +358,8 @@ El objetivo principal de la planificación por prioridades es garantizar que las
 Para reducir este problema, algunos sistemas implementan el **envejecimiento (ageing)**, una técnica que incrementa gradualmente la prioridad de los procesos que llevan mucho tiempo esperando, asegurando que finalmente obtengan acceso a la CPU.
 
   <div style="text-align: center;">
-    <img src="" alt="Walden" width="550" height="auto"/>
-    <p><em>Figura 59: Cola de prioridad. Fuente: Computer Science for the IB Diploma 2025 (Baumgarten P.)</em></p>
+    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/A1.%20Fundamentos%20de%20la%20inform%C3%A1tica/images/Figura%2083.%20Cola%20de%20prioridad.png" alt="Walden" width="550" height="auto"/>
+    <p><em>Figura 60: Cola de prioridad. Fuente: Computer Science for the IB Diploma 2025 (Baumgarten P.)</em></p>
   </div>
 
 Un ejemplo de una **cola prioritaria en un aeropuerto**, donde los pasajeros con mayor prioridad (como los viajeros de primera clase o las personas con discapacidad) reciben un servicio más rápido.
@@ -375,8 +380,8 @@ En este ejemplo, P1 y P4, ambos procesos de alta prioridad, se ejecutan primero.
 | P4 | 3 | Alta |
 
   <div style="text-align: center;">
-    <img src="" alt="Walden" width="550" height="auto"/>
-    <p><em>Figura 60: Ejecución de procesos. Fuente: Computer Science for the IB Diploma 2025 (Baumgarten P.)</em></p>
+    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/A1.%20Fundamentos%20de%20la%20inform%C3%A1tica/images/Figura%2084.%20Orden%20de%20procesos%203.png" alt="Walden" width="550" height="auto"/>
+    <p><em>Figura 61: Ejecución de procesos. Fuente: Computer Science for the IB Diploma 2025 (Baumgarten P.)</em></p>
   </div>
 
 ### Planificación por colas multinivel (Multilevel Queue Scheduling)
@@ -402,8 +407,8 @@ En este ejemplo, los procesos de la cola de alta prioridad (P1 y P2) se planific
 | Q3 | Baja | Segundo plano / inactivos | FCFS | P4 |
 
   <div style="text-align: center;">
-    <img src="" alt="Walden" width="550" height="auto"/>
-    <p><em>Figura 61: Ejecución de procesos. Fuente: Computer Science for the IB Diploma 2025 (Baumgarten P.)</em></p>
+    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/A1.%20Fundamentos%20de%20la%20inform%C3%A1tica/images/Figura%2085.%20Orden%20de%20procesos%204.png" alt="Walden" width="550" height="auto"/>
+    <p><em>Figura 62: Ejecución de procesos. Fuente: Computer Science for the IB Diploma 2025 (Baumgarten P.)</em></p>
   </div>
 
 > [!CAUTION]
