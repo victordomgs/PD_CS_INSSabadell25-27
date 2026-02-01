@@ -246,7 +246,7 @@ UDP es un protocolo sin conexión. Los datos se transmiten, pero no existe garan
 
 ### Protocolo de Transferencia de Hipertexto (HTTP)
 
-HTTP es la base de la World Wide Web. Es el protocolo utilizado para la transmisión de documentos hipermedia, como HTML, así como archivos de texto asociados (JavaScript, CSS) o archivos binarios (imágenes, entre otros).
+HTTP es la base de la **World Wide Web**. Es el protocolo utilizado para la transmisión de documentos hipermedia, como HTML, así como archivos de texto asociados (JavaScript, CSS) o archivos binarios (imágenes, entre otros).
 
 HTTP es un protocolo sin estado (stateless). Esto significa que cada comando se ejecuta de forma independiente de cualquier comando previo, sin memoria ni conocimiento de ellos. El cliente (como un navegador web) envía solicitudes al servidor web, que luego responde con el recurso solicitado o con un código de error.
 
@@ -265,3 +265,83 @@ La respuesta asociada del servidor web sigue a continuación. El servidor comien
     <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/A2.%20Redes/images/Figura%2011.jpg" alt="HTTP" width="500" height="auto"/>
     <p><em>Figura 11: Protocolo HTTP. Fuente: Computer Science IB. (Paul Baumgarten, Ioana Ganea, Carl Turland)</em></p>
   </div>
+
+Este es un ejemplo sencillo; en la práctica, también suele incluirse información de autenticación, cookies y otros datos como parte de la solicitud o de la respuesta.
+
+Puedes experimentar de forma programática enviando tus propias solicitudes HTTP y recibiendo las respuestas con Python utilizando la biblioteca requests. Por ejemplo, un programa sencillo podría verse así:
+
+```python
+import requests
+response = requests.get("https://www.example.com")
+print(response.status_code)
+print(response.text)
+```
+
+La biblioteca **requests** es muy potente e incluso permite descargar o subir archivos de texto y archivos binarios.
+
+Si te gustaría crear tu propio servidor web que reciba y procese solicitudes HTTP, puedes echar un vistazo a la biblioteca Flask de Python. Una aplicación sencilla de servidor web podría parecerse al siguiente código:
+
+```python
+from flask import Flask, render_template, request, redirect, send_file
+
+app = Flask(__name__)
+app.config["SECRET_KEY"] = "code used to secure cookies from tampering"
+
+# Return templates/index.html
+@app.route("/")
+def index_page():
+    return render_template("index.html")
+
+# Return a binary file
+@app.route("/promotional_video")
+def promotional_video():
+    return send_file("promotional_video.mp4")
+
+# Use the URL path to supply a parameter
+@app.route("/user/<userid>")
+def users(userid):
+    return "User page for " + userid
+
+# Get values from an HTML form
+@app.route("/page2", methods=["GET", "POST"])
+def page2():
+    # HTML with <input name='person'> will create a request.values['person']
+    form = dict(request.values)  # Convert all values into a dictionary
+    person = form["person"]
+    return f"Hello, {person}, welcome to my website"
+
+# Start the web server. These should be the last lines
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=80, debug=True)
+```
+
+### Protocolo Seguro de Transferencia de Hipertexto (HTTPS)
+
+HTTPS es la versión segura del Protocolo de Transferencia de Hipertexto. Está diseñado para garantizar que la comunicación esté cifrada entre el cliente y el servidor, ayudando a proteger contra ataques de intermediario (*man-in-the-middle*) y escuchas no autorizadas. Existen tres características clave que HTTPS ofrece frente al HTTP original:
+
+- **Cifrado:** normalmente se logra mediante el uso de los métodos de cifrado SSL o TLS.
+- **Autenticación:** el servidor emite un certificado firmado digitalmente para que la aplicación cliente pueda verificar que se está conectando al servidor correcto (por ejemplo, para proteger contra un impostor que se haga pasar por el sitio web de tu banco).
+- **Integridad de datos:** garantiza que los datos enviados y recibidos no se modifiquen durante la transmisión.
+
+Estas ideas se analizan con más detalle en la Sección A2.4.4.
+
+### Protocolo de Configuración Dinámica de Host (DHCP)
+
+  <div style="text-align: center;">
+    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/A2.%20Redes/images/Figura%2012.jpg" alt="DHCP" width="600" height="auto"/>
+    <p><em>Figura 12: Protocolo DHCP. Fuente: Computer Science IB. (Paul Baumgarten, Ioana Ganea, Carl Turland)</em></p>
+  </div>
+
+**DHCP es un protocolo de gestión de red**. Se utiliza más comúnmente cuando una computadora se conecta por primera vez a una red (por ejemplo, al iniciar el sistema). DHCP es el proceso mediante el cual el equipo solicita y recibe una dirección IP válida para su uso en esa red. En muchas redes domésticas y de pequeñas oficinas, el dispositivo conocido comúnmente como “router” también ejecuta un servidor DHCP, proporcionando direcciones IP a los dispositivos que se conectan a él dentro del hogar.
+
+El dispositivo cliente envía por difusión (es decir, envía un mensaje visible para todos los dispositivos de la red) un mensaje **DHCP Discover**, en el que proporciona su dirección MAC de hardware y cualquier preferencia relacionada con la subred, el router, el servidor DNS o el tiempo de concesión (lease) de la dirección IP.
+
+Un servidor DHCP responde con un mensaje **DHCP Offer** para asignar una dirección IP dentro de un conjunto definido de direcciones disponibles. Las direcciones IP se “alquilan” a los dispositivos durante un periodo específico, tras el cual el dispositivo debe solicitar la renovación del alquiler. Este proceso permite la reconfiguración y reutilización de direcciones. La oferta también incluye información sobre la subred, el servidor de nombres de dominio (DNS) y otros parámetros.
+
+En entornos domésticos o de pequeñas oficinas, existen varios rangos de direcciones reservados para el uso en redes internas privadas. Estas direcciones no se utilizan en servidores públicos válidos y no son enrutables en Internet público. Estos rangos de direcciones son:
+
+- 10.0.0.0 a 10.255.255.255
+- 172.16.0.0 a 172.31.255.255
+- 192.168.0.0 a 192.168.255.255
+
+Las redes que utilizan estas direcciones para sus dispositivos internos dependen de servicios como la **traducción de direcciones de red (NAT)** para conectarse a Internet público. Consulta la Sección A2.3.1 para una explicación más detallada sobre este tema.
