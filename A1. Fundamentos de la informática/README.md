@@ -111,3 +111,11 @@ Nivel Medio: 11 horas.
 ### A1.3.4 Evaluar el uso del sondeo y el manejo de interrupciones
 - Frecuencia de los eventos, sobrecarga de procesamiento de la CPU, fuentes de alimentación (batería o red eléctrica), previsibilidad de los eventos, latencia controlada y problemas de seguridad
 - Las situaciones del mundo real pueden incluir entradas de teclado y mouse, comunicaciones de red, operaciones de entrada/salida de disco, sistemas integrados y sistemas de tiempo real
+
+### Preguntas transversales
+
+- ¿Cómo podría construirse una declaración condicional utilizando puertas lógicas booleanas en un circuito (B2)?
+- ¿Qué función desempeña la programación de tareas en un sistema operativo a la hora de gestionar el tráfico y las peticiones de la red (A2.3.3, A2.4)?
+- ¿Cómo afecta la asignación de recursos en un sistema operativo al rendimiento y la estabilidad de la red (A2)?
+- ¿Qué función desempeñan las GPU en las tareas computacionales no gráficas (A4)?
+- ¿En qué medida no deben causar daños los sistemas informáticos (TdC)?
