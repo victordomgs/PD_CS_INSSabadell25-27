@@ -162,3 +162,96 @@ Muchas redes domésticas o de pequeñas oficinas pueden tener un único disposit
 
 > [!TIP]  
 > **¡Comprende el propósito!** Existen muchos dispositivos diferentes que desempeñan distintos roles dentro de una red de computadoras. Puede resultar fácil confundirlos porque la mayoría de las redes domésticas tienen un único dispositivo físico que desempeña muchos de estos roles. Concéntrate en comprender el propósito y la funcionalidad de cada tipo de dispositivo. Pregúntate por qué se necesita este tipo de dispositivo y qué problemas resuelve.
+
+### Puerta de enlace (Gateway)
+
+Una puerta de enlace es, como su nombre indica, la puerta o conexión entre dos redes. Estas redes pueden comunicarse utilizando protocolos diferentes, y la puerta de enlace realiza la tarea de traducción necesaria para convertir entre dichos protocolos.
+
+> [!IMPORTANT]
+> **Puerta de enlace (Gateway):** un dispositivo que conecta diferentes redes y gestiona el flujo de tráfico entre ellas; a menudo se utiliza para conectar una red local a Internet.
+
+Por ejemplo, en un entorno doméstico típico en el que la puerta de enlace se conecta al proveedor de servicios de Internet mediante un cable de fibra óptica, puede estar traduciendo entre EPON (Ethernet Passive Optical Network) y Ethernet convencional.
+
+Debido a que convierte entre una red y otra, funciona principalmente en la capa de aplicación del modelo TCP/IP (véase la Sección A2.1.5).
+
+### Cortafuegos por hardware (Hardware firewall)
+
+El cortafuegos por hardware supervisa y permite o bloquea el tráfico de red entrante y saliente basándose en un conjunto predeterminado de reglas de seguridad. Su propósito es actuar como una barrera de protección entre la red local de confianza y la red no confiable de Internet.
+
+> [!IMPORTANT]
+> **Cortafuegos (Firewall):** un sistema de seguridad (hardware o software) que supervisa y controla el tráfico de red entrante y saliente basándose en un conjunto de reglas de seguridad.
+> **Router (enrutador):** un dispositivo que reenvía paquetes de datos entre redes de computadoras, dirigiendo el tráfico por la ruta más eficiente.
+> **Conmutador de red (Switch):** un dispositivo que conecta múltiples dispositivos dentro de un único segmento de una red informática, reenviando los datos únicamente al dispositivo específico al que están destinados.
+
+Las reglas del cortafuegos suelen ser una lista de direcciones IP y/o puertos TCP/UDP para permitir o bloquear tráfico, en función de la dirección o puerto de origen y destino.
+
+Este dispositivo funciona en las capas de transporte e Internet del modelo TCP/IP (véase la Sección A2.1.5).
+
+### Módem
+
+Un módem es un modulador–demodulador. Se utiliza para convertir entre señales digitales y analógicas. Una señal digital se modula para codificar datos digitales en forma analógica, se transmite a través de un medio analógico, como las líneas telefónicas, y luego se demodula en el otro extremo para extraer los datos digitales.
+
+Este dispositivo funciona en la capa física o de interfaz de red del modelo TCP/IP (véase la Sección A2.1.5).
+
+### Tarjeta de interfaz de red (Network Interface Card, NIC)
+
+La tarjeta de interfaz de red es el componente de hardware de un dispositivo individual, como un portátil o un teléfono móvil, que le permite conectarse a la red. Puede ser una tarjeta que requiera la conexión de un cable físico, como par trenzado Ethernet o fibra óptica, o puede tener una antena para conectarse a una red inalámbrica.
+
+Este dispositivo funciona en la capa física o de interfaz de red del modelo TCP/IP (véase la Sección A2.1.5).
+
+### Router (Enrutador)
+
+El router dirige el camino que siguen los paquetes de datos entre redes. Inspecciona la información de dirección de red en la cabecera del paquete para determinar el destino final y utiliza esa información para enviar el paquete por la ruta óptima.
+
+El router suele operar en la capa de interfaz de red del modelo TCP/IP, ya que utiliza direcciones TCP/IP para tomar sus decisiones de enrutamiento (véase la Sección A2.1.5).
+
+### Conmutador (Switch)
+
+Un conmutador de red conecta dispositivos dentro de un único segmento de una red. El switch crea efectivamente una red; es el punto central en una red basada en topología de estrella. Un switch recibe paquetes de datos entrantes y los envía a su destino dentro de la red de área local utilizando direcciones MAC.
+
+El switch opera en la capa de interfaz de red del modelo TCP/IP (véase la Sección A2.1.5).
+
+### Punto de acceso inalámbrico (Wireless Access Point)
+
+Los puntos de acceso inalámbricos conectan dispositivos inalámbricos entre sí para formar una red, de la misma forma que un switch lo hace para una red física. También pueden actuar como extensores de alcance para señales inalámbricas.
+
+Un punto de acceso inalámbrico opera en la capa de interfaz de red del modelo TCP/IP (véase la Sección A2.1.5).
+
+<br>
+
+## A2.1.4 Describir los protocolos de red utilizados para el transporte y la aplicación
+
+### Protocolo de Control de Transmisión (TCP) y Protocolo de Datagramas de Usuario (UDP)
+
+El Protocolo de Control de Transmisión (TCP) y el Protocolo de Datagramas de Usuario (UDP) operan en la capa de transporte del modelo TCP/IP. Es decir, son paquetes que están contenidos dentro de la parte de datos de un paquete IP. Mientras que IP es responsable de llevar un paquete de un sistema informático a otro, TCP o UDP se encargan de llevar los datos de una aplicación a otra.
+
+  <div style="text-align: center;">
+    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/A2.%20Redes/images/Figura%208.jpg" alt="TCP" width="550" height="auto"/>
+    <p><em>Figura 8: Protocolo TCP. Fuente: Computer Science IB. (Paul Baumgarten, Ioana Ganea, Carl Turland)</em></p>
+  </div>
+
+  <div style="text-align: center;">
+    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/A2.%20Redes/images/Figura%209.jpg" alt="UDP" width="550" height="auto"/>
+    <p><em>Figura 9: Protocolo UDP. Fuente: Computer Science IB. (Paul Baumgarten, Ioana Ganea, Carl Turland)</em></p>
+  </div>
+
+Estos protocolos permiten que múltiples aplicaciones compartan una misma conexión de red al mismo tiempo. Por ejemplo, si un servidor ejecuta tanto una aplicación de servidor de correo electrónico como una aplicación de servidor web, el sistema operativo anfitrión necesita un medio para determinar a qué aplicación debe enviar el tráfico entrante para su procesamiento. Aquí es donde entran en juego los números de puerto. Puedes pensar en ellos como extensiones telefónicas o números de apartamento dentro de la dirección de un edificio. Para facilitar aún más esta tarea, la industria ha estandarizado números de puerto predeterminados para aplicaciones de uso común. El Protocolo Simple de Transferencia de Correo (SMTP) utiliza el puerto 587 y el Protocolo de Transferencia de Hipertexto (HTTP) utiliza el puerto 80, mientras que el Protocolo Seguro de Transferencia de Hipertexto (HTTPS) utiliza el 443 y Secure Shell (SSH) utiliza el puerto 22.
+
+> [!IMPORTANT]
+> **Protocolo:** un conjunto de reglas y estándares que definen cómo se transmiten y reciben los datos a través de una red para una aplicación determinada.
+
+TCP es un protocolo orientado a conexión. Esto significa que establece y mantiene una conexión activa con el servidor remoto hasta que los programas de aplicación en ambos extremos han terminado de intercambiar mensajes. TCP garantiza que los datos se entreguen en orden, sin errores, y que se confirme su recepción. Si hay un error en la recepción de un paquete (ya sea porque no llega o porque se corrompe de alguna forma), se vuelve a enviar. El número de secuencia se utiliza para asegurar que los paquetes se reensamblen en el orden correcto por la aplicación receptora, y la suma de comprobación (checksum) se utiliza para garantizar que no se hayan corrompido durante la transmisión.
+
+UDP es un protocolo sin conexión. Los datos se transmiten, pero no existe garantía de fiabilidad ni de orden en la entrega. UDP se utiliza en aplicaciones como el streaming de vídeo, donde mantener la velocidad y estar al día con la transmisión es más importante que perder ocasionalmente algún fotograma o un subconjunto de píxeles.
+
+### Protocolo de Transferencia de Hipertexto (HTTP)
+
+HTTP es la base de la World Wide Web. Es el protocolo utilizado para la transmisión de documentos hipermedia, como HTML, así como archivos de texto asociados (JavaScript, CSS) o archivos binarios (imágenes, entre otros).
+
+HTTP es un protocolo sin estado (stateless). Esto significa que cada comando se ejecuta de forma independiente de cualquier comando previo, sin memoria ni conocimiento de ellos. El cliente (como un navegador web) envía solicitudes al servidor web, que luego responde con el recurso solicitado o con un código de error.
+
+La comunicación HTTP se realiza mediante cadenas de texto Unicode, por lo que es legible por humanos.
+
+Un ejemplo de una solicitud HTTP desde un navegador podría parecerse al siguiente texto. El cliente envía una solicitud GET para un archivo concreto llamado index.html desde el servidor que aloja (www.example.com)[www.example.com].
+
+La respuesta asociada del servidor web sigue a continuación. El servidor comienza indicando que está respondiendo utilizando el protocolo HTTP v1.1 y un código de estado 200, que significa OK (correcto). Si se produce un error, se recibirá un código de estado diferente. Por ejemplo, si el archivo solicitado no se encuentra, se enviará un estado 404.
