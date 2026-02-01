@@ -252,6 +252,6 @@ HTTP es un protocolo sin estado (stateless). Esto significa que cada comando se 
 
 La comunicación HTTP se realiza mediante cadenas de texto Unicode, por lo que es legible por humanos.
 
-Un ejemplo de una solicitud HTTP desde un navegador podría parecerse al siguiente texto. El cliente envía una solicitud GET para un archivo concreto llamado index.html desde el servidor que aloja (www.example.com)[www.example.com].
+Un ejemplo de una solicitud HTTP desde un navegador podría parecerse al siguiente texto. El cliente envía una solicitud GET para un archivo concreto llamado index.html desde el servidor que aloja www.example.com.
 
 La respuesta asociada del servidor web sigue a continuación. El servidor comienza indicando que está respondiendo utilizando el protocolo HTTP v1.1 y un código de estado 200, que significa OK (correcto). Si se produce un error, se recibirá un código de estado diferente. Por ejemplo, si el archivo solicitado no se encuentra, se enviará un estado 404.
