@@ -1,6 +1,6 @@
 # A1. Fundamentos de la informática
 
-Nivel Medio: 11 horas. Nivel Superior: 18 horas.
+Nivel Medio: 11 horas. 
 
 ## Pregunta de orientación
 ¿Qué principios sustentan el funcionamiento de una computadora, desde la funcionalidad de bajo nivel del hardware hasta las interacciones del sistema operativo?
