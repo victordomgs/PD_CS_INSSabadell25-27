@@ -44,7 +44,7 @@ La mayoría de los hogares y muchas LAN corporativas utilizan actualmente una co
 Una **red de área amplia** permite la interconexión de múltiples redes de área local a lo largo de una distancia geográfica mayor. Esta distancia de conexión puede ser dentro de una misma ciudad, entre diferentes ciudades o incluso entre distintos continentes. Por ejemplo, esto podría utilizarse para compartir recursos entre diferentes sucursales de una empresa.
 
   <div style="text-align: center;">
-    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/A2.%20Redes/images/Figura%201.jpg" alt="WAN" width="450" height="auto"/>
+    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/A2.%20Redes/images/Figura%201.jpg" alt="WAN" width="650" height="auto"/>
     <p><em>Figura 1: WAN. Fuente: Computer Science IB. (Paul Baumgarten, Ioana Ganea, Carl Turland)</em></p>
   </div>
 
@@ -72,7 +72,7 @@ Aunque los dispositivos conectados mediante cable USB podrían considerarse part
 Las redes privadas virtuales hacen referencia al uso de infraestructura de red pública para establecer un túnel seguro y privado con fines propios de comunicación. El cifrado permite a los usuarios enviar y recibir datos a través de Internet público como si sus dispositivos informáticos estuvieran conectados directamente a su propia red privada.
 
   <div style="text-align: center;">
-    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/A2.%20Redes/images/Figura%203.jpg" alt="VPN" width="450" height="auto"/>
+    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/A2.%20Redes/images/Figura%203.jpg" alt="VPN" width="650" height="auto"/>
     <p><em>Figura 3: VPN. Fuente: Computer Science IB. (Paul Baumgarten, Ioana Ganea, Carl Turland)</em></p>
   </div>
 
