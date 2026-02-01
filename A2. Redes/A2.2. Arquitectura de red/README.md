@@ -11,11 +11,6 @@
 
 <br>
 
-  <div style="text-align: center;">
-    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/A2.%20Redes/images/Figura%201.jpg" alt="WAN" width="650" height="auto"/>
-    <p><em>Figura 1: WAN. Fuente: Computer Science IB. (Paul Baumgarten, Ioana Ganea, Carl Turland)</em></p>
-  </div>
-
 ## A2.1.1 Describir la finalidad y las características de las redes
 
 La **topología de red** se refiere a la disposición física y la estructura de los nodos y las conexiones dentro de una red.
