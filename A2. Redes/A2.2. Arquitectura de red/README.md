@@ -48,7 +48,7 @@ Los sistemas de malla inalámbrica, como Meshtastic, también han empezado a gan
 En una topología en malla, todos los nodos están interconectados entre sí.
 
   <div style="text-align: center;">
-    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/A2.%20Redes/images/Figura%2014.jpg" alt="Redes" width="650" height="auto"/>
+    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/A2.%20Redes/images/Figura%2014.jpg" alt="Redes" width="550" height="auto"/>
     <p><em>Figura 14: Topología en malla. Fuente: Computer Science IB. (Paul Baumgarten, Ioana Ganea, Carl Turland)</em></p>
   </div>
 
@@ -75,7 +75,7 @@ Los factores a considerar en un enfoque híbrido incluyen:
 - **Coste:** probablemente más alto al inicio, pero generalmente más eficiente a largo plazo.
 
   <div style="text-align: center;">
-    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/A2.%20Redes/images/Figura%2015.jpg" alt="Redes" width="650" height="auto"/>
+    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/A2.%20Redes/images/Figura%2015.jpg" alt="Redes" width="550" height="auto"/>
     <p><em>Figura 15: Topología híbrida. Fuente: Computer Science IB. (Paul Baumgarten, Ioana Ganea, Carl Turland)</em></p>
   </div>
 
@@ -97,7 +97,7 @@ Ventajas:
 - **Seguridad:** es mucho más fácil gestionar los riesgos de seguridad cuando todo se ejecuta desde un punto central.
 
   <div style="text-align: center;">
-    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/A2.%20Redes/images/Figura%2016.jpg" alt="Redes" width="450" height="auto"/>
+    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/A2.%20Redes/images/Figura%2016.jpg" alt="Redes" width="250" height="auto"/>
     <p><em>Figura 16: Cliente-servidor. Fuente: Computer Science IB. (Paul Baumgarten, Ioana Ganea, Carl Turland)</em></p>
   </div>
   
@@ -127,7 +127,7 @@ Ventajas:
 - **Compartición directa:** los servicios pueden proporcionarse directamente de un ordenador a otro, reduciendo cuellos de botella.
 
   <div style="text-align: center;">
-    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/A2.%20Redes/images/Figura%2017.jpg" alt="Redes" width="450" height="auto"/>
+    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/A2.%20Redes/images/Figura%2017.jpg" alt="Redes" width="250" height="auto"/>
     <p><em>Figura 17: Peer-to-peer. Fuente: Computer Science IB. (Paul Baumgarten, Ioana Ganea, Carl Turland)</em></p>
   </div>
   
