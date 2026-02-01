@@ -254,4 +254,14 @@ La comunicación HTTP se realiza mediante cadenas de texto Unicode, por lo que e
 
 Un ejemplo de una solicitud HTTP desde un navegador podría parecerse al siguiente texto. El cliente envía una solicitud GET para un archivo concreto llamado index.html desde el servidor que aloja www.example.com.
 
+  <div style="text-align: center;">
+    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/A2.%20Redes/images/Figura%2010.jpg" alt="HTTP" width="350" height="auto"/>
+    <p><em>Figura 10: Protocolo HTTP. Fuente: Computer Science IB. (Paul Baumgarten, Ioana Ganea, Carl Turland)</em></p>
+  </div>
+
 La respuesta asociada del servidor web sigue a continuación. El servidor comienza indicando que está respondiendo utilizando el protocolo HTTP v1.1 y un código de estado 200, que significa OK (correcto). Si se produce un error, se recibirá un código de estado diferente. Por ejemplo, si el archivo solicitado no se encuentra, se enviará un estado 404.
+
+  <div style="text-align: center;">
+    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/A2.%20Redes/images/Figura%2011.jpg" alt="HTTP" width="350" height="auto"/>
+    <p><em>Figura 11: Protocolo HTTP. Fuente: Computer Science IB. (Paul Baumgarten, Ioana Ganea, Carl Turland)</em></p>
+  </div>
