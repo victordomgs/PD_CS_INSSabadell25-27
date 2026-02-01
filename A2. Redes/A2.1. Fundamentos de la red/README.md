@@ -130,7 +130,7 @@ Las grandes empresas de distribución de contenidos, como Netflix, Spotify y otr
 Este aumento de puntos finales en la red supone un incremento de los vectores de ataque para un adversario, por lo que conlleva una mayor complejidad en términos de seguridad y mantenimiento.
 
   <div style="text-align: center;">
-    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/A2.%20Redes/images/Figura%205.jpg" alt="Redes" width="550" height="auto"/>
+    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/A2.%20Redes/images/Figura%205.jpg" alt="Redes" width="650" height="auto"/>
     <p><em>Figura 5: Computación en el borde. Fuente: Computer Science IB. (Paul Baumgarten, Ioana Ganea, Carl Turland)</em></p>
   </div>
 
@@ -145,7 +145,7 @@ La movilidad que facilitan estas redes permite un acceso cómodo a la informaci�
 En el momento de redactar este texto, muchos países están en proceso de desplegar redes móviles de quinta generación (5G), que aumentarán las velocidades hasta 10 Gbps en picos de datos, con una media de 100 Mbps.
 
   <div style="text-align: center;">
-    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/A2.%20Redes/images/Figura%206.jpg" alt="Redes" width="550" height="auto"/>
+    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/A2.%20Redes/images/Figura%206.jpg" alt="Redes" width="350" height="auto"/>
     <p><em>Figura 6: Redes móviles. Fuente: Universitat Internacional de Valencia</em></p>
   </div>
 
@@ -156,10 +156,9 @@ En el momento de redactar este texto, muchos países están en proceso de desple
 Muchas redes domésticas o de pequeñas oficinas pueden tener un único dispositivo físico que conecta todos sus dispositivos con su proveedor de servicios de Internet. Este único dispositivo suele denominarse coloquialmente router o módem. La realidad es que existen varios dispositivos lógicos funcionando, aunque todos estén integrados en una sola unidad física. Ahora examinaremos las funciones de estos diferentes dispositivos.
 
   <div style="text-align: center;">
-    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/A2.%20Redes/images/Figura%207.jpg" alt="Redes" width="550" height="auto"/>
+    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/A2.%20Redes/images/Figura%207.jpg" alt="Redes" width="650" height="auto"/>
     <p><em>Figura 7: Dipositivos en una pequeña red local. Fuente: Computer Science IB. (Paul Baumgarten, Ioana Ganea, Carl Turland)</em></p>
   </div>
 
 > [!TIP]  
-> **¡Comprende el propósito!
-Existen muchos dispositivos diferentes que desempeñan distintos roles dentro de una red de computadoras. Puede resultar fácil confundirlos porque la mayoría de las redes domésticas tienen un único dispositivo físico que desempeña muchos de estos roles. Concéntrate en comprender el propósito y la funcionalidad de cada tipo de dispositivo. Pregúntate por qué se necesita este tipo de dispositivo y qué problemas resuelve.
+> **¡Comprende el propósito!** Existen muchos dispositivos diferentes que desempeñan distintos roles dentro de una red de computadoras. Puede resultar fácil confundirlos porque la mayoría de las redes domésticas tienen un único dispositivo físico que desempeña muchos de estos roles. Concéntrate en comprender el propósito y la funcionalidad de cada tipo de dispositivo. Pregúntate por qué se necesita este tipo de dispositivo y qué problemas resuelve.
