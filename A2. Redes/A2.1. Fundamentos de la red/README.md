@@ -226,12 +226,12 @@ Un punto de acceso inalámbrico opera en la capa de interfaz de red del modelo T
 El Protocolo de Control de Transmisión (TCP) y el Protocolo de Datagramas de Usuario (UDP) operan en la capa de transporte del modelo TCP/IP. Es decir, son paquetes que están contenidos dentro de la parte de datos de un paquete IP. Mientras que IP es responsable de llevar un paquete de un sistema informático a otro, TCP o UDP se encargan de llevar los datos de una aplicación a otra.
 
   <div style="text-align: center;">
-    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/A2.%20Redes/images/Figura%208.jpg" alt="TCP" width="550" height="auto"/>
+    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/A2.%20Redes/images/Figura%208.jpg" alt="TCP" width="650" height="auto"/>
     <p><em>Figura 8: Protocolo TCP. Fuente: Computer Science IB. (Paul Baumgarten, Ioana Ganea, Carl Turland)</em></p>
   </div>
 
   <div style="text-align: center;">
-    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/A2.%20Redes/images/Figura%209.jpg" alt="UDP" width="550" height="auto"/>
+    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/A2.%20Redes/images/Figura%209.jpg" alt="UDP" width="650" height="auto"/>
     <p><em>Figura 9: Protocolo UDP. Fuente: Computer Science IB. (Paul Baumgarten, Ioana Ganea, Carl Turland)</em></p>
   </div>
 
@@ -255,13 +255,13 @@ La comunicación HTTP se realiza mediante cadenas de texto Unicode, por lo que e
 Un ejemplo de una solicitud HTTP desde un navegador podría parecerse al siguiente texto. El cliente envía una solicitud GET para un archivo concreto llamado index.html desde el servidor que aloja www.example.com.
 
   <div style="text-align: center;">
-    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/A2.%20Redes/images/Figura%2010.jpg" alt="HTTP" width="350" height="auto"/>
+    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/A2.%20Redes/images/Figura%2010.jpg" alt="HTTP" width="500" height="auto"/>
     <p><em>Figura 10: Protocolo HTTP. Fuente: Computer Science IB. (Paul Baumgarten, Ioana Ganea, Carl Turland)</em></p>
   </div>
 
 La respuesta asociada del servidor web sigue a continuación. El servidor comienza indicando que está respondiendo utilizando el protocolo HTTP v1.1 y un código de estado 200, que significa OK (correcto). Si se produce un error, se recibirá un código de estado diferente. Por ejemplo, si el archivo solicitado no se encuentra, se enviará un estado 404.
 
   <div style="text-align: center;">
-    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/A2.%20Redes/images/Figura%2011.jpg" alt="HTTP" width="350" height="auto"/>
+    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/A2.%20Redes/images/Figura%2011.jpg" alt="HTTP" width="500" height="auto"/>
     <p><em>Figura 11: Protocolo HTTP. Fuente: Computer Science IB. (Paul Baumgarten, Ioana Ganea, Carl Turland)</em></p>
   </div>
