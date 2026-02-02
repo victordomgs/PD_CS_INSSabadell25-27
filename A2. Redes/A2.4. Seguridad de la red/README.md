@@ -49,7 +49,7 @@ Dado que NAT modifica la información de direcciones IP en las cabeceras de los 
 El cifrado simétrico es aquel en el que se utiliza la misma clave tanto para cifrar como para descifrar los datos. Esto significa que la clave debe compartirse entre el emisor y el receptor de forma segura.
 
   <div style="text-align: center;">
-    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/A2.%20Redes/images/Figura%2021.jpg" alt="Redes" width="550" height="auto"/>
+    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/A2.%20Redes/images/Figura%2021.jpg" alt="Redes" width="650" height="auto"/>
     <p><em>Figura 21: Cifrado simétrico. Fuente: Computer Science IB. (Paul Baumgarten, Ioana Ganea, Carl Turland)</em></p>
   </div>
 
@@ -68,7 +68,7 @@ Cuando existe una gran distancia física entre el emisor y el receptor, puede re
 El cifrado asimétrico es aquel en el que la clave de seguridad utilizada para cifrar los datos es diferente de la clave utilizada para descifrarlos. Si funciona correctamente, ofrece ventajas significativas, ya que dos partes que desean comunicarse de forma cifrada no necesitan reunirse en privado para intercambiar una clave de cifrado acordada previamente, como ocurre en el cifrado simétrico. En su lugar, la clave de cifrado puede publicarse de forma pública, y cualquier persona que quiera enviar un mensaje puede usarla para cifrar los datos, de modo que solo el destinatario, que posee la clave privada correspondiente, pueda descifrarlos y leerlos.
 
   <div style="text-align: center;">
-    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/A2.%20Redes/images/Figura%2022.jpg" alt="Redes" width="550" height="auto"/>
+    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/A2.%20Redes/images/Figura%2022.jpg" alt="Redes" width="650" height="auto"/>
     <p><em>Figura 22: Cifrado asimétrico. Fuente: Computer Science IB. (Paul Baumgarten, Ioana Ganea, Carl Turland)</em></p>
   </div>
 
@@ -93,7 +93,7 @@ Una vez que la CA está satisfecha con la verificación, utiliza su clave privad
 ### Uso de certificados digitales
 
   <div style="text-align: center;">
-    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/A2.%20Redes/images/Figura%2023.jpg" alt="Redes" width="550" height="auto"/>
+    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/A2.%20Redes/images/Figura%2023.jpg" alt="Redes" width="650" height="auto"/>
     <p><em>Figura 23: Firmar con un certificado digital. Fuente: Computer Science IB. (Paul Baumgarten, Ioana Ganea, Carl Turland)</em></p>
   </div>
   
@@ -108,7 +108,7 @@ Dada la importancia crucial de las claves criptográficas en la economía digita
 Los certificados digitales también son una parte esencial de las tecnologías blockchain, como las criptomonedas. Todas las transacciones en una cadena de bloques están tanto firmadas como sometidas a funciones hash. Los emisores utilizan sus claves privadas para firmar digitalmente las transacciones como parte del proceso de validación que demuestra que son los propietarios de las criptomonedas que están gastando. Esta firma sirve para autenticar la identidad del emisor y garantizar la no repudio de la transacción, es decir, el emisor no puede negar posteriormente haber realizado dicha transacción.
 
   <div style="text-align: center;">
-    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/A2.%20Redes/images/Figura%2024.jpg" alt="Redes" width="550" height="auto"/>
+    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/A2.%20Redes/images/Figura%2024.jpg" alt="Redes" width="400" height="auto"/>
     <p><em>Figura 24: Bob y Alice. Fuente: Computer Science IB. (Paul Baumgarten, Ioana Ganea, Carl Turland)</em></p>
   </div>
 
