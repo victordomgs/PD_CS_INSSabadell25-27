@@ -11,7 +11,7 @@
 
 <br>
 
-## A2.1.1 Describir la finalidad y las características de las redes
+## A2.2.1 Describir las funciones y aplicaciones prácticas de las topologías de red
 
 La **topología de red** se refiere a la disposición física y la estructura de los nodos y las conexiones dentro de una red.
 
