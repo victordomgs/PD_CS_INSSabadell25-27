@@ -85,7 +85,7 @@ NAT ha sido fundamental para el funcionamiento eficaz de Internet, ya que sigue 
 
 #### Ventajas:
 
-- **oste:** el cableado de par trenzado es una tecnología conocida y consolidada desde hace décadas. Está ampliamente disponible y es económico.
+- **Coste:** el cableado de par trenzado es una tecnología conocida y consolidada desde hace décadas. Está ampliamente disponible y es económico.
 - **Complejidad de instalación:** la instalación es considerablemente más sencilla que la de la fibra óptica. En redes domésticas y pequeñas oficinas suele realizarse de forma autónoma, requiriéndose técnicos especializados normalmente solo en entornos exteriores o complejos.
 - **Fiabilidad:** los cables son mucho más flexibles, lo que permite instalarlos de forma segura y fiable en espacios reducidos.
 
