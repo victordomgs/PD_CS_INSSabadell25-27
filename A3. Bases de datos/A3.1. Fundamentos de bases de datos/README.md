@@ -102,7 +102,6 @@ Una clave compuesta es un conjunto de atributos que forma una clave primaria par
 
 ### Relaciones
 
-Relaciones
 Una **relación** se crea cuando existe una asociación lógica entre dos o más tablas de una base de datos, en la que una tabla contiene una o más claves foráneas (o ajenas) que hacen referencia a las claves primarias de las otras tablas. Estas relaciones permiten que las bases de datos relacionales dividan y almacenen los datos en tablas separadas, manteniendo al mismo tiempo la conexión entre sus elementos.
 
 Para garantizar que los datos sean siempre precisos, accesibles y coherentes, las bases de datos relacionales siguen ciertas reglas de integridad. Por ejemplo, la regla de integridad referencial evita que los usuarios o las aplicaciones introduzcan datos inconsistentes. Se trata de una restricción que asegura que ninguna tabla contenga valores de una clave foránea que no coincidan con su clave primaria correspondiente. En otras palabras, garantiza que una clave foránea siempre haga referencia a un registro que existe en otra tabla. Al aplicar restricciones de integridad referencial, los datos se mantienen consistentes durante operaciones como la inserción, eliminación y modificación de tuplas.
