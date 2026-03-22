@@ -229,36 +229,200 @@ La **consistencia de datos** garantiza que los usuarios tengan acceso a informac
 La definición adecuada de las tablas en una base de datos sustenta el diseño de los diagramas ERD apropiados y garantiza la integridad de los datos.
 
 Considerando un sistema de gestión escolar, este podría incluir las siguientes tablas:
-* **ESTUDIANTE** (ID_Estudiante, Nombre, Apellido, FechaNacimiento, Email)
-* **CLUB** (ID_Estudiante, TituloClub, NombreProfesor)
-* **PROFESOR** (ClubProfesor, Ubicacion)
+* **STUDENT** (StudentID, FirstName, LastName, DateOfBirth, Email)
+* **CLUB** (StudentID, ClubTitle, TeacherName)
+* **TEACHER** (TeacherClub, Location)
 
-#### Tabla: ESTUDIANTE
-| ID_Estudiante | Nombre | Apellido | FechaNacimiento | Email |
+#### Tabla: STUDENT
+| StudentID | FirstName | LastName | DateOfBirth | Email |
 | :--- | :--- | :--- | :--- | :--- |
 | 101 | Fatema | Kada | 02/01/2010 | f.kada@email.com |
 | 105 | Alexandru | Buchidau | 05/11/2009 | a.buchidau@email.com |
 | 202 | Kada | Hussein | 07/25/2011 | k.hussein@email.com |
 
-En la tabla **ESTUDIANTE**, el `ID_Estudiante` actúa como **clave primaria** para identificar de forma única cada registro de la tabla.
+En la tabla **STUDENT**, el `StudentID` actúa como **clave primaria** para identificar de forma única cada registro de la tabla.
 
 #### Tabla: CLUB
-| ID_Estudiante | TituloClub | NombreProfesor |
+| StudentID | ClubTitle | TeacherName |
 | :--- | :--- | :--- |
 | 105 | Robótica | Bobby Williams |
 | 202 | Taekwondo | Dima White |
 | 101 | Robótica | Bobby Williams |
 | 105 | Artes y Oficios | Jane Doe |
 
-En la tabla **CLUB**, el `ID_Estudiante` es una **clave foránea** (ya que es una clave primaria en la tabla ESTUDIANTE). Sin embargo, ninguno de los campos de esta tabla puede actuar por sí solo como clave primaria, ya que todos tienen duplicados. En este caso, se podría establecer la clave primaria como una **clave compuesta**, formada por los atributos `ID_Estudiante` y `TituloClub`. Por otro lado, se podría añadir un nuevo atributo `ID_Club` para que actúe como clave primaria.
+En la tabla **CLUB**, el `StudentID` es una **clave foránea** (ya que es una clave primaria en la tabla STUDENT). Sin embargo, ninguno de los campos de esta tabla puede actuar por sí solo como clave primaria, ya que todos tienen duplicados. En este caso, se podría establecer la clave primaria como una **clave compuesta**, formada por los atributos `StudentID` y `ClubTitle`. Por otro lado, se podría añadir un nuevo atributo `ClubdID` para que actúe como clave primaria.
 
 En caso de que sea necesario que un único campo actúe como clave primaria, es posible combinar datos de varios atributos en uno solo para que actúe como una **clave concatenada**.
 
-#### Tabla: PROFESOR
-| ClubProfesor (NombreProfesor + TituloClub) | Ubicacion |
+#### Tabla: TEACHER
+| TeacherClub (TeacherName + ClubTitle) | Location |
 | :--- | :--- |
 | Jane Doe Artes y Oficios | L101 |
 | Bobby Williams Robótica | H203 |
 | Dima White Taekwondo | B353 |
 
-En la tabla **PROFESOR**, la clave primaria es una **clave concatenada**, formada a partir de los atributos `NombreProfesor` y `TituloClub`.
+En la tabla **TEACHER**, la clave primaria es una **clave concatenada**, formada a partir de los atributos `TeacherName` y `ClubTitle`.
+
+<br>
+
+## A3.2.5 Diferencias entre las formas normales
+
+La normalización de datos representa el proceso de organizar los datos en una base de datos relacional de manera que se reduzca la redundancia y se mejore la integridad de los datos. La redundancia se reduce ya que cada elemento de datos solo aparece en una ubicación de la base de datos. Esto puede disminuir la posibilidad de que ocurran anomalías de actualización y hace un uso más eficiente de la memoria.
+
+La normalización da lugar a tablas más pequeñas con menos información en cada fila, lo que conlleva una reducción de las transferencias de entrada/salida (I/O); así, la CPU puede trabajar a plena capacidad al reducirse la probabilidad de que sus actividades se suspendan. La normalización se logra a través de una serie de etapas llamadas "formas normales", donde cada forma normal tiene requisitos específicos para que la tabla sea considerada normalizada en ese nivel.
+
+* **Normalización:** el proceso de organizar los datos en una base de datos relacional para reducir la redundancia y mejorar la integridad de los datos.
+* **Primera forma normal:** el estado de una base de datos relacional en el que las entidades no contienen grupos repetidos de atributos.
+* **Atómico:** cada atributo de una tabla contiene valores indivisibles (valores que no pueden desglosarse en subvalores más detallados).
+
+### Primera forma normal (1NF)
+
+En la primera forma normal, la tabla:
+* Tiene una clave primaria (**primary key**).
+* No incluye atributos duplicados de la misma tabla.
+* No incluye grupos repetidos de atributos.
+
+Por lo tanto, es necesario crear tablas separadas para cada grupo de datos relacionados, identificando cada registro mediante el uso de la clave primaria —ya sea un solo atributo o un conjunto de ellos (clave compuesta o compuesta)— y asegurar que las entidades no contengan grupos repetidos de atributos.
+
+En 1NF, los datos de cada campo deben ser **atómicos**. Esto significa que cada atributo contiene valores indivisibles. Por ejemplo, un atributo llamado `TeacherName` en la tabla `TEACHER` no es un campo atómico, ya que podría dividirse en dos atributos diferentes llamados `LastName` y `FirstName`. Una vez hecho esto, los campos son atómicos. La atomicidad garantiza que cada celda de la tabla contenga un solo valor, no estructuras complejas como arrays o listas.
+
+La **dependencia funcional** es una relación que existe entre atributos, donde un conjunto de atributos (el determinante) determina el valor del otro conjunto (el dependiente). Normalmente, esta es una relación entre el atributo de la clave primaria y un atributo que no es clave. Por ejemplo, en la tabla `STUDENT`, el `StudentID` (clave primaria y determinante) determina los valores de `FirstName`, `LastName`, `DateOfBirth` y `Email` (los dependientes). Esto significa que, dado el valor del `StudentID`, puedes encontrar los demás detalles, pero no viceversa.
+
+* **Dependencia funcional:** relación entre atributos donde un conjunto (determinante) determina el valor de otro (dependiente).
+* **Dependencia funcional completa:** cuando los atributos dependientes son determinados por la totalidad de los atributos determinantes.
+* **Dependencia funcional parcial:** cuando los atributos dependientes son determinados solo por una parte de los atributos determinantes.
+* **Dependencia transitiva:** tipo de dependencia funcional que ocurre cuando un atributo no primo depende de otro atributo no primo, en lugar de la clave primaria.
+* **Segunda forma normal (2NF):** estado en el que las entidades están en 1NF y cualquier atributo que no sea clave depende de la clave primaria.
+* **Tercera forma normal (3NF):** estado en el que las entidades están en 2NF y todos los atributos que no son clave son independientes entre sí.
+
+### Segunda forma normal (2NF)
+
+En la segunda forma normal (2NF):
+* Las entidades están en 1NF.
+* Cualquier atributo que no sea clave tiene una **dependencia funcional completa** de la clave primaria; no existen dependencias parciales.
+
+La dependencia de clave parcial ocurre en una tabla que tiene una clave compuesta como clave primaria y uno o más atributos que no son clave dependen solo de un subconjunto de dicha clave compuesta. Por ejemplo, en la tabla `CLUB`, el atributo `TeacherName` depende de `ClubTitle`, pero no de `StudentID`. Como la clave primaria en esta tabla es compuesta (`ClubTitle` y `StudentID`), el `TeacherName` debería haber dependido funcionalmente de ambos campos para cumplir con la 2NF.
+
+### Tercera forma normal (3NF)
+
+En la tercera forma normal (3NF):
+* Las entidades están en 2NF.
+* Todos los atributos que no son clave son independientes (se eliminan las columnas que no dependen funcionalmente de forma completa de la clave primaria); la tabla no contiene dependencias no clave.
+
+La dependencia transitiva ocurre cuando un atributo no primo depende de otro atributo no primo. Si la tabla `CLUB` fuera como la siguiente, la clave primaria sería `ClubID`:
+
+| ClubID | ClubTitle | TeacherID | TeacherLastName |
+| :--- | :--- | :--- | :--- |
+| 105 | Robotics | 1 | Williams |
+| 202 | Taekwondo | 2 | White |
+| 105 | Robotics | 1 | Williams |
+| 106 | Arts and Crafts | 4 | Doe |
+
+El `ClubTitle` depende totalmente de `ClubID`; sin embargo, el `TeacherLastName` depende de `TeacherID`, el cual no es una clave primaria. Para resolver esto, la tabla debe dividirse en dos:
+
+**CLUBDETAILS**
+| ClubID | ClubTitle | TeacherID |
+| :--- | :--- | :--- |
+| 105 | Robotics | 1 |
+| 202 | Taekwondo | 2 |
+| 106 | Arts and Crafts | 4 |
+
+**TEACHERDETAILS**
+| TeacherID | TeacherFirstName | TeacherLastName |
+| :--- | :--- | :--- |
+| 1 | Bobby | Williams |
+| 2 | Dima | White |
+| 4 | Jane | Doe |
+
+#### Problemas de normalización
+Los problemas pueden incluir duplicación de datos, datos faltantes y preocupaciones de dependencia (dependencias de datos, de claves compuestas, transitivas y multievaluadas).
+
+Las **dependencias multievaluadas** ocurren cuando dos atributos en una tabla son independientes entre sí, pero ambos dependen de un tercero. Por ejemplo, un fabricante de coches produce dos colores (`black` y `grey`) de cada modelo cada año. Los atributos `Colour` y `ManufacturingYear` dependen de `CarModel`, pero son independientes entre sí. Esto es clave para alcanzar la **cuarta forma normal (4NF)**, que aborda redundancias no resueltas por las formas normales anteriores.
+
+<br>
+
+## A3.2.6 Bases de datos normalizadas (3NF)
+
+Consideremos un sistema de gestión de bibliotecas que almacena los datos en una tabla llamada `BOOKS`:
+
+| BookID | AuthorID | Author | Title | Pages | ProofReader |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| 1 | 101 | Boris Brown | History of AI | 353 | Amanda |
+| 2 | 102 | Chris Joe | The Great G | 200 | Hamilton |
+| 3 | 19 | Danny Bill | Big Tonny | 190 | Juan |
+| 5 | 101 | Boris Brown | Amazing Future | 399 | Amanda |
+
+Normalizar esta base de datos a **3NF** implica:
+
+#### 1. Normalizar a 1NF:
+* Establecer `BookID` como la clave primaria.
+* Dividir el autor en dos atributos diferentes: `AuthorFirstName` y `AuthorLastName`.
+
+| BookID | AuthorID | AuthorFirstName | AuthorLastName | Title | Pages | ProofReader |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| 1 | 101 | Boris | Brown | History of AI | 353 | Amanda |
+| 2 | 102 | Chris | Joe | The Great G | 200 | Hamilton |
+| 3 | 19 | Danny | Bill | Big Tonny | 190 | Juan |
+| 5 | 101 | Boris | Brown | Amazing Future | 399 | Amanda |
+
+#### 2. Normalizar a 2NF:
+* Las entidades están en 1NF.
+* No existen dependencias parciales.
+
+`AuthorFirstName` y `AuthorLastName` dependen de `AuthorID`, mientras que `Title`, `Pages` y `ProofReader` dependen de la clave primaria (`BookID`). Por lo tanto, necesitamos dividir esta tabla de la siguiente manera:
+
+**BOOKS**
+| BookID | AuthorID | Title | Pages | ProofReader |
+| :--- | :--- | :--- | :--- | :--- |
+| 1 | 101 | History of AI | 353 | Amanda |
+| 2 | 102 | The Great G | 200 | Hamilton |
+| 3 | 19 | Big Tonny | 190 | Juan |
+| 5 | 101 | Amazing Future | 399 | Amanda |
+
+**AUTHOR**
+| AuthorID | AuthorFirstName | AuthorLastName |
+| :--- | :--- | :--- |
+| 101 | Boris | Brown |
+| 102 | Chris | Joe |
+| 19 | Danny | Bill |
+
+#### 3. Normalizar a 3NF:
+* Las entidades están en 2NF.
+* No existen dependencias transitivas.
+
+El campo `ProofReader` tiene valores repetidos y no es necesariamente dependiente de forma funcional completa del `BookID`. Por lo tanto, para eliminar las dependencias no transitivas, puedes crear una nueva tabla para los correctores (*proof readers*).
+
+**BOOKS**
+| BookID | AuthorID | Title | Pages |
+| :--- | :--- | :--- | :--- |
+| 1 | 101 | History of AI | 353 |
+| 2 | 102 | The Great G | 200 |
+| 3 | 19 | Big Tonny | 190 |
+| 5 | 101 | Amazing Future | 399 |
+
+**AUTHOR**
+| AuthorID | AuthorFirstName | AuthorLastName |
+| :--- | :--- | :--- |
+| 101 | Boris | Brown |
+| 102 | Chris | Joe |
+| 19 | Danny | Bill |
+
+**PROOFREADERS**
+| ProofReaderID | ProofReader |
+| :--- | :--- |
+| 100 | Amanda |
+| 222 | Hamilton |
+| 123 | Juan |
+
+Ahora, necesitas vincular la tabla `BOOKS` con la tabla `PROOFREADERS`, por lo que se crea una nueva tabla de unión.
+
+**BOOKS_PROOFREADERS**
+| BookID | ProofReaderID |
+| :--- | :--- |
+| 1 | 100 |
+| 2 | 222 |
+| 3 | 123 |
+| 5 | 100 |
+
+> **¡Consejo de experto!**
+> La normalización de bases de datos puede ser un concepto difícil de asimilar. Tómate el tiempo necesario para practicar; puedes utilizar ejercicios de exámenes anteriores o crear tus propias tablas para este propósito.
