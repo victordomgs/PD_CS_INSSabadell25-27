@@ -202,7 +202,7 @@ Comprender tanto la cardinalidad como la modalidad es esencial para modelar con 
 
 <br>
 
-### A3.2.3 Describir los diferentes tipos de datos utilizados en las bases de datos relacionales
+## A3.2.3 Describir los diferentes tipos de datos utilizados en las bases de datos relacionales
 
 | Tipo de dato para atributos | Descripción |
 | :--- | :--- |
@@ -224,7 +224,7 @@ La **consistencia de datos** garantiza que los usuarios tengan acceso a informac
 
 <br>
 
-### A3.2.4 Construir tablas para bases de datos relacionales
+## A3.2.4 Construir tablas para bases de datos relacionales
 
 La definición adecuada de las tablas en una base de datos sustenta el diseño de los diagramas ERD apropiados y garantiza la integridad de los datos.
 
