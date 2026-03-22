@@ -144,5 +144,5 @@ INDEX on LastName for faster access based on the last name
 
 #### Parámetros de almacenamiento:
 
-Uso de los índices descritos anteriormente para una recuperación rápida de datos.
-Particionamiento de tablas grandes como "Pedidos" por ID_Pedido para mejorar el rendimiento de las consultas.
+- Uso de los índices descritos anteriormente para una recuperación rápida de datos.
+- Particionamiento de tablas grandes como "Orders" por OrderID para mejorar el rendimiento de las consultas.
