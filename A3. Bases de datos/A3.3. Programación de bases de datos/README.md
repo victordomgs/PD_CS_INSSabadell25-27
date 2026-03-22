@@ -100,7 +100,132 @@ Los lenguajes de manipulación de datos se utilizan para añadir, modificar, eli
 
 #### Sentencias SELECT
 
-* **Recuperar registros mostrando columnas específicas:**
 ```sql
+-- Recuperar registros mostrando columnas específicas
 SELECT field1, field2, field3...
 FROM table_name;
+
+-- Recuperar registros mostrando atributos que coinciden con un criterio dado
+SELECT field1, field2, ...
+FROM table_name
+WHERE condition;
+
+-- Recuperar todos los registros
+SELECT * FROM table_name;
+
+-- Recuperar registros comprobando si campos específicos cumplen criterios determinados
+SELECT * FROM table_name WHERE condition;
+```
+
+<br>
+
+## A3.3.2 Construir consultas entre dos tablas en SQL
+
+### JOIN en una sentencia SELECT
+
+Incluir un **JOIN** en una sentencia **SELECT** permite agregar datos de múltiples tablas. Por ejemplo, considerando las tablas `Employees` y `Department`, el siguiente script recupera el gasto salarial agrupado por departamento.
+
+```sql
+SELECT Employees.DepartmentName,
+SUM(Employees.Salary) AS TotalSalary
+FROM Employees
+JOIN Department ON Employees.DepartmentID = Department.DepartmentID
+GROUP BY Department.DepartmentName;
+```
+
+### DISTINCT en una sentencia SELECT
+
+Cuando se desea recuperar registros únicos e ignorar duplicados, se utiliza la palabra clave **DISTINCT**.
+
+```sql
+SELECT DISTINCT column1, column2, ...
+FROM table_name;
+```
+
+### Cláusula HAVING frente a cláusula WHERE
+
+La cláusula **HAVING** se utiliza para filtrar grupos de registros creados por la cláusula **GROUP BY**. Por ejemplo, para recuperar el ID del departamento y el salario promedio por departamento donde dicho promedio sea superior a 10,000.
+
+La cláusula **WHERE** se utiliza para filtrar registros antes de la agrupación, mientras que la cláusula **HAVING** se utiliza para filtrar grupos después de la agregación.
+
+```sql
+SELECT DepartmentID, Salary
+FROM Employees
+GROUP BY DepartmentID
+HAVING Salary > 10000;
+```
+
+### Operadores relacionales
+
+| Operador | Ejemplo |
+| :--- | :--- |
+| **Igual a (=)** | `SELECT * FROM Employees WHERE DepartmentID = 1;` |
+| **No igual a (<>)** | `SELECT * FROM Employees WHERE DepartmentID <> 1;` |
+| **Mayor que (>)** | `SELECT * FROM Employees WHERE Salary > 10000;` |
+| **Menor que (<)** | `SELECT * FROM Employees WHERE Salary < 10000;` |
+| **Mayor o igual que (>=)** | `SELECT * FROM Employees WHERE Salary >= 10000;` |
+| **Menor o igual que (<=)** | `SELECT * FROM Employees WHERE Salary <= 10000;` |
+
+#### Filtrado y combinación de condiciones
+
+| Operador | Ejemplo |
+| :--- | :--- |
+| **BETWEEN** (rango) | `SELECT * FROM Employees WHERE Salary BETWEEN 50000 AND 100000;` |
+| **IN** (lista de valores) | `SELECT * FROM Employees WHERE DepartmentID IN (1, 2, 3);` |
+| **IS NULL** (nulos) | `SELECT * FROM Employees WHERE ManagerID IS NULL;` |
+| **IS NOT NULL** (no nulos) | `SELECT * FROM Employees WHERE ManagerID IS NOT NULL;` |
+| **Lógicos (AND, OR)** | `SELECT * FROM Employees WHERE (DepartmentID = 5 AND Salary > 50000) OR (DepartmentID = 1 AND Salary > 10000);` |
+
+#### Coincidencia de patrones (Pattern matching)
+* **LIKE** filtra valores basados en un patrón.
+* **%** se utiliza para cualquier secuencia de caracteres (cero o más).
+* **_** se utiliza para un único carácter.
+
+```sql
+-- Recuperar registros que empiezan con la letra 'D'
+SELECT * FROM Employees WHERE LastName LIKE 'D%';
+
+-- Recuperar registros que terminan con la letra 'd':
+SELECT * FROM Employees WHERE LastName LIKE '%d';
+
+-- Patrón específico (empieza con 'D', sigue un carácter, luego 'm' y después cualquier secuencia)
+SELECT * FROM Employees WHERE LastName LIKE 'D_m%';
+
+-- Registros compuestos exactamente por tres caracteres
+SELECT * FROM Employees WHERE LastName LIKE '_ _ _';
+```
+
+### Ordenación de datos (Ordering)
+
+```sql
+-- Por un solo campo
+SELECT * FROM Employees ORDER BY LastName;
+
+-- Ascendente
+SELECT * FROM Employees ORDER BY LastName ASC;
+
+-- Descendente
+SELECT * FROM Employees ORDER BY LastName DESC;
+
+-- Múltiples campos
+SELECT * FROM Employees ORDER BY DepartmentID, Salary DESC;
+```
+
+<br>
+
+## A3.3.3 Explicar cómo se puede utilizar SQL para actualizar datos en una base de datos
+
+### A3.3.3 Consultas de actualización en SQL
+
+| Sentencia SQL | Explicación | Ejemplo |
+| :--- | :--- | :--- |
+| **INSERT** | Añade nuevos registros. | `INSERT INTO table_name (field1, field2, ...) VALUES (value1, value2, ...);` |
+| **DELETE** | Elimina registros. | `DELETE FROM table_name WHERE condition;` |
+| **UPDATE** | Modifica registros. | `UPDATE table_name SET field1 = value1, field2 = value2, ... WHERE condition;` |
+
+Las columnas indexadas optimizan el rendimiento de las consultas, pero la actualización de datos en dichas columnas puede impactar negativamente en el rendimiento. Cuando se realiza una actualización en una columna indexada, el índice también debe actualizarse, lo que puede ralentizar la operación. Además, las actualizaciones de índices pueden provocar el bloqueo de otras transacciones que necesiten acceder a un registro específico. 
+
+Para superar estos desafíos, puedes:
+* **Procesar las actualizaciones por lotes (batching):** para reducir el número de veces que el índice necesita ser modificado.
+* **Reconstruir o reorganizar índices con frecuencia:** para reducir la fragmentación.
+* **Usar índices parciales o filtrados:** para limitar el alcance del índice únicamente a los registros más relevantes.
