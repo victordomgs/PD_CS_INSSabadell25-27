@@ -202,7 +202,7 @@ Comprender tanto la cardinalidad como la modalidad es esencial para modelar con 
 
 <br>
 
-### A3.2.3 Tipos de datos utilizados en bases de datos relacionales
+### A3.2.3 Describir los diferentes tipos de datos utilizados en las bases de datos relacionales
 
 | Tipo de dato para atributos | Descripción |
 | :--- | :--- |
@@ -224,7 +224,7 @@ La **consistencia de datos** garantiza que los usuarios tengan acceso a informac
 
 <br>
 
-### A3.2.4 Construcción de tablas para bases de datos relacionales
+### A3.2.4 Construir tablas para bases de datos relacionales
 
 La definición adecuada de las tablas en una base de datos sustenta el diseño de los diagramas ERD apropiados y garantiza la integridad de los datos.
 
@@ -265,7 +265,7 @@ En la tabla **TEACHER**, la clave primaria es una **clave concatenada**, formada
 
 <br>
 
-## A3.2.5 Diferencias entre las formas normales
+## A3.2.5 Explicar la diferencia entre las formas normales
 
 La normalización de datos representa el proceso de organizar los datos en una base de datos relacional de manera que se reduzca la redundancia y se mejore la integridad de los datos. La redundancia se reduce ya que cada elemento de datos solo aparece en una ubicación de la base de datos. Esto puede disminuir la posibilidad de que ocurran anomalías de actualización y hace un uso más eficiente de la memoria.
 
@@ -341,7 +341,7 @@ Las **dependencias multievaluadas** ocurren cuando dos atributos en una tabla so
 
 <br>
 
-## A3.2.6 Bases de datos normalizadas (3NF)
+## A3.2.6 Construir una base de datos normalizada hasta 3FN para diversos escenarios de la vida real
 
 Consideremos un sistema de gestión de bibliotecas que almacena los datos en una tabla llamada `BOOKS`:
 
