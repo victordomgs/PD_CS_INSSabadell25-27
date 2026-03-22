@@ -199,3 +199,66 @@ La relación entre las dos entidades puede representarse como "un club tiene muc
 - Modalidad: un club debe tener al menos un estudiante inscrito (obligatorio para los clubes); un estudiante podría no inscribirse en ningún club (opcional para los estudiantes).
 
 Comprender tanto la cardinalidad como la modalidad es esencial para modelar con precisión las relaciones y restricciones en una base de datos, asegurando que refleje eficazmente los requisitos del mundo real y las reglas de negocio.
+
+<br>
+
+### A3.2.3 Tipos de datos utilizados en bases de datos relacionales
+
+| Tipo de dato para atributos | Descripción |
+| :--- | :--- |
+| **CHARACTER** | Texto de longitud fija. |
+| **VARCHAR(n)** | Texto de longitud variable (donde *n* indica el número máximo de caracteres). |
+| **INTEGER** | Número entero. |
+| **REAL** | Número con parte decimal. |
+| **DATE** | Fecha en formato AAAA-MM-DD. |
+| **TIME** | Hora en formato HH:MM:SS. |
+| **BOOLEAN** | Verdadero (True) o Falso (False). |
+
+Elegir el tipo de dato correcto es fundamental para garantizar una indexación eficiente. Por ejemplo, utilizar `CHARACTER(8)` para datos de longitud fija como un *UserID* es más eficiente que utilizar `VARCHAR(8)`, ya que esto puede generar un tiempo adicional durante la ejecución de las consultas debido al almacenamiento de longitud variable. 
+
+Además, el tipo de dato indica el tipo de operaciones permitidas. Por ejemplo, si almacenas la cantidad y el precio como texto de longitud fija, para realizar cálculos necesitarás convertir el texto a valores de tipo *integer* o *real* en la aplicación antes de poder usar los datos.
+
+Otro aspecto del uso de tipos de datos adecuados es la capacidad de almacenar los datos en el campo correspondiente de la base de datos. Si el tipo de dato de entrada no coincide con el tipo de dato del atributo en la base de datos, el intento de inserción arrojará errores.
+
+La **consistencia de datos** garantiza que los usuarios tengan acceso a información actualizada y precisa, donde todas las copias o instancias sean iguales en todos los sistemas y tablas de la base de datos. El uso de diferentes tipos de datos para referirse al mismo atributo en diferentes plataformas (base de datos y sistema de aplicación) provocará problemas, como la imposibilidad de realizar operaciones específicas del tipo de dato requerido, o actualizaciones y consultas incorrectas.
+
+<br>
+
+### A3.2.4 Construcción de tablas para bases de datos relacionales
+
+La definición adecuada de las tablas en una base de datos sustenta el diseño de los diagramas ERD apropiados y garantiza la integridad de los datos.
+
+Considerando un sistema de gestión escolar, este podría incluir las siguientes tablas:
+* **ESTUDIANTE** (ID_Estudiante, Nombre, Apellido, FechaNacimiento, Email)
+* **CLUB** (ID_Estudiante, TituloClub, NombreProfesor)
+* **PROFESOR** (ClubProfesor, Ubicacion)
+
+#### Tabla: ESTUDIANTE
+| ID_Estudiante | Nombre | Apellido | FechaNacimiento | Email |
+| :--- | :--- | :--- | :--- | :--- |
+| 101 | Fatema | Kada | 02/01/2010 | f.kada@email.com |
+| 105 | Alexandru | Buchidau | 05/11/2009 | a.buchidau@email.com |
+| 202 | Kada | Hussein | 07/25/2011 | k.hussein@email.com |
+
+En la tabla **ESTUDIANTE**, el `ID_Estudiante` actúa como **clave primaria** para identificar de forma única cada registro de la tabla.
+
+#### Tabla: CLUB
+| ID_Estudiante | TituloClub | NombreProfesor |
+| :--- | :--- | :--- |
+| 105 | Robótica | Bobby Williams |
+| 202 | Taekwondo | Dima White |
+| 101 | Robótica | Bobby Williams |
+| 105 | Artes y Oficios | Jane Doe |
+
+En la tabla **CLUB**, el `ID_Estudiante` es una **clave foránea** (ya que es una clave primaria en la tabla ESTUDIANTE). Sin embargo, ninguno de los campos de esta tabla puede actuar por sí solo como clave primaria, ya que todos tienen duplicados. En este caso, se podría establecer la clave primaria como una **clave compuesta**, formada por los atributos `ID_Estudiante` y `TituloClub`. Por otro lado, se podría añadir un nuevo atributo `ID_Club` para que actúe como clave primaria.
+
+En caso de que sea necesario que un único campo actúe como clave primaria, es posible combinar datos de varios atributos en uno solo para que actúe como una **clave concatenada**.
+
+#### Tabla: PROFESOR
+| ClubProfesor (NombreProfesor + TituloClub) | Ubicacion |
+| :--- | :--- |
+| Jane Doe Artes y Oficios | L101 |
+| Bobby Williams Robótica | H203 |
+| Dima White Taekwondo | B353 |
+
+En la tabla **PROFESOR**, la clave primaria es una **clave concatenada**, formada a partir de los atributos `NombreProfesor` y `TituloClub`.
