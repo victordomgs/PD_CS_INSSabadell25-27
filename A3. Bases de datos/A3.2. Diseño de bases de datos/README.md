@@ -426,3 +426,50 @@ Ahora, necesitas vincular la tabla `BOOKS` con la tabla `PROOFREADERS`, por lo q
 
 > [!TIP]  
 > La normalización de bases de datos puede ser un concepto difícil de asimilar. Tómate el tiempo necesario para practicar; puedes utilizar ejercicios de exámenes anteriores o crear tus propias tablas para este propósito.
+
+<br>
+
+## A3.2.7 Evaluar la necesidad de desnormalizar bases de datos
+
+Existen tanto ventajas como desventajas al normalizar y desnormalizar bases de datos. En general, la normalización desempeña un papel crucial en el diseño de bases de datos eficientes, fáciles de mantener y fiables que respaldan la integridad y consistencia de los datos, al tiempo que optimizan el rendimiento y la escalabilidad.
+
+#### Normalización
+
+| Ventajas | Desventajas |
+| :--- | :--- |
+| **Minimiza la redundancia de datos:** Los datos se organizan en tablas separadas para cada entidad, lo que reduce los duplicados, ahorra espacio de almacenamiento y garantiza la consistencia. | **Complejidad en el esquema de la base de datos:** Un esquema complejo con múltiples tablas y relaciones puede dificultar que los desarrolladores entiendan y mantengan la estructura, especialmente en sistemas grandes o en evolución. |
+| **Garantiza la integridad de los datos:** Mediante reglas específicas sobre relaciones y dependencias, la normalización asegura la precisión en las consultas de inserción, actualización y eliminación. | **Mayor complejidad en las consultas:** Cuando es necesario unir (*join*) múltiples tablas para realizar consultas, el rendimiento puede disminuir. |
+| **Facilita la recuperación eficiente de datos:** Las relaciones bien definidas entre las tablas permiten el desarrollo de consultas eficientes. | **Mayores requisitos de almacenamiento:** El incremento en el número de tablas y relaciones puede derivar en una mayor necesidad de almacenamiento. |
+| **Soporta la escalabilidad:** Se pueden añadir nuevos datos sin alterar significativamente la estructura existente. | **No es ideal para todos los casos de uso:** La normalización se basa en principios de bases de datos relacionales y puede no ajustarse a todas las aplicaciones o tipos de datos. |
+| **Promueve la consistencia de los datos:** Al eliminar la redundancia y definir relaciones claras, se fomenta la consistencia de la información. | **Dificultad para equilibrar la normalización:** Al normalizar, hay que buscar un equilibrio entre reducir la redundancia y mantener el rendimiento. Una sobre-normalización o sub-normalización puede causar problemas de mantenimiento. |
+| **Simplifica el mantenimiento de la base de datos:** Se pueden realizar cambios en una sola tabla sin afectar a las demás. | **Sobrecarga en las actualizaciones:** Actualizar registros puede requerir cambiar datos en diferentes lugares, lo que puede reducir el rendimiento o aumentar la complejidad. |
+
+#### Desnormalización
+
+**Desnormalización:** permitir deliberadamente la redundancia de datos en el diseño de una base de datos para mejorar el rendimiento de las consultas.
+
+| Ventajas | Desventajas |
+| :--- | :--- |
+| **Mejora del rendimiento de las consultas:** Hay menos necesidad de uniones (*joins*); la estructura más simple de las tablas mejora el rendimiento en consultas de lectura intensiva. | **Redundancia de datos:** Existe la posibilidad de inconsistencias si las actualizaciones no se gestionan adecuadamente; es más difícil sincronizar y mantener los datos. |
+| **Recuperación de datos simplificada:** Los datos se almacenan de forma más cercana a cómo los acceden las aplicaciones, lo que permite una recuperación más rápida. | **Aumento de la sobrecarga de almacenamiento:** Los datos redundantes requieren espacio adicional, lo que puede ser significativo en sistemas grandes. |
+| **Escalabilidad mejorada:** Reduce la sobrecarga de mantener relaciones complejas, soportando conjuntos de datos más grandes y mayores volúmenes de transacciones. | **Desafíos de mantenimiento:** Gestionar bases de datos desnormalizadas requiere una planificación y mantenimiento cuidadosos para asegurar la integridad. |
+
+Existen situaciones donde la desnormalización puede mejorar el rendimiento, especialmente cuando la velocidad de lectura es crucial y supera las preocupaciones sobre la redundancia. Algunos escenarios específicos son:
+
+* **Aplicaciones de lectura intensiva:** Aplicaciones centradas en recuperar datos más que en actualizarlos. Al reducir tablas y uniones, el acceso es más rápido.
+* **Informes y analítica (Reporting and analytics):** Se utiliza al generar informes complejos o analizar grandes conjuntos de datos para acelerar las consultas.
+* **Almacenamiento de datos (Data warehousing):** El enfoque está en almacenar y analizar datos históricos de diferentes fuentes. Simplifica las consultas complejas y mejora el tiempo de respuesta.
+
+Encontrar el equilibrio requiere:
+1. Analizar los requisitos específicos de la aplicación.
+2. Identificar si los beneficios de desnormalizar superan los riesgos de redundancia.
+3. Implementar estrategias para mitigar riesgos (validaciones robustas, monitoreo de rendimiento, etc.).
+
+---
+
+### TOK (Teoría del Conocimiento)
+**Utilitarismo: el mayor bien para el mayor número. El fin justifica los medios.**
+
+El utilitarismo es una teoría ética que sugiere que la mejor acción es aquella que maximiza el bienestar general. Al gestionar bases de datos, especialmente con información personal, suele haber un equilibrio entre privacidad y utilidad. Un enfoque utilitarista podría justificar el uso de datos personales sin consentimiento explícito si conduce a un bien mayor, como mejorar la salud pública durante una pandemia mediante el rastreo del virus.
+
+**Discusión:** Analiza cómo este enfoque puede equilibrarse frente a otras consideraciones éticas, como los derechos individuales y la equidad, que no siempre se alinean con una perspectiva puramente utilitarista.
