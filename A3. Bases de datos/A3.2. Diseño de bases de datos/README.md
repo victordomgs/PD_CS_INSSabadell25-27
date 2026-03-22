@@ -146,3 +146,56 @@ INDEX on LastName for faster access based on the last name
 
 - Uso de los índices descritos anteriormente para una recuperación rápida de datos.
 - Particionamiento de tablas grandes como "Orders" por OrderID para mejorar el rendimiento de las consultas.
+
+<br>
+
+## A3.2.2 Construir diagramas de entidad-relación (ERD)
+
+Un **diagrama de entidad-relación (ERD)** es una representación visual de las entidades en la base de datos y la relación entre ellas.
+
+> [!IMPORTANT]  
+> **Diagrama de entidad-relación:** una representación visual de las entidades en una base de datos y la relación entre ellas.
+
+Además de proporcionar una visión clara de la estructura de la base de datos, los ERD facilitan la comunicación entre las partes interesadas (stakeholders); actúan como documentación para el diseño de la base de datos; apoyan el desarrollo y mantenimiento futuro; y garantizan la integridad y consistencia de los datos mediante restricciones y relaciones bien definidas.
+
+Para el sistema de ventas con las entidades Productos, Pedidos y Clientes, el ERD se vería así:
+
+  <div style="text-align: center;">
+    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/A3.%20Bases%20de%20datos/images/Figura%201.png" alt="BBDD" width="650" height="auto"/>
+    <p><em>Figura 1: Modalidad de relaciones. Fuente: Computer Science IB. (Paul Baumgarten, Ioana Ganea, Carl Turland)</em></p>
+  </div>
+
+La **modalidad en los ERD** se refiere al número mínimo de instancias de una entidad que pueden estar asociadas con una instancia de otra entidad. Define si la participación de una entidad en una relación es opcional (0) o obligatoria (1).
+
+- **Modalidad:** el número mínimo de instancias de una entidad que pueden estar asociadas con una instancia de otra entidad.
+- **Cardinalidad:** el número máximo de veces que una instancia en una entidad puede estar asociada con instancias en la entidad relacionada.
+
+Consideremos un ejemplo que involucra datos sobre pacientes y sus historiales médicos en un sistema sanitario. La mayoría de los pacientes tendrán historiales médicos asociados, pero los pacientes nuevos o los recién nacidos podrían no tener ningún historial todavía; por lo tanto, este es un tipo de relación opcional.
+
+Por otro lado, si consideramos una plataforma de comercio electrónico, cada pedido debe estar asociado a un cliente (no puedes convertirte en cliente a menos que realices un pedido), por lo que ese es un tipo de relación obligatoria.
+
+La **cardinalidad** de las relaciones se refiere a la naturaleza y el alcance de las relaciones entre entidades en un ERD. Especifica el número de instancias de una entidad que pueden o deben estar asociadas con cada instancia de otra entidad.
+
+La cardinalidad describe el lado de "muchos" de la relación y se puede definir como:
+
+- Uno a uno (1:1)
+- Uno a muchos (1:N)
+- Muchos a uno (N:1)
+- Muchos a muchos (M:N)
+
+Por ejemplo, consideremos un sistema de gestión escolar que incluye las entidades "STUDENT" y "CLUB".
+
+- La entidad STUDENT tiene como atributos: StudentID, FirstName, LastName, Email.
+- La entidad CLUB tiene como atributos: ClubID, Title, TeacherID, Location.
+
+  <div style="text-align: center;">
+    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/A3.%20Bases%20de%20datos/images/Figura%202.png" alt="BBDD" width="450" height="auto"/>
+    <p><em>Figura 2: Relación entre entidades. Fuente: Computer Science IB. (Paul Baumgarten, Ioana Ganea, Carl Turland)</em></p>
+  </div>
+  
+La relación entre las dos entidades puede representarse como "un club tiene muchos estudiantes".
+
+- Cardinalidad: un estudiante puede inscribirse en varios clubes (uno a muchos).
+- Modalidad: un club debe tener al menos un estudiante inscrito (obligatorio para los clubes); un estudiante podría no inscribirse en ningún club (opcional para los estudiantes).
+
+Comprender tanto la cardinalidad como la modalidad es esencial para modelar con precisión las relaciones y restricciones en una base de datos, asegurando que refleje eficazmente los requisitos del mundo real y las reglas de negocio.
