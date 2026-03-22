@@ -424,5 +424,5 @@ Ahora, necesitas vincular la tabla `BOOKS` con la tabla `PROOFREADERS`, por lo q
 | 3 | 123 |
 | 5 | 100 |
 
-> **¡Consejo de experto!**
+> [!TIP]  
 > La normalización de bases de datos puede ser un concepto difícil de asimilar. Tómate el tiempo necesario para practicar; puedes utilizar ejercicios de exámenes anteriores o crear tus propias tablas para este propósito.
