@@ -6,7 +6,7 @@
 ## Contenido:
 
 - [A4.1.1 Describir los tipos de aprendizaje automático y sus aplicaciones en el mundo real](#A411-describir-los-tipos-de-aprendizaje-automático-y-sus-aplicaciones-en-el-mundo-real)
-- [A4.1.2 Describir los requisitos de hardware para diversos escenarios donde se implementa el aprendizaje automático](#A412-describir-los-requisitos-de-hardware-para-diversos-escenarios-donde-se-implementa-el-apdrendizaje-automático)
+- [A4.1.2 Describir los requisitos de hardware para diversos escenarios donde se implementa el aprendizaje automático](#A412-describir-los-requisitos-de-hardware-para-diversos-escenarios-donde-se-implementa-el-aprendizaje-automático)
 
 <br>
 
@@ -133,6 +133,8 @@ El **aprendizaje por transferencia** es aquel en el que el conocimiento obtenido
 
 > [!WARNING]
 > El aprendizaje por transferencia no consiste simplemente en utilizar un modelo preentrenado. Implica **adaptar** un modelo desarrollado para una tarea con el fin de resolver otra relacionada; no es solo reutilizar un modelo existente sin modificaciones. Es crucial cuando los datos escasean o cuando se trata de tareas similares.
+
+<br>
 
 ## A4.1.2 Describir los requisitos de hardware para diversos escenarios donde se implementa el aprendizaje automático
 
