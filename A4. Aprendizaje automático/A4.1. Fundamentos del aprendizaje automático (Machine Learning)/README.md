@@ -10,7 +10,7 @@
 
 <br>
 
-## A4.1.1 Tipos de aprendizaje automático y sus aplicaciones
+## A4.1.1 Describir los tipos de aprendizaje automático y sus aplicaciones en el mundo real
 
 ### TDC (Teoría del Conocimiento)
 #### ¿Qué se considera conocimiento?
