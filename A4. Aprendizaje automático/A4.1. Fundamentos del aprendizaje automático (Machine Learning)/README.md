@@ -134,7 +134,7 @@ El **aprendizaje por transferencia** es aquel en el que el conocimiento obtenido
 > [!WARNING]
 > El aprendizaje por transferencia no consiste simplemente en utilizar un modelo preentrenado. Implica **adaptar** un modelo desarrollado para una tarea con el fin de resolver otra relacionada; no es solo reutilizar un modelo existente sin modificaciones. Es crucial cuando los datos escasean o cuando se trata de tareas similares.
 
-## A4.1.2 Requisitos de hardware
+## A4.1.2 Describir los requisitos de hardware para diversos escenarios donde se implementa el aprendizaje automático
 
 El hardware necesario para fines de aprendizaje automático continuará innovando y evolucionando a lo largo de la vida útil de este texto. En consecuencia, esta sección no ofrecerá recomendaciones sobre números de modelo específicos de procesadores, sino que analizará las categorías generales de tecnología de hardware disponibles y sus diversos casos de uso.
 
