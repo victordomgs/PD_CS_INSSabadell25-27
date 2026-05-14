@@ -94,7 +94,6 @@ Una tarea de clasificación es aquella en la que el algoritmo predice a qué cat
 
 ### Aprendizaje no supervisado
 
-Aprendizaje no supervisado
 El aprendizaje no supervisado es aquel en el que el algoritmo se construye para identificar patrones o estructuras dentro de sus conjuntos de datos sin que se le proporcione una etiqueta explícita que indique la salida correcta. Esto puede deberse a que la naturaleza de los datos no permite tener una respuesta "correcta" emparejada, o porque el algoritmo aprende constantemente basándose en interacciones del usuario que no tienen una respuesta fija acertada o errónea.
 
 **Aprendizaje no supervisado:** método de aprendizaje automático donde el conjunto de datos no incluye las "respuestas" o salidas esperadas para los datos proporcionados. El algoritmo intentará descubrir los patrones por sí solo.
