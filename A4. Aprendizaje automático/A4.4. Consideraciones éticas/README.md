@@ -107,7 +107,7 @@ A medida que la inteligencia artificial y otras tecnologías sigan avanzando y e
 > [!TIP]
 > Esta sección ha compartido casos de estudio de la vida real sobre el impacto de muchas de las cuestiones éticas planteadas por este tema. Familiarízate con casos de estudio a los que puedas hacer referencia en tus respuestas del examen. Si puedes debatir con especificidad una situación relevante que haya ocurrido, esto ayudará mucho a demostrar que te importa el tema.
 
-> [!ERROR]
+> [!CAUTION]
 > Los estudiantes cometen una serie de errores habituales al abordar preguntas relacionadas con la ética, lo que se extiende al debate sobre el aprendizaje automático:
 > - **No simplifiques demasiado los problemas.** Evita reducir cuestiones éticas complejas a respuestas simples de "correcto" o "incorrecto". Las implicaciones éticas del aprendizaje automático tienen muchos matices y a menudo implican consideraciones interconectadas de responsabilidad, equidad e impacto social.
 > - **No confundas el sesgo técnico con el sesgo ético.** Distingue entre el sesgo técnico (desviación en un algoritmo que conduce a predicciones menos precisas) y el sesgo ético o social (prejuicios en los datos que conducen a resultados injustos para ciertos grupos).
