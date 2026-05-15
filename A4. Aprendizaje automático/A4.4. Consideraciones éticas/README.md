@@ -44,15 +44,15 @@ A continuación se presentan algunos de los problemas éticos a considerar:
 
 - **Impacto ambiental (Environmental impact):** Los modelos de aprendizaje automático requieren una enorme potencia de cálculo, especialmente en la fase de entrenamiento. Esto conlleva un consumo sustancial de energía e implicaciones en las emisiones de carbono.
 
-Científicos de la Universidad de Cornell descubrieron que el entrenamiento de LLM (grandes modelos de lenguaje) como GPT-3 consumía una cantidad de electricidad equivalente a 500 toneladas métricas de carbono. De hecho, DatacenterDynamics informa que el uso global de energía por parte de los centros de datos se duplicará con creces, pasando de 460 TWh en 2022 a más de 1000 TWh en 2026.
+  Científicos de la Universidad de Cornell descubrieron que el entrenamiento de LLM (grandes modelos de lenguaje) como GPT-3 consumía una cantidad de electricidad equivalente a 500 toneladas métricas de carbono. De hecho, DatacenterDynamics informa que el uso global de energía por parte de los centros de datos se duplicará con creces, pasando de 460 TWh en 2022 a más de 1000 TWh en 2026.
 
 - **Privacidad (Privacy):** Los sistemas de aprendizaje automático pueden predecir o clasificar el comportamiento personal de formas que invaden la privacidad. La capacidad de estos sistemas para aplicar la inferencia significa que la privacidad puede verse aún más comprometida si el sistema deduce condiciones de salud que ni siquiera se le proporcionaron al modelo.
 
-En 2018, la aplicación de seguimiento de actividad física Strava publicó un mapa de calor global de las actividades de los usuarios que, sin darse cuenta, reveló la ubicación de bases militares secretas y rutas de patrullaje, lo que evidenció una filtración significativa de privacidad.
+  En 2018, la aplicación de seguimiento de actividad física Strava publicó un mapa de calor global de las actividades de los usuarios que, sin darse cuenta, reveló la ubicación de bases militares secretas y rutas de patrullaje, lo que evidenció una filtración significativa de privacidad.
 
 - **Seguridad (Security):** Los sistemas de aprendizaje automático pueden ser vulnerables a ataques por diversos medios. Tres ataques comunes incluyen:
 
-1. **Envenenamiento de datos (data poisoning):** consiste en introducir datos falsos o dañinos en el conjunto de datos de entrenamiento para manipular el modelo con fines maliciosos.
+  - **Envenenamiento de datos (data poisoning):** consiste en introducir datos falsos o dañinos en el conjunto de datos de entrenamiento para manipular el modelo con fines maliciosos.
 
 2. **Evasión del modelo (model evasion):** donde se utilizan entradas (como prompts o instrucciones) para "engañar" al modelo y hacer que genere respuestas incorrectas en contra de su entrenamiento (a veces conocido como "jailbreaking" o desbloqueo, en el contexto de la IA generativa).
 
