@@ -5,8 +5,8 @@
 
 ## Contenido:
 
-- [A4.4.1 Implicaciones-éticas](#A441-implicaciones-éticas)
-- [A4.1.2 Describir los requisitos de hardware para diversos escenarios donde se implementa el aprendizaje automático](#A412-describir-los-requisitos-de-hardware-para-diversos-escenarios-donde-se-implementa-el-aprendizaje-automático)
+- [A4.4.1 Implicaciones éticas](#A441-implicaciones-éticas)
+- [A4.4.2 Reevaluación de la ética a medida que las tecnologías se integran más](#A442-reevaluación-de-la-ética-a-medida-que-las-tecnologías-se-integran-más)
 
 
 ## A4.4.1 Implicaciones éticas
@@ -87,3 +87,31 @@ Tanto los algoritmos de la sección de noticias (newsfeed) de Facebook como los 
  **Privacidad y anonimato en las comunicaciones en línea (Privacy and anonymity in online communications):** Los usuarios a menudo no son conscientes o no entienden completamente cómo los algoritmos de aprendizaje automático utilizan y procesan sus datos. Los usuarios pueden pensar que sus acciones son anónimas, pero cada vez más los algoritmos de aprendizaje automático pueden realizar la desanonimización con un alto grado de fiabilidad. Existe muy poca conciencia de esto en la comunidad en general.
 
 En 2006, Netflix publicó un conjunto de datos que contenía 100 millones de calificaciones de películas de 500.000 suscriptores, destinado a ser utilizado en un concurso global para mejorar la precisión del algoritmo de recomendación de Netflix. Supuestamente, los datos se habían anonimizado eliminando cualquier información de identificación personal. Investigadores de la Universidad de Texas en Austin demostraron que era posible volver a identificar a los usuarios comparando los datos anonimizados de Netflix con las calificaciones de películas disponibles públicamente en Internet Movie Database (IMDb). Utilizando solo una pequeña cantidad de información adicional sobre las preferencias de un individuo, los investigadores pudieron identificar hábitos de visualización personales e información potencialmente sensible.
+
+<br>
+
+## A4.4.2 Reevaluación de la ética a medida que las tecnologías se integran más
+
+A medida que la inteligencia artificial y otras tecnologías sigan avanzando y evolucionando en los próximos años, la sociedad necesitará reevaluar periódicamente las implicaciones desde un punto de vista ético. Son muchos los desafíos que nos aguardan; la siguiente lista es solo un punto de partida para el debate:
+
+- **Computación cuántica (Quantum computing):** La computación cuántica podría romper potencialmente muchos de los sistemas criptográficos que actualmente aseguran las comunicaciones digitales y las criptomonedas. El desarrollo de la criptografía resistente a la cuántica es un área de investigación importante a la que se le debe dar prioridad.
+
+- **Realidad aumentada (Augmented reality - AR):** La realidad aumentada puede recopilar enormes cantidades de datos personales sobre el entorno de los usuarios. Además, ¿cuál es la ética en torno a alterar la percepción de la realidad de una persona? ¿Les desconecta esto de la sociedad de la que forman parte, provocando una pérdida de empatía?
+
+- **Realidad virtual (Virtual reality - VR):** A medida que la realidad virtual se vuelve más realista, ¿cuáles son las preocupaciones de salud mental para quienes utilizan estos sistemas de forma excesiva o como evasión? ¿Cuáles deberían ser los límites cuando se trata de utilizar la realidad virtual para acceder a material violento o explícito?
+
+- **IA omnipresente (Pervasive AI):** ¿Cómo nos protegemos de la vigilancia intrusiva y de la recopilación aparentemente interminable de nuestros datos personales para su uso en conjuntos de datos de aprendizaje automático?
+
+- **Privacidad (Privacy):** ¿A quién pertenecen los datos sobre ti? ¿A ti o a la empresa que los recopiló? A medida que la recopilación de datos se vuelve más compleja, ¿habrá una tendencia hacia un consentimiento más transparente e informado sobre lo que ocurre con nuestra información personal?
+
+- **Equidad (Equity):** ¿Cómo podemos garantizar que los avances tecnológicos reduzcan, en lugar de magnificar, la brecha en el acceso equitativo a la tecnología entre los diferentes grupos socioeconómicos, raciales, de género, sociales y geográficos?
+
+> [!TIP]
+> Esta sección ha compartido casos de estudio de la vida real sobre el impacto de muchas de las cuestiones éticas planteadas por este tema. Familiarízate con casos de estudio a los que puedas hacer referencia en tus respuestas del examen. Si puedes debatir con especificidad una situación relevante que haya ocurrido, esto ayudará mucho a demostrar que te importa el tema.
+
+> [!ERROR]
+> Los estudiantes cometen una serie de errores habituales al abordar preguntas relacionadas con la ética, lo que se extiende al debate sobre el aprendizaje automático:
+> - **No simplifiques demasiado los problemas.** Evita reducir cuestiones éticas complejas a respuestas simples de "correcto" o "incorrecto". Las implicaciones éticas del aprendizaje automático tienen muchos matices y a menudo implican consideraciones interconectadas de responsabilidad, equidad e impacto social.
+> - **No confundas el sesgo técnico con el sesgo ético.** Distingue entre el sesgo técnico (desviación en un algoritmo que conduce a predicciones menos precisas) y el sesgo ético o social (prejuicios en los datos que conducen a resultados injustos para ciertos grupos).
+> - **No limites tus respuestas a cuestiones de privacidad y seguridad.** Considera una gama más amplia de problemas éticos, como el impacto ambiental, los cambios sociales y las implicaciones para la salud mental. Demuestra que tienes una comprensión profunda de las complejidades implicadas, en lugar de tomar el camino fácil de recurrir a una respuesta de examen que hable de la privacidad o la seguridad de forma superficial.
+> - **No descuides la importancia de la reevaluación.** Las directrices éticas nunca pueden ser estáticas, ya que la tecnología y su impacto en la sociedad tampoco lo son.
