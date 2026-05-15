@@ -28,7 +28,7 @@ A continuación se presentan algunos de los problemas éticos a considerar:
 
 - **Responsabilidad (Accountability):** ¿En quién o en dónde recae la responsabilidad de las decisiones tomadas por los sistemas de aprendizaje automático? ¿Es de la empresa que produjo la IA o de las personas que la utilizan? ¿Es una mezcla de ambas? ¿Es posible determinar cómo y por qué un sistema de aprendizaje automático tomó una decisión en particular?
 
-Un incidente que resalta el problema de la responsabilidad involucró a un automóvil autónomo. El conductor que estaba al volante de un coche autónomo cuando este atropelló y mató a un peatón en 2018 se declaró culpable de imprudencia temeraria y fue sentenciado a tres años de libertad condicional supervisada.
+  Un incidente que resalta el problema de la responsabilidad involucró a un automóvil autónomo. El conductor que estaba al volante de un coche autónomo cuando este atropelló y mató a un peatón en 2018 se declaró culpable de imprudencia temeraria y fue sentenciado a tres años de libertad condicional supervisada.
 
 - **Equidad algorítmica y sesgo (Algorithmic fairness and bias):** El aprendizaje automático puede perpetuar los sesgos sociales existentes si estos se encuentran en los datos de entrenamiento, o si el diseño del modelo favorece, a sabiendas o no, a ciertos grupos. La equidad requiere identificar y mitigar activamente el sesgo en el conjunto de datos y en los algoritmos.
 
