@@ -53,14 +53,12 @@ A continuación se presentan algunos de los problemas éticos a considerar:
 - **Seguridad (Security):** Los sistemas de aprendizaje automático pueden ser vulnerables a ataques por diversos medios. Tres ataques comunes incluyen:
 
   - **Envenenamiento de datos (data poisoning):** consiste en introducir datos falsos o dañinos en el conjunto de datos de entrenamiento para manipular el modelo con fines maliciosos.
+  - **Evasión del modelo (model evasion):** donde se utilizan entradas (como prompts o instrucciones) para "engañar" al modelo y hacer que genere respuestas incorrectas en contra de su entrenamiento (a veces conocido como "jailbreaking" o desbloqueo, en el contexto de la IA generativa).
+  - **Inversión del modelo (model inversion):** se refiere a obtener acceso a datos sensibles contenidos dentro de los datos de entrenamiento.
 
-2. **Evasión del modelo (model evasion):** donde se utilizan entradas (como prompts o instrucciones) para "engañar" al modelo y hacer que genere respuestas incorrectas en contra de su entrenamiento (a veces conocido como "jailbreaking" o desbloqueo, en el contexto de la IA generativa).
+  A las 24 horas de su lanzamiento, el bot de Twitter Tay de Microsoft fue manipulado mediante datos de entrada maliciosos para producir tuits sumamente inapropiados y ofensivos.
 
-3. **Inversión del modelo (model inversion):** se refiere a obtener acceso a datos sensibles contenidos dentro de los datos de entrenamiento.
-
-A las 24 horas de su lanzamiento, el bot de Twitter Tay de Microsoft fue manipulado mediante datos de entrada maliciosos para producir tuits sumamente inapropiados y ofensivos.
-
-Cuando OpenAI lanzó GPT-3 por primera vez, este carecía de muchos de los filtros actuales y resultaba sumamente sencillo diseñar prompts que generaran contenido obsceno, tóxico o ilegal.
+  Cuando OpenAI lanzó GPT-3 por primera vez, este carecía de muchos de los filtros actuales y resultaba sumamente sencillo diseñar prompts que generaran contenido obsceno, tóxico o ilegal.
 
 - **Impacto social (Societal impact):** El aprendizaje automático altera cada vez más los mercados laborales e influye en la opinión pública. Existe un delicado equilibrio entre el avance tecnológico y el mantenimiento del bienestar social que debe ser considerado.
 
