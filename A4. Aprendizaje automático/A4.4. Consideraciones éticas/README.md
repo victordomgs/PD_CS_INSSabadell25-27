@@ -31,16 +31,16 @@ A continuación se presentan algunos de los problemas éticos a considerar:
   Un incidente que resalta el problema de la responsabilidad involucró a un automóvil autónomo. El conductor que estaba al volante de un coche autónomo cuando este atropelló y mató a un peatón en 2018 se declaró culpable de imprudencia temeraria y fue sentenciado a tres años de libertad condicional supervisada.
 
 - **Equidad algorítmica y sesgo (Algorithmic fairness and bias):** El aprendizaje automático puede perpetuar los sesgos sociales existentes si estos se encuentran en los datos de entrenamiento, o si el diseño del modelo favorece, a sabiendas o no, a ciertos grupos. La equidad requiere identificar y mitigar activamente el sesgo en el conjunto de datos y en los algoritmos.
-
-COMPAS es un algoritmo de reincidencia utilizado por muchos sistemas judiciales de EE. UU. Se descubrió que presentaba un sesgo racial, ya que predecía un mayor riesgo de reincidencia para las personas negras y un menor riesgo para las personas blancas.
-
-Otro ejemplo es que, en 2018, Amazon descartó una herramienta "secreta" de contratación por IA que estaba sesgada contra las mujeres.
-
-Por último, las IA generativas se enfrentan al desafío constante de reforzar y exacerbar los estereotipos y los sesgos.
+  
+  COMPAS es un algoritmo de reincidencia utilizado por muchos sistemas judiciales de EE. UU. Se descubrió que presentaba un sesgo racial, ya que predecía un mayor riesgo de reincidencia para las personas negras y un menor riesgo para las personas blancas.
+  
+  Otro ejemplo es que, en 2018, Amazon descartó una herramienta "secreta" de contratación por IA que estaba sesgada contra las mujeres.
+  
+  Por último, las IA generativas se enfrentan al desafío constante de reforzar y exacerbar los estereotipos y los sesgos.
 
 - **Consentimiento (Consent):** Los grandes conjuntos de datos utilizados para el entrenamiento suelen contener información recopilada sin el consentimiento explícito. Muchas grandes empresas están aplicando el aprendizaje automático en sus bases de datos de clientes o vendiendo los datos de estos a otras empresas de emparejamiento de datos (data-matching). ¿Cuánto control deberían conservar las personas sobre su información personal?
-
-Se determinó que DeepMind de Google infringió las leyes de privacidad del Reino Unido tras no informar adecuadamente a los pacientes sobre el uso de sus datos de salud de identificación personal en el desarrollo de una aplicación para detectar lesiones renales.
+  
+  Se determinó que DeepMind de Google infringió las leyes de privacidad del Reino Unido tras no informar adecuadamente a los pacientes sobre el uso de sus datos de salud de identificación personal en el desarrollo de una aplicación para detectar lesiones renales.
 
 - **Impacto ambiental (Environmental impact):** Los modelos de aprendizaje automático requieren una enorme potencia de cálculo, especialmente en la fase de entrenamiento. Esto conlleva un consumo sustancial de energía e implicaciones en las emisiones de carbono.
 
