@@ -7,7 +7,6 @@
 
 - [A1.1.1. Funciones e interacciones de los principales componentes de la CPU](#A111-funciones-e-interacciones-de-los-principales-componentes-de-la-CPU)  
 - [A1.1.2. Función de una GPU](#A112-función-de-una-GPU)
-- [A1.1.3. Diferencia entre CPU y GPU](#A113-diferencia-entre-CPU-y-GPU)
 - [A1.1.4. Propósitos de los diferentes tipos de memoria principal](#A114-propósitos-de-los-diferentes-tipos-de-memoria-principal) 
 - [A1.1.5. Ciclo de búsqueda, decodificación y ejecución](#A115-ciclo-de-búsqueda-decodificación-y-ejecución) 
 - [A1.1.6. Tipos externos e internos de memoria secundaria](#A116-tipos-externos-e-internos-de-memoria-secundaria)
@@ -141,59 +140,6 @@ La **volatilidad** y la **menor rentabilidad** de la minería de criptomonedas h
 Los grandes fabricantes habían incrementado la producción para satisfacer la demanda.
 
 Los circuitos integrados de aplicación específica (ASICs), que están diseñados específicamente para la minería, habían reemplazado en gran medida el uso de GPUs en muchas operaciones de minería.
-
-<br>
-
-## A1.1.3. Diferencia entre CPU y GPU
-
-La **unidad central de procesamiento (CPU)** y la **unidad de procesamiento gráfico (GPU)** son ambos componentes fundamentales de los ordenadores modernos. Están diseñados de manera diferente, lo que explica por qué se utilizan para distintos tipos de tareas. **La CPU es excelente para manejar diversos trabajos, mientras que la GPU es mejor para realizar la misma tarea muchas veces sobre grandes cantidades de datos a la vez**.
-
-### Filosofías de diseño
-
-Las **CPU** se denominan generalmente **procesadores de propósito general** porque pueden manejar muchos tipos de tareas. Están diseñadas para ejecutar el sistema operativo, procesar la entrada del usuario y gestionar programas. Las CPU son buenas para tareas en las que hay que tomar decisiones rápidamente y en las que se realizan diferentes tipos de trabajo al mismo tiempo.
-
-Las **GPU** son **procesadores especializados** porque se centran en tipos específicos de tareas. Están hechas para procesar grandes volúmenes de datos en paralelo. Esto significa que pueden trabajar en muchos cálculos al mismo tiempo. Por ejemplo, las GPU se utilizan para procesar imágenes y videos porque pueden trabajar sobre miles de píxeles simultáneamente.
-
-### Arquitectura del núcleo
-
-La **CPU** tiene solo unos **pocos núcleos**, **pero estos núcleos son muy potentes**. Cada núcleo puede manejar muchas instrucciones diferentes, pero funciona mejor cuando realiza una tarea a la vez. Esto hace que la CPU sea muy adecuada para tareas como **ejecutar el sistema operativo**, donde se necesitan respuestas rápidas. Las CPU también incluyen características como la **predicción de saltos** (donde la CPU intenta adivinar qué ocurrirá a continuación) y la ejecución fuera de orden (donde la CPU puede trabajar en tareas que ya están listas antes que en otras).
-
-La GPU tiene **muchos núcleos más pequeños**. Estos núcleos no son tan potentes como los de la CPU, pero hay **miles de ellos**, y todos **trabajan al mismo tiempo**. Por eso, la GPU es muy buena para tareas como el **renderizado de imágenes 3D**, donde se deben realizar muchos cálculos similares simultáneamente. La arquitectura de la GPU está diseñada para trabajar con grandes conjuntos de datos de forma paralela.
-
-#### Acceso a la memoria y eficiencia energética
-
-La CPU y la GPU acceden a la memoria de forma diferente. **La CPU utiliza una memoria caché más pequeña y de alta velocidad para obtener datos rápidamente**. Esto es útil cuando la CPU necesita acceder muchas veces a pequeñas cantidades de datos, como al ejecutar programas o procesar entradas del usuario.
-
-La GPU utiliza su propia memoria especial llamada **VRAM (memoria de video)**. La VRAM tiene un **ancho de banda muy alto**, lo que significa que puede mover grandes cantidades de datos a la vez, como imágenes y videos. Sin embargo, la GPU consume más energía porque debe procesar muchos datos al mismo tiempo, especialmente al renderizar videos o ejecutar simulaciones complejas.
-
-> [!NOTE]  
-> **Renderizado:** el proceso de generar una imagen a partir de un modelo mediante programas informáticos.
-
-### Comparación entre CPU y GPU
-
-| Procesador | Procesamiento | Arquitectura | Funcionalidad |
-|------------|---------------|---------------|---------------|
-| **CPU** | Es un procesador **de propósito general**, capaz de manejar muchas tareas diferentes. Ejecuta las instrucciones de los programas de ordenador, implicando operaciones como aritmética, lógica y control de operaciones de entrada/salida (E/S), según lo indicado por el sistema operativo. | Las CPU generalmente tienen menos núcleos. Los dispositivos de usuario general suelen tener entre 4 y 8 núcleos; sin embargo, existen algunas CPU avanzadas que ahora tienen 64 núcleos o más. Cada núcleo es muy versátil, lo que le permite manejar cálculos complejos que requieren procesamiento secuencial. | Permite al usuario cambiar entre múltiples tareas y aplicaciones. Esto lo hace ideal para ejecutar el sistema operativo y aplicaciones de software en general. |
-| **GPU** | Es un procesador **especializado**, centrado en manejar gráficos, **renderizar** imágenes, video y animaciones. | Compuesto por cientos o miles de núcleos pequeños que son adecuados para tareas que se pueden ejecutar en paralelo. Aunque cada núcleo no es tan potente como uno estándar de la CPU, el alto número de núcleos les permite realizar un gran número de cálculos simultáneamente, lo que los hace perfectos para el procesamiento gráfico. | Adecuado para tareas que requieren el procesamiento simultáneo de grandes bloques de datos, como el renderizado de imágenes, el procesamiento de video y las aplicaciones de *deep learning*. |
-
-> [!IMPORTANT]  
-> En resumen, las CPU son mejores para tareas que requieren alta velocidad, toma de decisiones complejas y versatilidad.
-Las GPU son mejores cuando la misma operación debe realizarse en muchos datos de forma simultánea.
-> 
-> Esto significa que, para tareas como los videojuegos, la edición de video y la investigación computacional (IA y aprendizaje automático), las GPU suelen superar significativamente a las CPU.
-
-### Cómo trabajan juntas la CPU y la GPU para aumentar el rendimiento en los videojuegos
-
-Al jugar videojuegos, la CPU y la GPU trabajan juntas para ofrecer una experiencia fluida e inmersiva.
-
-La CPU se encarga de la lógica principal del juego, incluyendo las reglas, los cálculos físicos y el comportamiento de la IA. También procesa las entradas del jugador (determinando los resultados de sus acciones y actualizando el estado del juego en consecuencia).
-
-La GPU tiene como función principal renderizar los elementos visuales del juego. Procesa los datos de **vértices y píxeles para dibujar imágenes en la pantalla**, incluyendo objetos 3D, texturas y efectos como iluminación y sombras.
-
-> [!NOTE]  
-> **Datos de vértices y píxeles:** datos que la GPU utiliza para renderizar objetos e imágenes en 3D.
->
-> **Frame (fotograma):** una sola imagen dentro de una secuencia que forma un video o animación.
 
 <br>
 
