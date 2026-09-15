@@ -200,7 +200,7 @@ Los **diagramas de flujo** se utilizan para diseñar algoritmos y describirlos m
 ### Símbolos estándar de los diagramas de flujo
 
   <div style="text-align: center;">
-    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/tree/9cf9b083d9e696a47795b13ecc833a77970fafc6/B1.%20Pensamiento%20computacional/images/symbols.png" alt="Símbolos estándar de los diagramas de flujo" width="450" height="auto"/>
+    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/B1.%20Pensamiento%20computacional/images/symbols.png?raw=true" alt="Símbolos estándar de los diagramas de flujo" width="450" height="auto"/>
     <p><em>Figura 1: Símbolos estándar de los diagramas de flujo. Fuente: Computer Science IB. (Paul Baumgarten, Ioana Ganea, Carl Turland)</em></p>
   </div>
 
@@ -226,7 +226,7 @@ Para resolver el problema, se identifican la entrada, los procesos y la salida:
 - **Procesos:** calcular la suma, calcular la media.
 
 <div style="text-align: center;">
-    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/tree/9cf9b083d9e696a47795b13ecc833a77970fafc6/B1.%20Pensamiento%20computacional/images/flowchart1.png" alt="Flowchart 1 resolución" width="450" height="auto"/>
+    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/B1.%20Pensamiento%20computacional/images/flowchart.png?raw=true" alt="Flowchart 1 resolución" width="300" height="auto"/>
     <p><em>Figura 2: Diagrama de flujo. Fuente: Computer Science IB. (Paul Baumgarten, Ioana Ganea, Carl Turland)</em></p>
   </div>
 
@@ -235,7 +235,7 @@ Para resolver el problema, se identifican la entrada, los procesos y la salida:
 Los diagramas de flujo pueden volverse algo más complejos al incluir **selección** o **iteración**. Por ejemplo, el diagrama de flujo correspondiente a un algoritmo que muestra el mayor de dos números introducidos requiere sentencias de selección (decisión).
 
 <div style="text-align: center;">
-    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/tree/9cf9b083d9e696a47795b13ecc833a77970fafc6/B1.%20Pensamiento%20computacional/images/flowchart2.png" alt="Flowchart 2 resolución" width="450" height="auto"/>
+    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/B1.%20Pensamiento%20computacional/images/flowchart2.png?raw=true" alt="Flowchart 2 resolución" width="300" height="auto"/>
     <p><em>Figura 2: Diagrama de flujo con selección. Fuente: Computer Science IB. (Paul Baumgarten, Ioana Ganea, Carl Turland)</em></p>
   </div>
 
