@@ -210,18 +210,9 @@ Es importante señalar que la concatenación es una técnica que se aplica a una
 
 La primera posición de una cadena es siempre **0**.
 
-En **Java**, la función utilizada para este propósito se llama `substring`:
+En **Java**, la función utilizada para este propósito se llama `substring`
 
-- Si se proporciona un único argumento a la función `substring`, este indica el índice inicial del texto a extraer. Por ejemplo, a partir de la posición 8, el resultado sería “Science is fun”, ya que la variable `part` tomaría el valor desde esa posición hasta el final de la cadena.
-- Si se proporcionan dos argumentos, el primero (8) indica el índice inicial y el segundo (16) el índice final. La subcadena producida abarcará desde el índice inicial hasta el índice final menos 1. Por tanto, el resultado sería “Science”, ya que la letra en la posición 8 es “S” y la de la posición 15 es “e”; el carácter en la posición 16 (un espacio) no se incluye.
-
-En **Python**, la función de subcadena suele denominarse **slicing** (rebanado):
-
-- Extraer el primer carácter del texto da como resultado “C”.
-- Extraer los cinco primeros caracteres da como resultado “Compu” (ya que “C” está en la posición 0 y “u” en la posición 4).
-- Usar el índice −1 almacena el último carácter de la cadena, en este caso la letra “n”.
-- Extraer los seis últimos caracteres da como resultado “is fun”.
-- Extraer desde el índice 1 hasta el índice final −4 da como resultado “omputer Science is”.
+En **Python**, la función de subcadena suele denominarse `slicing`.
 
 ### Reemplazar (Replace)
 
