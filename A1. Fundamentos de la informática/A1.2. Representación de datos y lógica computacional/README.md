@@ -276,6 +276,182 @@ Resultado:
 
 <br>
 
+## Representación de números enteros en hexadecimal
+
+El sistema **hexadecimal** (a menudo abreviado como **hex**) es un sistema numérico de **base 16** que utiliza 16 símbolos distintos para representar valores, en lugar de los 10 del sistema decimal o los 2 del sistema binario.
+
+Los símbolos utilizados son los dígitos del **0 al 9** y las letras **A a F**, donde:
+
+| Hexadecimal | Decimal |
+|:-----------:|:-------:|
+| A | 10 |
+| B | 11 |
+| C | 12 |
+| D | 13 |
+| E | 14 |
+| F | 15 |
+
+El sistema hexadecimal se utiliza ampliamente en informática por varias razones.
+
+La conversión entre binario y hexadecimal es especialmente sencilla porque **cada dígito hexadecimal corresponde exactamente a 4 bits**. Por ejemplo, el número binario **1111₂** puede representarse como **F₁₆**.
+
+Otra ventaja es que proporciona una forma mucho más compacta de representar números binarios. Esto facilita enormemente la lectura y la comunicación de valores binarios largos. Por esta razón, el hexadecimal se utiliza con frecuencia en:
+
+- Herramientas de depuración (*debugging tools*).
+- Volcados de memoria (*memory dumps*).
+- Programación en lenguaje ensamblador (*assembly language*).
+
+> [!NOTE]
+> - **Herramientas de depuración (debugging tools):** aplicaciones o utilidades utilizadas por los desarrolladores para identificar, analizar y corregir errores en un programa inspeccionando el código, las variables y el flujo de ejecución.
+> - **Volcado de memoria (memory dump):** proceso mediante el cual se captura y almacena el contenido de la memoria de un ordenador, normalmente con fines de diagnóstico y depuración de software.
+> - **Nibble:** grupo de 4 bits.
+
+### Convertir números binarios a hexadecimales
+
+La conversión de binario a hexadecimal es un cálculo sencillo.
+
+**Pasos:**
+
+1. Divide el byte binario (8 bits) en dos *nibbles* (2 × 4 bits).
+2. Calcula el valor decimal de cada grupo de 4 bits.
+3. Convierte esos valores decimales a sus equivalentes hexadecimales y únelos.
+
+Por ejemplo, para convertir **01101011₂** a hexadecimal:
+
+#### Paso 1: Dividir en dos nibbles
+
+| Primer nibble | Segundo nibble |
+|:-------------:|:--------------:|
+| 0110₂ | 1011₂ |
+
+#### Paso 2: Calcular el valor decimal
+
+| Binario | Decimal |
+|:--------:|:--------:|
+| 0110₂ | 6₁₀ |
+| 1011₂ | 11₁₀ |
+
+#### Paso 3: Convertir a hexadecimal
+
+| Decimal | Hexadecimal |
+|:--------:|:------------:|
+| 6₁₀ | 6₁₆ |
+| 11₁₀ | B₁₆ |
+
+Resultado:
+
+**01101011₂ = 6B₁₆**
+
+### Convertir números hexadecimales a binarios
+
+La conversión de hexadecimal a binario es simplemente el proceso inverso.
+
+**Pasos:**
+
+1. Separa los dos dígitos hexadecimales.
+2. Convierte cada uno a un número binario de 4 bits.
+3. Une ambos grupos para formar un byte completo.
+
+Por ejemplo, para convertir **F2₁₆** a binario:
+
+#### Paso 1: Separar los dígitos
+
+| Dígito 1 | Dígito 2 |
+|:---------:|:---------:|
+| F₁₆ | 2₁₆ |
+
+#### Paso 2: Convertir cada dígito a binario
+
+| Hexadecimal | Binario |
+|:-----------:|:-------:|
+| F₁₆ | 1111₂ |
+| 2₁₆ | 0010₂ |
+
+#### Paso 3: Unir los grupos
+
+```text
+1111 0010
+```
+
+Resultado:
+
+**F2₁₆ = 11110010₂**
+
+### Convertir números decimales a hexadecimales
+
+La conversión de decimal a hexadecimal requiere trabajar con divisiones sucesivas entre 16.
+
+**Pasos:**
+
+1. Divide el número decimal entre 16 y anota el resto.
+2. Repite el proceso utilizando el cociente obtenido.
+3. Continúa hasta que el cociente sea 0.
+4. Construye el número hexadecimal leyendo los restos desde el último hasta el primero.
+
+Por ejemplo, para convertir **254₁₀** a hexadecimal:
+
+#### Paso 1: Primera división
+
+| División | Cociente | Resto |
+|:----------|:---------:|:------:|
+| 254 ÷ 16 | 15 | 14 |
+
+El resto **14₁₀** equivale a **E₁₆**.
+
+#### Paso 2: Segunda división
+
+| División | Cociente | Resto |
+|:----------|:---------:|:------:|
+| 15 ÷ 16 | 0 | 15 |
+
+El resto **15₁₀** equivale a **F₁₆**.
+
+#### Paso 3: Construir el resultado
+
+Leyendo los restos desde el último hasta el primero:
+
+**FE₁₆**
+
+Resultado:
+
+**254₁₀ = FE₁₆**
+
+### Convertir números hexadecimales a decimales
+
+Para convertir un número hexadecimal a decimal:
+
+**Pasos:**
+
+1. Convierte cada dígito hexadecimal a su equivalente decimal.
+2. Multiplica cada valor por **16 elevado a la potencia correspondiente a su posición**, empezando por 0 desde la derecha.
+3. Suma todos los resultados.
+
+Por ejemplo, para convertir **2F₁₆** a decimal:
+
+#### Paso 1: Convertir los dígitos
+
+| Hexadecimal | Decimal |
+|:-----------:|:-------:|
+| 2₁₆ | 2₁₀ |
+| F₁₆ | 15₁₀ |
+
+#### Paso 2: Aplicar los pesos posicionales
+
+| Cálculo | Resultado |
+|:---------|:----------:|
+| 2 × 16¹ | 32 |
+| 15 × 16⁰ | 15 |
+
+#### Paso 3: Sumar los resultados
+
+```text
+32 + 15 = 47
+```
+
+Resultado:
+
+**2F₁₆ = 47₁₀**
+
 ## A1.2.2. Explica cómo se utiliza el sistema binario para almacenar datos
 
 El sistema binario sustenta todo, desde los valores numéricos y la información textual hasta los archivos multimedia complejos, garantizando un procesamiento de datos eficiente y fiable. En esta sección, vamos a descubrir los mecanismos que se utilizan para almacenar datos como caracteres, cadenas de texto, imágenes, audio y vídeo en forma binaria.
