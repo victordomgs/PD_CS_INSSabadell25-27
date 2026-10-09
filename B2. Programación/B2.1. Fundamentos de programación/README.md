@@ -335,9 +335,9 @@ Por ejemplo, considera el siguiente problema: los estudiantes de un curso de idi
 El siguiente diagrama de flujo se ha diseñado para proponer una posible solución al problema:
 
 <div style="text-align: center;">
-    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/B2.%20Programacion/images/flowchart.png?raw=true" alt="Flowchart" width="300" height="auto"/>
+    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/B2.%20Programaci%C3%B3n/images/flowchart.png?raw=true" alt="Diagrama de flujo" width="500" height="auto"/>
     <p><em>Figura 1: Diagrama de flujo. Fuente: Computer Science IB. (Paul Baumgarten, Ioana Ganea, Carl Turland)</em></p>
-  </div>
+</div>
 
 La tabla de traza para los datos de entrada `23, 98, 33, 45, 78, 80, 81, 84, 34, 999` sería la siguiente:
 
