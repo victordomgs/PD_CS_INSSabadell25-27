@@ -7,6 +7,7 @@
 
 - [B2.3.1. Secuenciación](#B231-secuenciación)
 - [B2.3.2. Estructuras de selección](#B232-estructuras-de-selección)
+- [B2.3.3. Bucles e iteración](#B233-bucles-e-iteración)
 
 <br>
 
@@ -175,5 +176,170 @@ En las comparaciones también se pueden usar otros operadores relacionales: `==`
 > La palabra “decisión” viene del latín *decidere*, que significa **“cortar”**: para decidir hay que considerar y descartar soluciones alternativas. El razonamiento es clave primero para **identificar las opciones disponibles** y después para **evaluar sus consecuencias**. Sin embargo, la toma de decisiones suele combinar razonamiento con otros factores que pueden limitar la racionalidad, como los **sesgos** y las **emociones**.
 >
 > Al explorar el papel del razonamiento en la toma de decisiones, discute la importancia de la lógica, el análisis, el pensamiento crítico, las técnicas de resolución de problemas, las habilidades adquiridas y el propósito para llegar a conclusiones bien fundamentadas y eficaces.
+
+<br>
+
+## B2.3.3. Bucles e iteración
+
+Imagina que necesitas mostrar tu nombre varias veces. Al principio podrías hacerlo escribiendo una sentencia `print` por cada repetición, pero este método se vuelve muy incómodo cuando hay muchas repeticiones, por ejemplo 100. Además, si quieres repetir acciones según lo que introduzca el usuario o hasta que se cumpla una condición, escribir cada repetición a mano es inviable. Para resolver estas situaciones de forma eficiente se usan los **bucles**.
+
+Los bucles permiten ejecutar un bloque de código de forma repetida, ya sea un **número predeterminado de iteraciones** o **hasta que se cumpla una condición**. Tanto si se conoce de antemano el número exacto de repeticiones como si hay que iterar dinámicamente según condiciones en tiempo de ejecución, los bucles ofrecen una solución flexible y concisa.
+
+Los bucles se usan para repetir instrucciones o bloques de código. **Un bucle hace referencia a una repetición.** Existen varios tipos:
+
+- **Bucles controlados por contador** (bucles **FOR**).
+- **Bucles condicionales**, que pueden ser:
+  - **Bucles de precondición** (bucles **WHILE**).
+  - **Bucles de postcondición** (bucles **REPEAT–UNTIL**).
+
+<br>
+
+### Bucle controlado por contador (FOR)
+
+Un **bucle controlado por contador** (bucle FOR) se usa cuando **el número de repeticiones se conoce antes de ejecutar el código**. Por ejemplo, si hay que escribir todos los números entre 1 y 100, antes de escribir nada de código ya se sabe que el programa se repetirá 100 veces.
+
+Si `n` es el número de repeticiones necesarias, un bucle FOR tendría este aspecto:
+
+```python
+for i in range(0, n):
+    print(i)
+```
+
+En Python, `range` indica el valor inicial de `i` (en este caso, 0) y el valor final (en este caso, `n`). Ten en cuenta que **el bucle se detiene cuando `i` llega a `n-1`**. Por ejemplo, si `n = 5`, `i` tomará los valores 0, 1, 2, 3, 4. Hay cinco repeticiones en total; cuando `i` alcanza el valor 5, la repetición termina y ese valor no se muestra.
+
+> [!NOTE]
+> Como el punto de partida es 0, que es el valor por defecto, la sentencia podría haberse escrito como `for i in range(n):` y tendría el mismo efecto.
+
+El punto de partida se puede cambiar. Supón que hay que mostrar todos los números entre 1 y 100. Para resolverlo, se fija el inicio en 1 y el final en 101, de modo que el 100 también quede incluido:
+
+```python
+for i in range(1, 101):
+    print(i)
+```
+
+Otra alternativa sería mantener el bucle de 0 a 100 y modificar la sentencia de impresión para que muestre `i + 1`:
+
+```python
+for i in range(0, 100):
+    print(i + 1)
+```
+
+#### Números impares entre 1 y 100
+
+Una posible solución es mantener la misma estructura y comprobar si el número es impar:
+
+```python
+for i in range(1, 101):
+    if i % 2 == 1:
+        print(i)
+```
+
+`i % 2 == 1` comprueba si el **resto** de dividir `i` entre 2 es 1. Es decir, si hay resto, el número es impar; si no hay resto, es par.
+
+El mismo problema se puede resolver **sin necesidad de un IF**, añadiendo un **paso** (*step*) que cambie el incremento: en lugar de aumentar `i` de 1 en 1 (valor por defecto), se aumenta de otra forma.
+
+```python
+for i in range(1, 101, 2):
+    print(i)
+```
+
+Aquí se ha incluido un paso de `2` en `range`, de modo que la variable `i` tomará los valores 1, 3, 5, … 99.
+
+#### Números de 100 a 1 (cuenta atrás)
+
+¿Y si se pide mostrar los números de 100 a 1?
+
+```python
+for i in range(100, 0, -1):
+    print(i)
+```
+
+El rango empieza en 100 y debe detenerse al llegar a 1 (el 0 no se alcanza), y el paso se fija en `-1` para que el número se **decremente** de uno en uno.
+
+> [!NOTE]
+> **Sintaxis de `range` en Python:** `range(inicio, fin, paso)`
+> - `inicio`: primer valor (por defecto, 0).
+> - `fin`: valor en el que se detiene el bucle (**no se incluye**).
+> - `paso`: cuánto cambia `i` en cada repetición (por defecto, 1).
+
+<br>
+
+### Bucle de precondición (WHILE)
+
+Un **bucle de precondición** (WHILE) se usa cuando **el número de repeticiones no se conoce antes de ejecutar el código**. Se espera que el código se repita **mientras se cumpla una condición**, es decir, mientras se evalúe como verdadera.
+
+Cuando la condición deja de cumplirse, llamada **condición de terminación**, la ejecución del bucle se detiene. En un bucle WHILE puede que **la repetición no se ejecute ni una sola vez**: esto ocurre cuando la condición nunca se cumple.
+
+Los bucles WHILE se utilizan con frecuencia con fines de **validación** o **verificación**. Por ejemplo, cuando se pide al usuario que introduzca una contraseña dos veces, el ordenador compara ambas entradas para comprobar que coinciden (**verificación de doble entrada**). En este caso, se usaría un bucle para repetir la introducción de la contraseña hasta que las dos entradas coincidan.
+
+> [!NOTE]
+> - **Condición de terminación:** condición de un bucle que interrumpe o detiene la repetición.
+> - **Validación:** proceso para asegurar que los datos de entrada son sensatos o razonables.
+> - **Verificación:** proceso para asegurar que los datos de entrada se han copiado con exactitud de una fuente a otra.
+
+```python
+password = input("Introduce la contraseña: ")
+pass_check = input("Repite la contraseña: ")
+
+while password != pass_check:
+    print("Las contraseñas no coinciden.")
+    pass_check = input("Repite la contraseña: ")
+
+print("Contraseña verificada.")
+```
+
+- `!=` es una **negación** de la igualdad: la condición comprueba si los dos valores **no son iguales**, y se pide al usuario que vuelva a introducir la contraseña hasta que coincidan.
+- En Python, tanto para cadenas de texto como para números se usa `==` / `!=` para comparar.
+- El mensaje final solo se muestra **después de salir del bucle**.
+- Si la segunda contraseña nunca coincide con la primera, el código del interior del bucle se repetirá continuamente.
+
+#### Convertir un FOR en un WHILE
+
+**Cualquier bucle FOR puede reescribirse como un bucle WHILE.** Con el ejemplo que muestra todos los números entre 1 y 100, usando un WHILE el código sería:
+
+```python
+i = 1
+while i < 101:
+    print(i)
+    i = i + 1
+```
+
+- El bucle se repetirá **mientras `i` sea menor que 101**. La condición de terminación es `i >= 101`.
+- La función del incremento (`i = i + 1`) es cambiar el valor de `i` para que el bucle se detenga en algún momento. Sin esa sentencia, el bucle se ejecutaría **de forma infinita**.
+
+<br>
+
+### Bucle de postcondición (REPEAT–UNTIL)
+
+En el **bucle de postcondición** (REPEAT–UNTIL), la condición se comprueba **al final**. Por tanto, el código del interior del bucle se ejecuta **al menos una vez**.
+
+> [!NOTE]
+> En Python, las estructuras de postcondición se escriben usando bucles `while`, ya que no existe una sentencia `repeat–until` propia. Se suele usar `while True` junto con `break` para salir del bucle cuando se cumple la condición de terminación.
+
+```python
+i = 1
+while True:
+    print(i)
+    i = i + 1
+    if i > 100:
+        break
+```
+
+En el ejemplo, la variable `i` se inicializa a 1. Ese valor se muestra y después se incrementa, **ocurra lo que ocurra con la condición**. Si la condición de terminación (`i > 100`) se evalúa como falsa, el bucle se repite; si se evalúa como verdadera, la repetición se detiene.
+
+<br>
+
+> [!IMPORTANT]
+> **Información clave**
+>
+> - Los bucles FOR se llaman bucles **“controlados por contador”**, los bucles WHILE se llaman bucles **“de precondición”** y los bucles REPEAT–UNTIL se llaman bucles **“de postcondición”**.
+> - Los bucles controlados por contador se usan cuando **el número de repeticiones se conoce antes de ejecutar el código**.
+> - Los bucles de precondición **pueden no ejecutarse ni una vez** (si la condición no se cumple).
+> - Los bucles de postcondición se ejecutan **al menos una vez**, aunque la condición nunca se cumpla.
+
+> [!TIP]
+> **Consejo**
+>
+> Cuando se te pida identificar el tipo de bucle que ejemplifica un fragmento de código, utiliza los nombres **controlado por contador**, **de precondición** o **de postcondición**. Por ejemplo, decir que es un “bucle FOR” en lugar de un bucle “controlado por contador” no es suficiente, ya que no queda claro que sepas de qué tipo de bucle se trata un FOR.
 
 <br>
