@@ -58,14 +58,14 @@ En el siguiente diagrama, si se cumple la condición se ejecutan las instruccion
 
   <div style="text-align: center;">
     <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/B2.%20Programaci%C3%B3n/images/if_flowchart.png?raw=true" alt="Diagrama de flujo IF" width="500" height="auto"/>
-    <p><em>Figura 1: Diagrama de flujo de una sentencia IF. Fuente: </em></p>
+    <p><em>Figura 1: Diagrama de flujo de una sentencia IF. Fuente: Fuente: Computer Science IB. (Paul Baumgarten, Ioana Ganea, Carl Turland)</em></p>
   </div>
 
 Si la condición no se cumple, no ocurre nada. Un ejemplo: un comprador recibe un **20 % de descuento** si su compra es de **100 o más**; si es inferior, no pasa nada.
 
   <div style="text-align: center;">
     <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/B2.%20Programaci%C3%B3n/images/if_flowchart2.png?raw=true" alt="Diagrama de flujo IF" width="500" height="auto"/>
-    <p><em>Figura 2: Diagrama de flujo de una sentencia IF. Fuente: </em></p>
+    <p><em>Figura 2: Diagrama de flujo de una sentencia IF. Fuente: Fuente: Computer Science IB. (Paul Baumgarten, Ioana Ganea, Carl Turland)</em></p>
   </div>
 
 ```python
@@ -104,7 +104,7 @@ El bloque de código puede ampliarse incluyendo **otro IF dentro del actual**. E
 
   <div style="text-align: center;">
     <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/B2.%20Programaci%C3%B3n/images/if_nested.png?raw=true" alt="Diagrama de flujo IF anidado" width="450" height="auto"/>
-    <p><em>Figura 4: Diagrama de flujo de un IF anidado. Fuente: </em></p>
+    <p><em>Figura 4: Diagrama de flujo de un IF anidado. Fuente: Fuente: Computer Science IB. (Paul Baumgarten, Ioana Ganea, Carl Turland)</em></p>
   </div>
 
 En el ejemplo se añade una variable que decide si el descuento es del **20 %** o del **10 %** según si el comprador es **socio** o no. Como no hace falta mostrar el descuento, también podría calcularse el importe a pagar multiplicando directamente por 0.9 (descuento del 10 %).
@@ -198,6 +198,11 @@ Los bucles se usan para repetir instrucciones o bloques de código. **Un bucle h
 
 Un **bucle controlado por contador** (bucle FOR) se usa cuando **el número de repeticiones se conoce antes de ejecutar el código**. Por ejemplo, si hay que escribir todos los números entre 1 y 100, antes de escribir nada de código ya se sabe que el programa se repetirá 100 veces.
 
+ <div style="text-align: center;">
+    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/B2.%20Programaci%C3%B3n/images/count-controlled.png?raw=true" alt="Diagrama de flujo Bucle FOR" width="500" height="auto"/>
+    <p><em>Figura 5: Diagrama de flujo Bucle FOR. Fuente: Fuente: Computer Science IB. (Paul Baumgarten, Ioana Ganea, Carl Turland)</em></p>
+  </div>
+
 Si `n` es el número de repeticiones necesarias, un bucle FOR tendría este aspecto:
 
 ```python
@@ -270,6 +275,11 @@ Un **bucle de precondición** (WHILE) se usa cuando **el número de repeticiones
 
 Cuando la condición deja de cumplirse, llamada **condición de terminación**, la ejecución del bucle se detiene. En un bucle WHILE puede que **la repetición no se ejecute ni una sola vez**: esto ocurre cuando la condición nunca se cumple.
 
+ <div style="text-align: center;">
+    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/B2.%20Programaci%C3%B3n/images/pre-condition.png?raw=true" alt="Diagrama de flujo Bucle Pre-Condición" width="500" height="auto"/>
+    <p><em>Figura 6: Diagrama de flujo Bucle pre-condición. Fuente: Fuente: Computer Science IB. (Paul Baumgarten, Ioana Ganea, Carl Turland)</em></p>
+  </div>
+
 Los bucles WHILE se utilizan con frecuencia con fines de **validación** o **verificación**. Por ejemplo, cuando se pide al usuario que introduzca una contraseña dos veces, el ordenador compara ambas entradas para comprobar que coinciden (**verificación de doble entrada**). En este caso, se usaría un bucle para repetir la introducción de la contraseña hasta que las dos entradas coincidan.
 
 > [!NOTE]
@@ -312,6 +322,11 @@ while i < 101:
 ### Bucle de postcondición (REPEAT–UNTIL)
 
 En el **bucle de postcondición** (REPEAT–UNTIL), la condición se comprueba **al final**. Por tanto, el código del interior del bucle se ejecuta **al menos una vez**.
+
+ <div style="text-align: center;">
+    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/B2.%20Programaci%C3%B3n/images/post-condition.png?raw=true" alt="Diagrama de flujo Bucle Post-Condición" width="500" height="auto"/>
+    <p><em>Figura 7: Diagrama de flujo Bucle post-condición. Fuente: Fuente: Computer Science IB. (Paul Baumgarten, Ioana Ganea, Carl Turland)</em></p>
+  </div>
 
 > [!NOTE]
 > En Python, las estructuras de postcondición se escriben usando bucles `while`, ya que no existe una sentencia `repeat–until` propia. Se suele usar `while True` junto con `break` para salir del bucle cuando se cumple la condición de terminación.
