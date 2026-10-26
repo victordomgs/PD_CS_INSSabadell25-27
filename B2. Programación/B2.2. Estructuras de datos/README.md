@@ -64,6 +64,11 @@ Un **array 1D** (o **lista 1D** en Python) es una estructura de datos que almace
 
 Por ejemplo, un array de cinco enteros que almacena notas sobre 100 se llama `grades`. Gráficamente, los arrays pueden representarse de forma horizontal o vertical.
 
+ <div style="text-align: center;">
+    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/B2.%20Programaci%C3%B3n/images/arrays.png?raw=true" alt="Array 1D" width="500" height="auto"/>
+    <p><em>Figura 1: Array 1D. Fuente: Fuente: Computer Science IB. (Paul Baumgarten, Ioana Ganea, Carl Turland)</em></p>
+  </div>
+
 El elemento en el índice 2 (el 3.er elemento, contando desde 0) se accede con el nombre del array seguido del índice:
 
 ```python
@@ -158,6 +163,11 @@ Un array bidimensional puede verse como una **tabla** con **filas** y **columnas
 
 Piensa en almacenar los números del 1 al 9 en una tabla de tres filas y tres columnas. Para ello se crea un array 2D o una lista 2D. Cada elemento se puede **acceder directamente** indicando sus índices (índice de fila e índice de columna).
 
+ <div style="text-align: center;">
+    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/B2.%20Programaci%C3%B3n/images/arrays2d.png?raw=true" alt="Array 2D" width="500" height="auto"/>
+    <p><em>Figura 2: Array 2D. Fuente: Fuente: Computer Science IB. (Paul Baumgarten, Ioana Ganea, Carl Turland)</em></p>
+  </div>
+
 #### Declaración
 
 ```python
@@ -166,6 +176,11 @@ numbers = [[0] * 3 for i in range(3)]
 
 - El `3` de `[0] * 3` indica el **número de columnas** y el `3` de `range(3)` el **número de filas**. El valor `0` es el valor inicial al que se fija la lista.
 - La lista 2D aparece como una tabla de **tres filas y tres columnas llenas de ceros**.
+
+ <div style="text-align: center;">
+    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/B2.%20Programaci%C3%B3n/images/arrays2d_zeros.png?raw=true" alt="Array 2D en Python" width="500" height="auto"/>
+    <p><em>Figura 3: Array 2D en Python inicializado con 0. Fuente: Fuente: Computer Science IB. (Paul Baumgarten, Ioana Ganea, Carl Turland)</em></p>
+  </div>
 
 > [!WARNING]
 > No uses `[[0] * 3] * 3` para crear una lista 2D: las tres filas serían **la misma lista repetida**, y modificar una afectaría a todas.
@@ -269,6 +284,11 @@ Si fueras cajero de un banco, manejarías muchas monedas. Para manipularlas con 
 Otro ejemplo es una **pila de platos**: un plato nuevo se añade encima de la pila y un plato se retira de la parte superior, ya que, de lo contrario, los platos podrían romperse.
 
 En informática, cuando se realizan acciones que funcionan con el mismo principio, se puede usar una estructura de datos abstracta llamada **pila** (*stack*). La pila funciona según el principio **LIFO** (*Last In First Out*, "el último en entrar es el primero en salir") o **FILO** (*First In Last Out*), lo que significa que **solo se accede al elemento superior**. La operación de eliminar un elemento de la pila se llama **pop** (sacar el elemento superior), y la operación de añadir un elemento se llama **push** (añadir un elemento en la parte superior de la pila).
+
+ <div style="text-align: center;">
+    <img src="https://github.com/victordomgs/PD_CS_INSSabadell25-27/blob/main/B2.%20Programaci%C3%B3n/images/stack.png?raw=true" alt="Pila" width="500" height="auto"/>
+    <p><em>Figura 4: Representación de una pila. Fuente: Fuente: Computer Science IB. (Paul Baumgarten, Ioana Ganea, Carl Turland)</em></p>
+  </div>
 
 > [!NOTE]
 > - **Pila (*stack*):** estructura de datos abstracta que funciona según el principio LIFO.
